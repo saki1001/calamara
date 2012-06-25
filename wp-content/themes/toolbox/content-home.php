@@ -8,7 +8,6 @@
     <div class="entry-content">
     
     <?php 
-        
         // do_action('slideshow_deploy', '17');
         wp_cycle();
     ?>
