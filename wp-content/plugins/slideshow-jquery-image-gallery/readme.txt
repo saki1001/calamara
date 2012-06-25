@@ -4,7 +4,7 @@ Contributors: stefanboonstra
 Tags: slideshow, slider, slide, images, image, photo, gallery, galleries
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 1.2.1
+Stable tag: 1.3.1
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -29,9 +29,10 @@ different images and settings for each one of them.
 
 2. After activating Slideshow, you can create a new slideshow.
 
-3. Attach images from the media page to your newly created slideshow.
+3. Upload images to your newly created slideshow with the upload button in the slides list.
 
 4. Use the shortcode or code snippet visible in your slideshow admin panel to deploy your slideshow anywhere on your website.
+You can also use the widget to show any of your slideshows in your sidebar.
 
 5. Feel like a sir.
 
@@ -48,6 +49,21 @@ different images and settings for each one of them.
 
 
 == Changelog ==
+
+= 1.3.1 =
+*   Fixed: Check if function 'file_get_contents' exists before calling it, some servers have this disabled. (This throws errors and messes up the plugin)
+
+= 1.3.0 =
+*   Added Dutch translation.
+*   Custom styles for each slideshow are now available to be more compatable with every theme. (Black and transparent scheme)
+*   Encapsulated a css class so that it does not interfere with anything outside the slideshow_container.
+*   Moved slides list to the side, saving space on the slideshow specific settings page.
+*   Settings bugs completely fixed, finally. (Previous version deleted post-meta on auto-save)
+*   Moved Slideshow settings and images script to inside the slideshow_container, outputting a more coherent whole.
+*   Settings moved from multiple meta keys to a single one. (This resets everyone's settings)
+*   Added a Wordpress media upload button to the slides list, this simplifies attaching images to a slideshow.
+*   Better way of including the jQuery library is now being used.
+*   Fixed bug with the number of slides shown in the slideshow stuck at the default value of five.
 
 = 1.2.1 =
 *   Fixed: Slideshow specific settings not saving.

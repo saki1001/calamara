@@ -1,5 +1,7 @@
-<? if(count($attachments) <= 0):
-	_e('Add slides to this slideshow by attaching images to it from the media page.', 'slideshow-plugin'); ?>
+<p><? echo $uploadButton; ?></p>
+
+<? if(count($attachments) <= 0): ?>
+	<p></p><? _e('Add slides to this slideshow by using the button above or attaching images from the media page.', 'slideshow-plugin'); ?></p>
 
 <? else: ?>
 	<table class="wp-list-table widefat fixed media" cellspacing="0">

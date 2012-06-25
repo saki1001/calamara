@@ -4,15 +4,9 @@
  * Responsible for outputting the slideshow's HTML, CSS and Javascript.
  *
  * @author: Stefan Boonstra
- * @version: 15-06-12
+ * @version: 23-06-12
  */
 class Slideshow {
-
-	/** Variables */
-	private static $stylesheet = '/style/style.css';
-	private static $scriptfile = '/js/slideshow.js';
-	private static $jQuery = '/js/jquery-min.js';
-	private static $htmlfile = 'slideshow.html';
 
 	/**
 	 * Function deploy prints out the prepared html
@@ -51,29 +45,12 @@ class Slideshow {
 		if(empty($post))
 			return;
 
-		// Store output for return
-		$output = '';
-
-		// Output basic html
-		$output .= file_get_contents(SlideshowMain::getPluginUrl() . '/views/' . __CLASS__ . '/' . self::$htmlfile);
-
 		// Get settings
-		$settings = SlideshowPostType::$defaults;
-		foreach($settings as $key => $value){
-			$metaValue = get_post_meta($post->ID, $key, true);
-			if(!empty($metaValue))
-				$settings[$key] = $metaValue;
-		}
-
-		// Get images
-		$imageObjects = get_posts(array(
-			'post_type' => 'attachment',
-			'numberposts' => null,
-			'post_parent' => $post->ID
-		));
+		$settings = SlideshowPostType::getSettings($post->ID);
 
 		// Load images into array
 		$images = array();
+		$imageObjects = SlideshowPostType::getAttachments($post->ID);
 		foreach($imageObjects as $key => $imageObject){
 			$images[$key] = array(
 				'img' => $imageObject->guid,
@@ -83,36 +60,29 @@ class Slideshow {
 			);
 		}
 
-		// Output settings and images
-		$output .= '
-			<script type="text/javascript">
-				var slideshow_images = ' . json_encode($images) . ';
-				var slideshow_settings = ' . json_encode($settings) . ';
-			</script>
-		';
+		// Check in what way the stylesheet needs to be loaded, .css can be enqueued, custom styles need to be printed.
+		$printStyle = '';
+		if($settings['style'] == 'custom-style') // Enqueue stylesheet
+			$printStyle = $settings['custom-style'];
+		else // Custom style, print it.
+			wp_enqueue_style(
+				'slideshow_style',
+				SlideshowMain::getPluginUrl() . '/style/' . __CLASS__ . '/' . $settings['style']
+			);
 
-		// Enqueue jQuery
-		wp_enqueue_script(
-			'jQuery',
-			SlideshowMain::getPluginUrl() . self::$jQuery,
-			array(),
-			'',
-			true
-		);
+		// Include output file that stores output in $output.
+		$output = '';
+		ob_start();
+		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/slideshow.php');
+		$output .= ob_get_clean();
 
 		// Enqueue slideshow script
 		wp_enqueue_script(
 			'slideshow_script',
-			SlideshowMain::getPluginUrl() . self::$scriptfile,
-			array('jQuery'),
-			'',
+			SlideshowMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.js',
+			array('jquery'),
+			false,
 			true
-		);
-
-		// Enqueue stylesheet
-		wp_enqueue_style(
-			'slideshow_style',
-			SlideshowMain::getPluginUrl() . self::$stylesheet
 		);
 
 		// Return output

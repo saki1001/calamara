@@ -1,0 +1,196 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Slideshow Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-23 17:41+0100\n"
+"PO-Revision-Date: 2012-06-23 17:41+0100\n"
+"Last-Translator: Stefan Boonstra <stefanboonstra@hotmail.com>\n"
+"Language-Team: Boonstra <stefanboonstra@hotmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;_e;__\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wordpress\\vanderlei-showproductions\\wp-content\\plugins\\slideshow-jquery-image-gallery\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/SlideshowPostType.php:49
+msgid "Slideshows"
+msgstr "Slideshows"
+
+#: classes/SlideshowPostType.php:50
+#: views/SlideshowWidget/form.php:7
+msgid "Slideshow"
+msgstr "Slideshow"
+
+#: classes/SlideshowPostType.php:51
+msgid "Add New Slideshow"
+msgstr "Nieuwe Slideshow Toevoegen"
+
+#: classes/SlideshowPostType.php:52
+msgid "Edit slideshow"
+msgstr "Slideshow bewerken"
+
+#: classes/SlideshowPostType.php:53
+msgid "New slideshow"
+msgstr "Nieuwe slideshow"
+
+#: classes/SlideshowPostType.php:54
+msgid "View slideshow"
+msgstr "Slideshow bekijken"
+
+#: classes/SlideshowPostType.php:55
+msgid "Search slideshows"
+msgstr "Slideshows zoeken"
+
+#: classes/SlideshowPostType.php:56
+#: classes/SlideshowPostType.php:57
+msgid "No slideshows found"
+msgstr "Geen slideshows gevonden"
+
+#: classes/SlideshowPostType.php:82
+msgid "Information"
+msgstr "Informatie"
+
+#: classes/SlideshowPostType.php:91
+msgid "Slides List"
+msgstr "Slides Lijst"
+
+#: classes/SlideshowPostType.php:100
+msgid "Slideshow Style"
+msgstr "Slideshow Stijl"
+
+#: classes/SlideshowPostType.php:109
+msgid "Slideshow Settings"
+msgstr "Slideshow Instellingen"
+
+#: classes/SlideshowWidget.php:20
+msgid "Enables you to show your slideshows in the widget area of your website."
+msgstr "Maakt het mogelijk je slideshows te bijken in het wigdet gebied van je website."
+
+#: classes/SlideshowWidget.php:26
+msgid "Slideshow Widget"
+msgstr "Slideshow Widget"
+
+#: views/SlideshowPostType/information.php:3
+msgid "To use this slideshow in your website either add this piece of shortcode to your posts or pages"
+msgstr "Om deze slideshow op je website te gebruiken voeg je of dit stukje shortcode aan je pagina of post toe"
+
+#: views/SlideshowPostType/information.php:5
+msgid "Or add this piece of code to where ever in your website you want to place the slideshow"
+msgstr "Of je voegt dit stuk code toe aan je broncode op de plaats waar je wilt dat de slideshow te zien is"
+
+#: views/SlideshowPostType/settings.php:3
+msgid "Number of seconds the slide takes to slide in"
+msgstr "Aantal seconden dat de animatie van het inschuiven van de volgende slide duurt"
+
+#: views/SlideshowPostType/settings.php:5
+#: views/SlideshowPostType/settings.php:10
+#: views/SlideshowPostType/settings.php:15
+#: views/SlideshowPostType/settings.php:20
+#: views/SlideshowPostType/settings.php:25
+#: views/SlideshowPostType/settings.php:33
+#: views/SlideshowPostType/settings.php:41
+#: views/SlideshowPostType/settings.php:49
+#: views/SlideshowPostType/settings.php:57
+msgid "Default"
+msgstr "Standaard"
+
+#: views/SlideshowPostType/settings.php:8
+msgid "Number of seconds the description takes to slide in"
+msgstr "Aantal seconden dat het inschuiven van de beschrijving duurt"
+
+#: views/SlideshowPostType/settings.php:13
+msgid "Seconds between changing slides"
+msgstr "Seconden tussen het wisselen van de slides"
+
+#: views/SlideshowPostType/settings.php:18
+msgid "Width of the slideshow"
+msgstr "Breedte van de slideshow"
+
+#: views/SlideshowPostType/settings.php:20
+msgid "Defaults to parent's width."
+msgstr "Standaard ingesteld op de breedte van het bovenliggende element."
+
+#: views/SlideshowPostType/settings.php:23
+msgid "Height of the slideshow"
+msgstr "Hoogte van de slideshow"
+
+#: views/SlideshowPostType/settings.php:28
+msgid "Fit image into slideshow (stretching it)"
+msgstr "Pas afbeelding in de slideshow (oprekken)"
+
+#: views/SlideshowPostType/settings.php:30
+#: views/SlideshowPostType/settings.php:33
+#: views/SlideshowPostType/settings.php:38
+#: views/SlideshowPostType/settings.php:41
+#: views/SlideshowPostType/settings.php:46
+#: views/SlideshowPostType/settings.php:49
+#: views/SlideshowPostType/settings.php:54
+#: views/SlideshowPostType/settings.php:57
+msgid "Yes"
+msgstr "Ja"
+
+#: views/SlideshowPostType/settings.php:31
+#: views/SlideshowPostType/settings.php:33
+#: views/SlideshowPostType/settings.php:39
+#: views/SlideshowPostType/settings.php:41
+#: views/SlideshowPostType/settings.php:47
+#: views/SlideshowPostType/settings.php:49
+#: views/SlideshowPostType/settings.php:55
+#: views/SlideshowPostType/settings.php:57
+msgid "No"
+msgstr "Nee"
+
+#: views/SlideshowPostType/settings.php:36
+msgid "Activate buttons (so the user can scroll through the slides)"
+msgstr "Knoppen activeren (zodat de gebruiker door de slides kan scrollen)"
+
+#: views/SlideshowPostType/settings.php:44
+msgid "Send user to image URL on click"
+msgstr "Wanner de gebruiker op de afbeelding klikt, stuur hem naar de URL van het plaatje"
+
+#: views/SlideshowPostType/settings.php:52
+msgid "Show title and description"
+msgstr "Toon titel en beschrijving"
+
+#: views/SlideshowPostType/slides.php:4
+msgid "Add slides to this slideshow by using the button above or attaching images from the media page."
+msgstr "Voeg slides toe door afbeeldingen te uploaden met de bovenstaande knop of ze te koppelen aan deze slideshow via de media pagina."
+
+#: views/SlideshowPostType/style-settings.php:3
+msgid "Style"
+msgstr "Style"
+
+#: views/SlideshowPostType/style-settings.php:9
+msgid "Custom Style"
+msgstr "Aangepaste Stijl"
+
+#: views/SlideshowPostType/style-settings.php:12
+msgid "The style used for this slideshow"
+msgstr "De stijl te gebruiken voor deze slidehsow"
+
+#: views/SlideshowPostType/style-settings.php:18
+msgid "Custom Style Editor"
+msgstr "Aangepaste Stijl Bewerker"
+
+#: views/SlideshowPostType/style-settings.php:22
+msgid "Custom style"
+msgstr "Aangepaste stijl"
+
+#: views/SlideshowUpload/upload-button.php:1
+msgid "Upload/Manage Images"
+msgstr "Upload/Beheer Afbeeldingen"
+
+#: views/SlideshowWidget/form.php:2
+msgid "Title"
+msgstr "Titel"
+
+#: views/SlideshowWidget/form.php:9
+msgid "Random Slideshow"
+msgstr "Willekeurige Slideshow"
+
+#~ msgid "Leave any field open to use default value."
+#~ msgstr "Een veld dat open wordt gelaten neemt de standaardwaarde aan."

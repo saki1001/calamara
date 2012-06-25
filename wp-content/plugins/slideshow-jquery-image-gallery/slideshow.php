@@ -3,7 +3,7 @@
  Plugin Name: Slideshow
  Plugin URI: http://stefanboonstra.com
  Description: This plugin offers a slideshow that is easily deployable in your website. Images can be assigned through the media page. Options are customizable for every single slideshow on your website.
- Version: 1.2.1
+ Version: 1.3.1
  Requires at least: 3.0
  Author: StefanBoonstra
  Author URI: http://stefanboonstra.com
@@ -16,9 +16,12 @@
  * base path/url returning method.
  *
  * @author Stefan Boonstra
- * @version 18-06-12
+ * @version 23-06-12
  */
 class SlideshowMain {
+
+	/** Variables */
+	static $version = '1.3.1';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -27,8 +30,8 @@ class SlideshowMain {
 	static function bootStrap(){
 		self::autoInclude();
 
-		// Initialize translation on init
-		add_action('init', array(__CLASS__, 'translator'));
+		// Initialize localization on init
+		add_action('init', array(__CLASS__, 'localize'));
 
 		// Deploy slide show on do_action('slideshow_deploy'); hook.
 		add_action('slideshow_deploy', array('Slideshow', 'deploy'));
@@ -40,14 +43,17 @@ class SlideshowMain {
 		add_action('widgets_init', array('SlideshowWidget', 'registerWidget'));
 
 		// Register slideshow post type
-		add_action('init', array('SlideshowPostType', 'registerSlideshowPostType'));
-		add_action('save_post', array('SlideshowPostType', 'save'));
+		SlideshowPostType::initialize();
+
+		// Plugin feedback
+		add_action('admin_init', array('SlideshowFeedback', 'adminInitialize'));
+		register_activation_hook(__FILE__, array('SlideshowFeedback', 'generalInformationNoCheck'));
 	}
 
 	/**
 	 * Translates the plugin
 	 */
-	static function translator(){
+	static function localize(){
 		load_plugin_textdomain(
 			'slideshow-plugin',
 			false,

@@ -3,7 +3,7 @@
  * Class SlideshowWidget allows showing one of your slideshows in your widget area.
  *
  * @author: Stefan Boonstra
- * @version: 15-06-12
+ * @version: 21-06-12
  */
 class SlideshowWidget extends WP_Widget {
 
@@ -39,7 +39,7 @@ class SlideshowWidget extends WP_Widget {
 		$slideshowId = '';
 		if(isset($instance['slideshowId']))
 			$slideshowId = $instance['slideshowId'];
-echo $slideshowId;
+
 		// Get title
 		$title = self::$widgetName;
 		if(isset($instance['title']))

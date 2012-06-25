@@ -185,14 +185,10 @@ var Slideshow = {
 		var slideShow = this;
 
 		// Slide in imagediv
-        jQuery('.' + slideShow.divName + imageId).animate({
-         'width': slideShow.width + 'px'},
-         slideShow.slideSpeed
-        );
-        //         jQuery('.' + slideShow.divName + imageId).animate({
-        //  'opacity': 1},
-        //  slideShow.slideSpeed
-        // );
+		jQuery('.' + slideShow.divName + imageId).animate({
+			'width': slideShow.width + 'px'},
+			slideShow.slideSpeed
+		);
 
 		// Set text of descriptionbox and slide it up, if showText is true
 		if(slideShow.showText){
@@ -228,14 +224,10 @@ var Slideshow = {
 		);
 
 		// Slide out imagediv
-        jQuery('.' + slideShow.divName + imageId).animate({
-         'width': '0px'},
-         slideShow.slideSpeed
-        );
-        //         jQuery('.' + slideShow.divName + imageId).animate({
-        //  'opacity': 0},
-        //  slideShow.slideSpeed
-        // );
+		jQuery('.' + slideShow.divName + imageId).animate({
+			'width': '0px'},
+			slideShow.slideSpeed
+		);
 
 		// Deactivate buttons for a while so the user can't mess up the app
 		slideShow.buttonsActive = false;
