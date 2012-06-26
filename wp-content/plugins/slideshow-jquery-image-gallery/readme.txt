@@ -4,7 +4,7 @@ Contributors: stefanboonstra
 Tags: slideshow, slider, slide, images, image, photo, gallery, galleries
 Requires at least: 3.0
 Tested up to: 3.4
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -14,14 +14,21 @@ Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
 
 Slideshow provides an easy way to integrate a slideshow for any Wordpress installation.
 
-Any sized image can be loaded into the slideshow using the admin's media screen you're already
-used to and once attached, will straight away be shown in your slideshow.
+Any sized image can be loaded into the slideshow using the upload button you're already familiar with from uploading
+images to your posts. Once uploaded, the images are shown in your slideshow straight away!
 
 Fancy doing something crazy? You can create and use as many slideshows as you'd like, with
-different images and settings for each one of them.
+different images, settings and styles for each one of them.
 
+ - Upload as many images as you like.
+ - Place it anywhere on your website.
+ - Customize it to taste.
  - Show that visitor who's boss.
 
+= Currently supported languages =
+
+ - English
+ - Dutch
 
 == Installation ==
 
@@ -41,14 +48,22 @@ You can also use the widget to show any of your slideshows in your sidebar.
 
 1. Create a new slideshow. A shortcode and a code snippet of how to call it is already visible.
 
-2. Attach images to the slideshow for the media menu.
+2. Attach images to the slideshow with the upload button in the slides list.
 
-3. The attached images are now visible in your newly created slideshow.
+3. The Wordpress media uploader will pop up and you can start uploading images to the slideshow.
 
-4. Using the shortcode or code snippet the slideshow shows you, you can enjoy your slides in style.
+4. The attached images are now visible in your newly created slideshow.
+
+5. Using the shortcode or code snippet the slideshow shows you, you can enjoy your slides in style.
+
+6. Not satisfied with the handling or styling of the slideshow? Customize!
 
 
 == Changelog ==
+
+= 1.3.2 =
+*   Fixed: 1.3.1 Bugfix failed to work, fixed problem entirely after reproducing it.
+*   Added alternative way to load default css into empty custom-style box, so that users without 'allow_url_fopen' enabled aren't influenced negatively by it.
 
 = 1.3.1 =
 *   Fixed: Check if function 'file_get_contents' exists before calling it, some servers have this disabled. (This throws errors and messes up the plugin)

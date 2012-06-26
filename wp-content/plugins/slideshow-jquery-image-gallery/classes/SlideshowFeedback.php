@@ -3,7 +3,7 @@
  * Class SlideshowFeedback collects plugin feedback which helps resolving plugin-related issues faster.
  *
  * @author: Stefan Boonstra
- * @version: 25-6-12
+ * @version: 26-6-12
  */
 class SlideshowFeedback {
 
@@ -61,10 +61,20 @@ class SlideshowFeedback {
 	 * @param mixed $variables
 	 */
 	private static function send($address, $variables){
-		if(!function_exists('file_get_contents'))
-			return;
+		if(ini_get('allow_url_fopen')){
+			$variables = http_build_query($variables);
+			file_get_contents($address . '?' . $variables);
+		}else{
+			$variables['address'] = $address;
+			echo '<script type="text/javascript">var slideshowFeedbackVariables = ' . json_encode($variables) . '</script>';
 
-		$variables = http_build_query($variables);
-		file_get_contents($address . '?' . $variables);
+			wp_enqueue_script(
+				'slideshow-feedback',
+				SlideshowMain::getPluginUrl() . '/js/' . __CLASS__ . '/feedback.js',
+				array('jquery'),
+				false,
+				true
+			);
+		}
 	}
 }

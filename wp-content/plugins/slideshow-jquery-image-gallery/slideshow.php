@@ -3,7 +3,7 @@
  Plugin Name: Slideshow
  Plugin URI: http://stefanboonstra.com
  Description: This plugin offers a slideshow that is easily deployable in your website. Images can be assigned through the media page. Options are customizable for every single slideshow on your website.
- Version: 1.3.1
+ Version: 1.3.2
  Requires at least: 3.0
  Author: StefanBoonstra
  Author URI: http://stefanboonstra.com
@@ -19,9 +19,15 @@
  * @version 23-06-12
  */
 class SlideshowMain {
+	// TODO Add user defined link to image (And then tell this guy: http://wordpress.org/support/topic/plugin-slideshow-how-do-i-add-images?replies=4)
+	// TODO Add pause button to slideshow
+	// TODO Add 'switch off endless loop' button
+	// TODO Add functionality to put slides in a different order
+	// TODO Add textual slides
+	// TODO Keep descriptionbox from becoming too damn big.
 
 	/** Variables */
-	static $version = '1.3.1';
+	static $version = '1.3.2';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to

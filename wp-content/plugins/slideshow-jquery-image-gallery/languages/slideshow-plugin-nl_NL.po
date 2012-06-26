@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Slideshow Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-23 17:41+0100\n"
-"PO-Revision-Date: 2012-06-23 17:41+0100\n"
+"PO-Revision-Date: 2012-06-26 01:04+0100\n"
 "Last-Translator: Stefan Boonstra <stefanboonstra@hotmail.com>\n"
 "Language-Team: Boonstra <stefanboonstra@hotmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -170,7 +170,7 @@ msgstr "Aangepaste Stijl"
 
 #: views/SlideshowPostType/style-settings.php:12
 msgid "The style used for this slideshow"
-msgstr "De stijl te gebruiken voor deze slidehsow"
+msgstr "De stijl te gebruiken voor deze slideshow"
 
 #: views/SlideshowPostType/style-settings.php:18
 msgid "Custom Style Editor"

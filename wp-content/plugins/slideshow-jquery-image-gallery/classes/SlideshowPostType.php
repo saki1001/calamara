@@ -4,7 +4,7 @@
  * slideshows and their individual settings
  *
  * @author: Stefan Boonstra
- * @version: 25-06-12
+ * @version: 26-06-12
  */
 class SlideshowPostType {
 
@@ -178,8 +178,11 @@ class SlideshowPostType {
 					)));
 
 		// Fill custom style with default css if empty
-		if(empty($settings['custom-style']) && function_exists('file_get_contents'))
-			$settings['custom-style'] = file_get_contents(SlideshowMain::getPluginUrl() . '/style/Slideshow/style-dark.css');
+		if(empty($settings['custom-style'])){
+			ob_start();
+			include(SlideshowMain::getPluginPath() . '/style/Slideshow/style-dark.css');
+			$settings['custom-style'] = ob_get_clean();
+		}
 
 		// Enqueue associating script
 		wp_enqueue_script(
