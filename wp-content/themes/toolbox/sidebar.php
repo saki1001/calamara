@@ -7,8 +7,7 @@
  */
 ?>
         <div id="secondary" class="widget-area" role="complementary">
-            <?php do_action( 'before_sidebar' ); ?>
-            
+            <h2>Normal Sidebar</h2>
             <?php
                 foreach( ( get_the_category() ) as $category ) {
                 $the_query = new WP_Query('category_name=' . $category->category_nicename);
@@ -22,12 +21,6 @@
             }
             ?>
             </ul>
-            
-            <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-
-
-
-            <?php endif; // end sidebar widget area ?>
         </div><!-- #secondary .widget-area -->
 
         <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
