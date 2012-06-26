@@ -1,26 +1,52 @@
 <?php
 /**
- * The Sidebar containing the main widget areas.
+ * Listing posts in a single category.
+ * Variables assume there is only one category being shown.
  *
  * @package Toolbox
  * @since Toolbox 0.1
  */
 ?>
-        <div id="secondary" class="widget-area" role="complementary">
+        <?php
+        if ( have_posts() ) :
+            $categories = get_the_category();
+            $current_cat_id = $categories[0]->term_id;
             
-            Sidebar Cat Posts
+            $current_post_id = '';
+            $class = '';
+            
+            // if not single, put current class on View All
+            if (is_single($post) === true) :
+                $current_post_id = $post->ID;
+            elseif (is_single($post) === false) :
+                // $class = "class='current'";
+                $class = "style='color: red;'";
+            endif;
+        ?>
+        <div id="secondary" class="widget-area" role="complementary">
+            <h2>Cat Posts</h2>
+            <ul>
+                <li <?php echo $class; ?>><a href="<?php echo get_category_link($current_cat_id); ?>">View All</a></li>
             <?php
-                foreach( ( get_the_category() ) as $category ) {
-                $the_query = new WP_Query('category_name=' . $category->category_nicename);
-                while ($the_query->have_posts()) : $the_query->the_post();
+                foreach( ( $categories ) as $category ) {
+                    $the_query = new WP_Query('category_name=' . $category->category_nicename);
+                    while ($the_query->have_posts()) : $the_query->the_post();
+                        $class = '';
+                        $id = get_the_ID();
+                        
+                        if ($current_post_id === $id) :
+                            // $class = "class='current'";
+                            $class = "style='color: red;'";
+                        endif;
             ?>
-                    <li>
+                    <li <?php echo $class; ?>>
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                     </li>
-            <?php endwhile; ?>
             <?php
-            }
+                    endwhile;
+                }
             ?>
             </ul>
             
         </div><!-- #secondary .widget-area -->
+        <?php endif; ?>
