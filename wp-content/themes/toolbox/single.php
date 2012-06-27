@@ -29,10 +29,10 @@ get_header(); ?>
                     elseif ( in_category('blog') ) :
                         $sidebar = 'blog';
                         get_template_part( 'content', 'single' );
-                        // If comments are open or we have at least one comment, load up the comment template
-                        if ( comments_open() || '0' != get_comments_number() ) :
-                            comments_template( '', true );
-                        endif;
+                        // // If comments are open or we have at least one comment, load up the comment template
+                        // if ( comments_open() || '0' != get_comments_number() ) :
+                        //     comments_template( '', true );
+                        // endif;
                     else :
                         get_template_part( 'content', 'page' );
                     endif;
