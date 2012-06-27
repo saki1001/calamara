@@ -91,6 +91,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* =Menu
 -------------------------------------------------------------- */
 
+#access .current-menu-item a,
+#access .current-post-ancestor a,
+#access .current-menu-ancestor {
+    color: red;
+}
+
 #access {
 	background: #eee;
 	display: block;
