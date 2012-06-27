@@ -23,7 +23,7 @@
                 $class = "style='color: red;'";
             endif;
         ?>
-        <div id="secondary" class="widget-area" role="complementary">
+        <div id="sidebar" class="widget-area">
             <h2>Cat Posts</h2>
             <ul>
                 <li <?php echo $class; ?>><a href="<?php echo get_category_link($current_cat_id); ?>">View All</a></li>
@@ -48,5 +48,5 @@
             ?>
             </ul>
             
-        </div><!-- #secondary .widget-area -->
+        </div><!-- #sidebar -->
         <?php endif; ?>

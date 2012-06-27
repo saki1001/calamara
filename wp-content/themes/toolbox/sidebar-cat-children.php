@@ -12,7 +12,7 @@
             $parent_cat_num = $categories[0]->parent;
             $primary_cat_name = $categories[0]->cat_name;
         ?>
-        <div id="secondary" class="widget-area" role="complementary">
+        <div id="sidebar">
             <h2>Cat Children</h2>
             <ul>
             <?php
@@ -31,5 +31,5 @@
                 }
             ?>
             </ul>
-        </div><!-- #secondary .widget-area -->
+        </div><!-- #sidebar -->
         <?php endif; ?>
