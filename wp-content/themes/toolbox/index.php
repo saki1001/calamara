@@ -14,10 +14,9 @@
 
 get_header(); ?>
         
-        <div id="primary">
-            <div id="content" role="main">
-                <?php
-                    get_template_part( 'content-home', get_post_format() );
-                ?>
-                
+        <section id="content" role="main">
+            <?php
+                get_template_part( 'content-home', get_post_format() );
+            ?>
+        </section>
 <?php get_footer(); ?>
