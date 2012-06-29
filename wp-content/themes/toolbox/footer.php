@@ -11,11 +11,11 @@
 
     </div><!-- #main -->
 
-    <footer id="colophon" role="contentinfo">
-        <div id="site-generator">
+    <footer id="footer" role="contentinfo">
+        <div>
             Mara G. Haseltine &copy;
         </div>
-    </footer><!-- #colophon -->
+    </footer><!-- #footer -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
