@@ -387,6 +387,9 @@ function get_category_tags($args) {
 	return $tags;
 }
 
+// Adding Thumbnails
+add_theme_support( 'post-thumbnails' );
+
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.
  */
