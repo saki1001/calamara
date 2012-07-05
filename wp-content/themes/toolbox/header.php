@@ -48,11 +48,13 @@
         <?php wp_head(); ?>
     </head>
     
-    <body <?php body_class(); ?>>
+    <body <?php body_class();?>>
     <div id="page">
         <header id="branding" role="banner">
             <h1 id="site-title">
-                <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+                <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                    <?php bloginfo( 'name' ); ?>
+                </a>
             </h1>
             
             <nav id="main-menu" role="navigation">
