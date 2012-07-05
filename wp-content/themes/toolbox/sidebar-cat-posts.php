@@ -19,12 +19,10 @@
             if (is_single($post) === true) :
                 $current_post_id = $post->ID;
             elseif (is_single($post) === false) :
-                // $class = "class='current'";
-                $class = "style='color: red;'";
+                $class = "class='current'";
             endif;
         ?>
         <div id="sidebar" class="widget-area">
-            <h2>Cat Posts</h2>
             <ul>
                 <li <?php echo $class; ?>><a href="<?php echo get_category_link($current_cat_id); ?>">View All</a></li>
             <?php
@@ -35,8 +33,7 @@
                         $id = get_the_ID();
                         
                         if ($current_post_id === $id) :
-                            // $class = "class='current'";
-                            $class = "style='color: red;'";
+                            $class = "class='current'";
                         endif;
             ?>
                     <li <?php echo $class; ?>>
