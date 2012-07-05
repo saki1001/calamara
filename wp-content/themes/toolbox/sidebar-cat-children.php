@@ -13,15 +13,13 @@
             $primary_cat_name = $categories[0]->cat_name;
         ?>
         <div id="sidebar">
-            <h2>Cat Children</h2>
             <ul>
             <?php
                 $child_categories = get_categories('child_of=' . $parent_cat_num . '&hide_empty=1');
                 foreach( $child_categories as $category ) {
                     $class = '';
                     if ($primary_cat_name === $category->cat_name) :
-                        // $class = "class='current'";
-                        $class = "style='color: red;'";
+                        $class = "class='current'";
                     endif;
                 ?>
                     <li <?php echo $class; ?>>
