@@ -21,8 +21,7 @@
             elseif (is_tag() === true) :
                 $current_tag_title = single_tag_title("", false);
             elseif (is_single($post) === false) :
-                // $class = "class='current'";
-                $class = "style='color: red;'";
+                $class = "class='current'";
             endif;
         ?>
         <div id="sidebar">
@@ -39,8 +38,7 @@
                     $class = '';
                     $title = $tag->tag_name;
                     if ($current_tag_title === $title) :
-                        // $class = "class='current'";
-                        $class = "style='color: red;'";
+                        $class = "class='current'";
                     endif;
             ?>
                     <li <?php echo $class; ?>>
