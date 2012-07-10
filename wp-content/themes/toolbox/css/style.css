@@ -14,12 +14,14 @@ body {
     font-size: 62.5%;
     line-height: 1;
     color: #333333;
+    position: relative;
 }
 
 #page {
     display: block;
     margin: 0 auto;
     width: 950px;
+    position: relative;
 }
 #main {
     width: 100%;
@@ -370,7 +372,7 @@ body.archive.tag #main #content {
     float: left;
 }
 
-/* Category ---- Gallery Thumbnail
+/* Category ---- Portfolio Thumbnail
 -------------------------------------------------------------- */
 body.category #content .thumb-container {
     float: left;
@@ -419,6 +421,114 @@ body.category #content .thumb-container figure a:hover {
 /*hide in order to keep rounded corners by using bg-image*/
 body.category #content .thumb-container figure a img {
     visibility: hidden;
+}
+
+/* Category ---- Portfolio Single
+-------------------------------------------------------------- */
+body.single-format-gallery #main {
+    position: relative;
+}
+
+body.single-format-gallery #content {
+    width: 750px;
+}
+
+body.single-format-gallery #content article {
+    width: 750px;
+    position: relative;
+    height: 550px;
+    overflow: hidden;
+}
+
+body.single-format-gallery #content article #scroll {
+    height: 550px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10000px; /*set dynamically after this*/
+}
+
+body.single-format-gallery #content article #scroll .image-container {
+    height: 550px;
+    float: left;
+    position: relative;
+    opacity: 0.25;
+}
+
+body.single-format-gallery #content article #scroll .image-container.current {
+    opacity: 1;
+}
+
+body.single-format-gallery #content article #scroll .image-container figure {
+    height: 500px;
+}
+
+body.single-format-gallery #content .text-container {
+    width: 750px;
+}
+
+body.single-format-gallery #content .text-container p {
+    font-size: 1.6em;
+    line-height: 1.3;
+    max-width: 750px;
+    margin: 0 20px 20px 0;
+/*    float: left;*/
+}
+
+body.single-format-gallery #main h2.page-title {
+    width: 300px;
+    float: left;
+}
+
+body.single-format-gallery #thumbs {
+    float: right;
+    position: relative;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+
+body.single-format-gallery #thumbs .text {
+    float: left;
+}
+
+body.single-format-gallery #thumbs .arrows {
+    float: right;
+}
+
+body.single-format-gallery #thumbs .arrows .nav {
+    float: left;
+    margin-left: 20px;
+}
+
+body.single-format-gallery #thumbs #pager {
+    float: left;
+}
+
+body.single-format-gallery #thumbs .thumb {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    background-color: #CCCCCC;
+    margin-left: 20px;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+body.single-format-gallery #thumbs .thumb.current,
+body.single-format-gallery #thumbs .thumb:hover {
+    background-color: #999999;
+}
+
+body.single-format-gallery #sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    height: 100%;
 }
 
 /* Blog List Format for News, Blog and Tag pages in these categories
