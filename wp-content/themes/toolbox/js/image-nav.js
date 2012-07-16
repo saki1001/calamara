@@ -95,6 +95,7 @@ $j(document).ready(function() {
         
         animateScroll(positionLeft, animTime);
         
+        return false;
     };
     
     var showPrevNext = function() {
@@ -119,6 +120,7 @@ $j(document).ready(function() {
             
         }
         
+        return false;
     };
     
     
