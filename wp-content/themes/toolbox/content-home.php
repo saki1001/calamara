@@ -4,6 +4,8 @@
  */
 ?>
 
+
+<div class="border-radius"></div>
 <div id="slideshow" class="<?php post_class(); ?>">
     
     <?php 
