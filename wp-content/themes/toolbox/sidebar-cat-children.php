@@ -8,12 +8,25 @@
 ?>
         <?php
         if ( have_posts() ) :
-            $categories = get_the_category();
-            $parent_cat_num = $categories[0]->parent;
-            $primary_cat_name = $categories[0]->cat_name;
+            
+            // Query Category Object
+            $cat_obj = $wp_query->get_queried_object();
+            $primary_cat_name = $cat_obj->cat_name;
+            $class = '';
+            
+            // For Child Categories
+            if( $cat_obj->parent ) :
+                $parent_cat_num = $cat_obj->parent;
+            // For the Parent Category
+            else :
+                $parent_cat_num =  $cat_obj->term_id;
+                $class = "class='current'";
+            endif;
+            
         ?>
         <div id="sidebar">
             <ul>
+                <li <?php echo $class; ?>><a href="<?php echo get_category_link($parent_cat_num); ?>">View All</a></li>
             <?php
                 $child_categories = get_categories('child_of=' . $parent_cat_num . '&hide_empty=1');
                 foreach( $child_categories as $category ) {
