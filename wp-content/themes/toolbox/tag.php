@@ -12,25 +12,24 @@ get_header(); ?>
     // BLOG for parent categories Blog and News
     if ( in_category('blog') || in_category('news') ) :
        $contentClass = "class='blog-list'";
-       $postFormat = "content-blog";
+       $postFormat = "content-blog-list";
     else :
         $mainClass = "";
         $postFormat = "content";
     endif;
 ?>
-
-<section id="content" <?php echo $contentClass; ?> role="main">
     
-    <?php if ( have_posts() ) : ?>
+<?php if ( have_posts() ) : ?>
+    
+    <h2 class="page-title">
+        <?php
+            $parent_category = get_the_category();
+            echo $parent_category[0]->cat_name . ": " . single_tag_title( '', false )   ;
+        ?>
+    </h2>
+    
+    <section id="content" <?php echo $contentClass; ?> role="main">
         
-            <h2 class="page-title">
-                <?php
-                    // printf( __( 'Tag Archives: %s', 'toolbox' ), '<span>' . single_tag_title( '', false ) . '</span>' );
-                    $parent_category = get_the_category();
-                    echo $parent_category[0]->cat_name . ": " . single_tag_title( '', false )   ;
-                ?>
-            </h2>
-            
         <?php rewind_posts(); ?>
             
             <?php
