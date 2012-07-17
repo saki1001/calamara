@@ -7,27 +7,30 @@
  * @since Toolbox 0.1
  */
 ?>
-        <?php
-        if ( have_posts() ) :
-            $categories = get_the_category();
-            $current_cat_id = $categories[0]->term_id;
-            
-            $current_post_id = '';
-            $class = '';
-            
-            // if not single, put current class on View All
-            if (is_single($post) === true) :
-                $current_post_id = $post->ID;
-            elseif (is_single($post) === false) :
-                $class = "class='current'";
-            endif;
-        ?>
+
+<?php
+    if ( have_posts() ) :
+        $categories = get_the_category();
+        $current_cat_id = $categories[0]->term_id;
+        
+        $current_post_id = '';
+        $class = '';
+        
+        // if not single, put current class on View All
+        if (is_single($post) === true) :
+            $current_post_id = $post->ID;
+        elseif (is_single($post) === false) :
+            $class = "class='current'";
+        endif;
+?>
         <div id="sidebar" class="widget-area">
             <ul>
                 <li <?php echo $class; ?>><a href="<?php echo get_category_link($current_cat_id); ?>">View All</a></li>
+            
             <?php
                 foreach( ( $categories ) as $category ) {
                     $the_query = new WP_Query('category_name=' . $category->category_nicename);
+                    
                     while ($the_query->have_posts()) : $the_query->the_post();
                         $class = '';
                         $id = $post->ID;
@@ -46,4 +49,6 @@
             </ul>
             
         </div><!-- #sidebar -->
-        <?php endif; ?>
+<?php
+    endif;
+?>
