@@ -183,21 +183,25 @@ header h1 a {
 
 /*Highlight current menu item*/
 #main-menu .current-menu-item a,
-#main-menu .current-menu-ancestor a {
+#main-menu .current-menu-ancestor a,
+#main-menu .current-post-ancestor a {
     color: #006699;
 }
 
 #main-menu .current-menu-item .sub-menu a,
-#main-menu .current-menu-ancestor ul li a {
+#main-menu .current-menu-ancestor ul li a,
+#main-menu .current-post-ancestor ul li a {
     color: #666;
 }
 
 #main-menu .current-menu-item .sub-menu a:hover,
-#main-menu .current-menu-ancestor ul li a:hover {
+#main-menu .current-menu-ancestor ul li a:hover,
+#main-menu .current-post-ancestor ul li a:hover {
     color: #006699;
 }
 
-#main-menu .current-menu-ancestor ul li.current-menu-item a {
+#main-menu .current-menu-ancestor ul li.current-menu-item a,
+#main-menu .current-post-ancestor ul li.current-post-parent a {
     color: #006699;
 }
 
@@ -409,7 +413,7 @@ body.category #content .thumb-container {
     position: relative;
     width: 350px;
     height: 200px;
-    margin-right: 25px;
+    margin: 0 25px 25px 0;
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
@@ -417,6 +421,7 @@ body.category #content .thumb-container {
 
 body.category #content .thumb-container figcaption {
     position: absolute;
+    top: 1px;
     z-index: 1;
     width: 350px;
     height: 200px;
@@ -428,7 +433,8 @@ body.category #content .thumb-container figcaption {
 }
 
 body.category #content .thumb-container figcaption p {
-    font-size: 1.8em;
+    font-weight: bold;
+    font-size: 2em;
     color: #FFF;
     text-align: center;
     margin: 90px 20px;
@@ -442,6 +448,9 @@ body.category #content .thumb-container figure a {
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+       -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
 }
 
 body.category #content .thumb-container figure a:hover {
@@ -504,7 +513,7 @@ body.single-format-gallery #content article #scroll .image-container {
     opacity: 0.25;
 }
 
-body.single-format-gallery #content article #scroll .image-container.current {
+body.single-format-gallery #content article #scroll .image-container.currentSlide {
     opacity: 1;
 }
 
