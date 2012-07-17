@@ -42,18 +42,18 @@ $j(document).ready(function() {
     
     var labelCurrentPosition = function(num) {
         
-        // remove old previous class
-        $j('.previous').removeClass('previous');
+        // remove old previousSlide class
+        $j('.previousSlide').removeClass('previousSlide');
         
-        // add new previous
-        $j('.current').addClass('previous');
+        // add new previousSlide
+        $j('.currentSlide').addClass('previousSlide');
         
-        // remove old current
-        $j('.current').removeClass('current');
+        // remove old currentSlide
+        $j('.currentSlide').removeClass('currentSlide');
         
-        // add new current
-        $j('.thumb[data-index="' + num +'"]').addClass('current');
-        $j('#scroll .image-container[data-index="' + num +'"]').addClass('current');
+        // add new currentSlide
+        $j('.thumb[data-index="' + num +'"]').addClass('currentSlide');
+        $j('#scroll .image-container[data-index="' + num +'"]').addClass('currentSlide');
         
     };
     
@@ -62,7 +62,7 @@ $j(document).ready(function() {
     
     var animateScroll = function(pos, time) {
         
-        $j('#scroll .image-container.previous').animate({
+        $j('#scroll .image-container.previousSlide').animate({
             opacity: 0.25
         }, 200 , function() {
             // animation complete
@@ -72,7 +72,7 @@ $j(document).ready(function() {
             left: pos
         }, time , function() {
             // animation complete
-            $j('#scroll .image-container.current').animate({
+            $j('#scroll .image-container.currentSlide').animate({
                 opacity: 1
             }, 200 , function() {
                 // animation complete
@@ -100,7 +100,7 @@ $j(document).ready(function() {
     
     var showPrevNext = function() {
         
-        var curDataIndex = parseInt($j('.thumb.current').attr('data-index'));
+        var curDataIndex = parseInt($j('.thumb.currentSlide').attr('data-index'));
         
         if ($j(this).hasClass('prev')) {
             var newDataIndex = curDataIndex - 1;
