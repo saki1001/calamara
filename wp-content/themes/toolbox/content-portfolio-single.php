@@ -29,6 +29,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     
+    <div class="border-radius"></div>
+    <div class="background"></div>
+    
     <div id="scroll" class="entry-content">
         <?php if ( post_password_required() ) : ?>
             <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'toolbox' ) ); ?>
@@ -43,7 +46,7 @@
                             $image_img_tag = wp_get_attachment_image( $image->ID, 'medium' );
                 ?>
                     <div class="image-container">
-                        <figure class="gallery-thumb">
+                        <figure>
                             <?php echo $image_img_tag; ?>
                         </figure><!-- .gallery-thumb -->
                         <figcaption>
