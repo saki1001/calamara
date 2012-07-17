@@ -30,7 +30,7 @@
                     $the_query = new WP_Query('category_name=' . $category->category_nicename);
                     while ($the_query->have_posts()) : $the_query->the_post();
                         $class = '';
-                        $id = get_the_ID();
+                        $id = $post->ID;
                         
                         if ($current_post_id === $id) :
                             $class = "class='current'";
