@@ -19,8 +19,8 @@
         <a href="#text">View Story</a>
     </div>
     <div class="arrows">
-        <a href="#" class="nav prev">Prev</a>
-        <a href="#" class="nav next">Next</a>
+        <a href="#" class="nav prev">&larr;</a>
+        <a href="#" class="nav next">&rarr;</a>
     </div>
     <div id="pager">
     <!-- filled dynamically -->
@@ -33,52 +33,48 @@
     <div class="background"></div>
     
     <div id="scroll" class="entry-content">
-        <?php if ( post_password_required() ) : ?>
-            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'toolbox' ) ); ?>
+        <?php
+            // Define args to get attachments
+            $args = array(
+                'post_parent' => $post->ID,
+                'post_type' => 'attachment',
+                'post_mime_type' => 'image',
+                'orderby' => 'menu_order',
+                'order' => 'ASC'
+            );
             
-            <?php else : ?>
-                <?php
-                    // Define args to get attachments
-                    $args = array(
-                        'post_parent' => $post->ID,
-                        'post_type' => 'attachment',
-                        'post_mime_type' => 'image',
-                        'orderby' => 'menu_order',
-                        'order' => 'ASC'
-                    );
-                    
-                    // Get image attachments
-                    $attachments = get_children( $args );
-                    
-                    if ( $attachments ) :
-                        
-                        foreach($attachments as $attachment) {
-                            // medium images set to be max 500px tall
-                            $image = wp_get_attachment_image( $attachment->ID, 'medium' );
-                ?>
-                    <div class="image-container">
-                        <figure>
-                            <?php
-                                // Insert image description
-                                echo $image;
-                            ?>
-                        </figure>
-                        <figcaption>
-                            <?php
-                                // Insert image description
-                                echo $attachment->post_content;
-                            ?>
-                        </figcaption>
-                    </div>
-                <?php
-                        }
-                    endif;
-                ?>
-
-        <?php endif; ?>
+            // Get image attachments
+            $attachments = get_children( $args );
+            
+            if ( $attachments ) :
+                
+                foreach($attachments as $attachment) {
+                    // medium images set to be max 500px tall
+                    $image = wp_get_attachment_image( $attachment->ID, 'medium' );
+        ?>
+            <div class="image-container">
+                <figure>
+                    <?php
+                        // Insert image description
+                        echo $image;
+                    ?>
+                </figure>
+                <figcaption>
+                    <?php
+                        // Insert image description
+                        echo $attachment->post_content;
+                    ?>
+                </figcaption>
+            </div>
+        <?php
+                }
+            endif;
+        ?>
+        
     </div>
     
 </article><!-- #post-<?php the_ID(); ?> -->
+
 <div id="text" class="text-container">
     <?php the_content(); ?>
 </div>
