@@ -2,7 +2,7 @@
 
 
 @font-face {
-    font-family: 'MuliItalic';
+    font-family: 'Muli-Italic';
     src: url('muli-italic-webfont.eot');
     src: url('muli-italic-webfont.eot?#iefix') format('embedded-opentype'),
          url('muli-italic-webfont.woff') format('woff'),
@@ -17,7 +17,7 @@
 
 
 @font-face {
-    font-family: 'MuliRegular';
+    font-family: 'Muli-Regular';
     src: url('muli-regular-webfont.eot');
     src: url('muli-regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('muli-regular-webfont.woff') format('woff'),
@@ -26,46 +26,4 @@
     font-weight: normal;
     font-style: normal;
 
-}
-
-@font-face {
-    font-family: 'GudeaBold';
-    src: url('fonts/gudea-bold-webfont.eot');
-    src: url('fonts/gudea-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/gudea-bold-webfont.woff') format('woff'),
-         url('fonts/gudea-bold-webfont.ttf') format('truetype'),
-         url('fonts/gudea-bold-webfont.svg#GudeaBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'GudeaItalic';
-    src: url('fonts/gudea-italic-webfont.eot');
-    src: url('fonts/gudea-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/gudea-italic-webfont.woff') format('woff'),
-         url('fonts/gudea-italic-webfont.ttf') format('truetype'),
-         url('fonts/gudea-italic-webfont.svg#GudeaItalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'GudeaRegular';
-    src: url('fonts/gudea-regular-webfont.eot');
-    src: url('fonts/gudea-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/gudea-regular-webfont.woff') format('woff'),
-         url('fonts/gudea-regular-webfont.ttf') format('truetype'),
-         url('fonts/gudea-regular-webfont.svg#GudeaRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
+}   
