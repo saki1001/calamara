@@ -12,6 +12,7 @@
     if ( have_posts() ) :
         $categories = get_the_category();
         $current_cat_id = $categories[0]->term_id;
+        $current_cat_name = $categories[0]->cat_name;
         
         $current_post_id = '';
         $class = '';
@@ -25,7 +26,7 @@
 ?>
         <div id="sidebar" class="widget-area">
             <ul>
-                <li <?php echo $class; ?>><a href="<?php echo get_category_link($current_cat_id); ?>">View All</a></li>
+                <li <?php echo $class; ?>><a href="<?php echo get_category_link($current_cat_id); ?>">All <?php echo $current_cat_name; ?></a></li>
             
             <?php
                 foreach( ( $categories ) as $category ) {
