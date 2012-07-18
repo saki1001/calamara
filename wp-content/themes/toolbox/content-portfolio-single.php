@@ -38,19 +38,36 @@
             
             <?php else : ?>
                 <?php
-                    $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
-                    if ( $images ) :
-                        $total_images = count( $images );
-                        foreach($images as $image) {
-                            // medium images set to be max 750 wide 500 tall
-                            $image_img_tag = wp_get_attachment_image( $image->ID, 'medium' );
+                    // Define args to get attachments
+                    $args = array(
+                        'post_parent' => $post->ID,
+                        'post_type' => 'attachment',
+                        'post_mime_type' => 'image',
+                        'orderby' => 'menu_order',
+                        'order' => 'ASC'
+                    );
+                    
+                    // Get image attachments
+                    $attachments = get_children( $args );
+                    
+                    if ( $attachments ) :
+                        
+                        foreach($attachments as $attachment) {
+                            // medium images set to be max 500px tall
+                            $image = wp_get_attachment_image( $attachment->ID, 'medium' );
                 ?>
                     <div class="image-container">
                         <figure>
-                            <?php echo $image_img_tag; ?>
-                        </figure><!-- .gallery-thumb -->
+                            <?php
+                                // Insert image description
+                                echo $image;
+                            ?>
+                        </figure>
                         <figcaption>
-                            <?php the_title(); ?>
+                            <?php
+                                // Insert image description
+                                echo $attachment->post_content;
+                            ?>
                         </figcaption>
                     </div>
                 <?php
