@@ -1,12 +1,12 @@
 <?php
 /**
- * Slideshow post type creates a post type specifically designed for
+ * SlideshowPluginPostType creates a post type specifically designed for
  * slideshows and their individual settings
  *
  * @author: Stefan Boonstra
- * @version: 26-06-12
+ * @version: 03-07-12
  */
-class SlideshowPostType {
+class SlideshowPluginPostType {
 
 	/** Variables */
 	private static $adminIcon = 'images/adminIcon.png';
@@ -66,7 +66,7 @@ class SlideshowPostType {
 				'has_archive' => true,
 				'hierarchical' => false,
 				'menu_position' => null,
-				'menu_icon' => SlideshowMain::getPluginUrl() . '/' . self::$adminIcon,
+				'menu_icon' => SlideshowPluginMain::getPluginUrl() . '/' . self::$adminIcon,
 				'supports' => array('title'),
 				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
 			)
@@ -121,9 +121,9 @@ class SlideshowPostType {
 		global $post;
 
 		$snippet = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
-		$shortCode = htmlentities(sprintf('[' . SlideshowShortcode::$shortCode . ' id=%s]', $post->ID));
+		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=%s]', $post->ID));
 
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php');
 	}
 
 	/**
@@ -133,16 +133,16 @@ class SlideshowPostType {
 		global $post;
 
 		// Media upload button
-		$uploadButton = SlideshowUpload::getUploadButton();
+		$uploadButton = SlideshowPluginUpload::getUploadButton();
 
 		// Get slideshow attachments
 		$attachments = self::getAttachments($post->ID);
 
 		// Set url from which a substitute icon can be fetched
-		$noPreviewIcon = SlideshowMain::getPluginUrl() . '/images/no-img.png';
+		$noPreviewIcon = SlideshowPluginMain::getPluginUrl() . '/images/no-img.png';
 
 		// Include slides preview file
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/slides.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/slides.php');
 	}
 
 	/**
@@ -158,7 +158,7 @@ class SlideshowPostType {
 		// Get styles from style folder
 		$styles = array();
 		$cssExtension = '.css';
-		if($handle = opendir(SlideshowMain::getPluginPath() . '/style/Slideshow/'))
+		if($handle = opendir(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/'))
 			while(($file = readdir($handle)) !== false)
 				if(strlen($file) >= strlen($cssExtension) && substr($file, strlen($file) - strlen($cssExtension)) === $cssExtension)
 					// Converts the css file's name (style-mystyle.css) and converts it to a user readable name by
@@ -180,21 +180,21 @@ class SlideshowPostType {
 		// Fill custom style with default css if empty
 		if(empty($settings['custom-style'])){
 			ob_start();
-			include(SlideshowMain::getPluginPath() . '/style/Slideshow/style-dark.css');
+			include(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/style-dark.css');
 			$settings['custom-style'] = ob_get_clean();
 		}
 
 		// Enqueue associating script
 		wp_enqueue_script(
 			'style-settings',
-			SlideshowMain::getPluginUrl() . '/js/' . __CLASS__ . '/style-settings.js',
+			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/style-settings.js',
 			array('jquery'),
 			false,
 			true
 		);
 
 		// Include style settings file
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php');
 	}
 
 	/**
@@ -208,7 +208,7 @@ class SlideshowPostType {
 		$settings = self::getSettings($post->ID);
 
 		// Include
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php');
 	}
 
 	/**

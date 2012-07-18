@@ -3,8 +3,8 @@
 Contributors: stefanboonstra
 Tags: slideshow, slider, slide, images, image, photo, gallery, galleries
 Requires at least: 3.0
-Tested up to: 3.4
-Stable tag: 1.3.2
+Tested up to: 3.4.1
+Stable tag: 1.3.5
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -60,6 +60,15 @@ You can also use the widget to show any of your slideshows in your sidebar.
 
 
 == Changelog ==
+
+= 1.3.5 =
+*   Fixed: Namespace complications found with the Slideshow widget, renamed all classes.
+
+= 1.3.4 =
+*   Fixed: Custom width of the slideshow will no longer cause buttons to fall off-screeen.
+
+= 1.3.3 =
+*   Extended compatibility to servers that do not support short php opening tags.
 
 = 1.3.2 =
 *   Fixed: 1.3.1 Bugfix failed to work, fixed problem entirely after reproducing it.

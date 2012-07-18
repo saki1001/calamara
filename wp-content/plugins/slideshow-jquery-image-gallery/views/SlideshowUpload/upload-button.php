@@ -1,1 +1,0 @@
-<input type="button" id="upload_image_button" class="button" value="<? _e('Upload/Manage Images', 'slideshow-plugin'); ?>" />

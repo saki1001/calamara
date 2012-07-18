@@ -1,11 +1,11 @@
 <?php
 /**
- * Class SlideshowShortcode is called on use of shortcode anywhere on the website.
+ * Class SlideshowPluginShortcode is called on use of shortcode anywhere on the website.
  *
  * @author: Stefan Boonstra
- * @version: 15-06-12
+ * @version: 03-07-12
  */
-class SlideshowShortcode {
+class SlideshowPluginShortcode {
 
 	/** Variables */
 	static $shortCode = 'slideshow_deploy';
@@ -22,6 +22,6 @@ class SlideshowShortcode {
 		if(isset($atts['id']))
 			$postId = $atts['id'];
 
-		return Slideshow::prepare($postId);
+		return SlideshowPlugin::prepare($postId);
 	}
 }

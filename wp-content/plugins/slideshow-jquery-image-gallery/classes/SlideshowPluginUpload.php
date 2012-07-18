@@ -1,12 +1,12 @@
 <?php
 /**
- * Class SlideshowUpload provides the code for an upload button that can be used
+ * Class SlideshowPluginUpload provides the code for an upload button that can be used
  * anywhere on a website.
  *
  * @author: Stefan Boonstra
- * @version: 21-6-12
+ * @version: 03-07-12
  */
-class SlideshowUpload {
+class SlideshowPluginUpload {
 
 	/**
 	 * Returns the html for showing the upload button.
@@ -21,7 +21,7 @@ class SlideshowUpload {
 
 		// Return button html
 		ob_start();
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/upload-button.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/upload-button.php');
 		return ob_get_clean();
 	}
 
@@ -39,7 +39,7 @@ class SlideshowUpload {
 		// Enqueue slideshow upload button script
 		wp_enqueue_script(
 			'slideshow-upload-button',
-			SlideshowMain::getPluginUrl() . '/js/' . __CLASS__ . '/upload-button.js',
+			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/upload-button.js',
 			array(
 				'jquery',
 				'media-upload',

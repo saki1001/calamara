@@ -1,12 +1,12 @@
 <?php
 /**
- * Class Slideslow is called whenever a slideshow do_action tag is come across.
+ * Class SlideslowPlugin is called whenever a slideshow do_action tag is come across.
  * Responsible for outputting the slideshow's HTML, CSS and Javascript.
  *
  * @author: Stefan Boonstra
- * @version: 23-06-12
+ * @version: 03-07-12
  */
-class Slideshow {
+class SlideshowPlugin {
 
 	/**
 	 * Function deploy prints out the prepared html
@@ -33,7 +33,7 @@ class Slideshow {
 			$post = get_posts(array(
 				'numberposts' => 1,
 				'orderby' => 'rand',
-				'post_type' => SlideshowPostType::$postType
+				'post_type' => SlideshowPluginPostType::$postType
 			));
 
 			if(is_array($post))
@@ -43,14 +43,14 @@ class Slideshow {
 
 		// Exit function on error
 		if(empty($post))
-			return;
+			return '';
 
 		// Get settings
-		$settings = SlideshowPostType::getSettings($post->ID);
+		$settings = SlideshowPluginPostType::getSettings($post->ID);
 
 		// Load images into array
 		$images = array();
-		$imageObjects = SlideshowPostType::getAttachments($post->ID);
+		$imageObjects = SlideshowPluginPostType::getAttachments($post->ID);
 		foreach($imageObjects as $key => $imageObject){
 			$images[$key] = array(
 				'img' => $imageObject->guid,
@@ -67,19 +67,19 @@ class Slideshow {
 		else // Custom style, print it.
 			wp_enqueue_style(
 				'slideshow_style',
-				SlideshowMain::getPluginUrl() . '/style/' . __CLASS__ . '/' . $settings['style']
+				SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/' . $settings['style']
 			);
 
 		// Include output file that stores output in $output.
 		$output = '';
 		ob_start();
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/slideshow.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/slideshow.php');
 		$output .= ob_get_clean();
 
 		// Enqueue slideshow script
 		wp_enqueue_script(
 			'slideshow_script',
-			SlideshowMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.js',
+			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/slideshow.js',
 			array('jquery'),
 			false,
 			true

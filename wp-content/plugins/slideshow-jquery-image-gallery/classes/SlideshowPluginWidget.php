@@ -1,11 +1,11 @@
 <?php
 /**
- * Class SlideshowWidget allows showing one of your slideshows in your widget area.
+ * Class SlideshowPluginWidget allows showing one of your slideshows in your widget area.
  *
  * @author: Stefan Boonstra
- * @version: 21-06-12
+ * @version: 03-07-12
  */
-class SlideshowWidget extends WP_Widget {
+class SlideshowPluginWidget extends WP_Widget {
 
 	/** Variables */
 	static $widgetName = 'Slideshow Widget';
@@ -13,7 +13,7 @@ class SlideshowWidget extends WP_Widget {
 	/**
 	 * Initializes the widget
 	 */
-	function SlideshowWidget(){
+	function SlideshowPluginWidget(){
 		// Settings
 		$options = array(
 			'classname' => 'SlideshowWidget',
@@ -46,10 +46,10 @@ class SlideshowWidget extends WP_Widget {
 			$title = $instance['title'];
 
 		// Prepare slideshow for output to website.
-		$output = Slideshow::prepare($slideshowId);
+		$output = SlideshowPlugin::prepare($slideshowId);
 
 		// Include widget html
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/widget.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/widget.php');
 	}
 
 	/**
@@ -70,11 +70,11 @@ class SlideshowWidget extends WP_Widget {
 		// Get slideshows
 		$slideshows = get_posts(array(
 			'numberposts' => null,
-			'post_type' => SlideshowPostType::$postType
+			'post_type' => SlideshowPluginPostType::$postType
 		));
 
 		// Include form
-		include(SlideshowMain::getPluginPath() . '/views/' . __CLASS__ . '/form.php');
+		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/form.php');
 	}
 
 	/**

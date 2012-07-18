@@ -3,7 +3,7 @@
  Plugin Name: Slideshow
  Plugin URI: http://stefanboonstra.com
  Description: This plugin offers a slideshow that is easily deployable in your website. Images can be assigned through the media page. Options are customizable for every single slideshow on your website.
- Version: 1.3.2
+ Version: 1.3.5
  Requires at least: 3.0
  Author: StefanBoonstra
  Author URI: http://stefanboonstra.com
@@ -11,23 +11,17 @@
 */
 
 /**
- * Class SlideshowMain fires up the application on plugin load and provides some
+ * Class SlideshowPluginMain fires up the application on plugin load and provides some
  * methods for the other classes to use like the auto-includer and the
  * base path/url returning method.
  *
  * @author Stefan Boonstra
- * @version 23-06-12
+ * @version 03-07-12
  */
-class SlideshowMain {
-	// TODO Add user defined link to image (And then tell this guy: http://wordpress.org/support/topic/plugin-slideshow-how-do-i-add-images?replies=4)
-	// TODO Add pause button to slideshow
-	// TODO Add 'switch off endless loop' button
-	// TODO Add functionality to put slides in a different order
-	// TODO Add textual slides
-	// TODO Keep descriptionbox from becoming too damn big.
+class SlideshowPluginMain {
 
 	/** Variables */
-	static $version = '1.3.2';
+	static $version = '1.3.5';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
@@ -40,20 +34,20 @@ class SlideshowMain {
 		add_action('init', array(__CLASS__, 'localize'));
 
 		// Deploy slide show on do_action('slideshow_deploy'); hook.
-		add_action('slideshow_deploy', array('Slideshow', 'deploy'));
+		add_action('slideshow_deploy', array('SlideshowPlugin', 'deploy'));
 
 		// Add shortcode
-		add_shortcode(SlideshowShortcode::$shortCode, array('SlideshowShortcode', 'slideshowDeploy'));
+		add_shortcode(SlideshowPluginShortcode::$shortCode, array('SlideshowPluginShortcode', 'slideshowDeploy'));
 
 		// Register widget
-		add_action('widgets_init', array('SlideshowWidget', 'registerWidget'));
+		add_action('widgets_init', array('SlideshowPluginWidget', 'registerWidget'));
 
 		// Register slideshow post type
-		SlideshowPostType::initialize();
+		SlideshowPluginPostType::initialize();
 
 		// Plugin feedback
-		add_action('admin_init', array('SlideshowFeedback', 'adminInitialize'));
-		register_activation_hook(__FILE__, array('SlideshowFeedback', 'generalInformationNoCheck'));
+		add_action('admin_head', array('SlideshowPluginFeedback', 'adminInitialize'));
+		register_deactivation_hook(__FILE__, array('SlideshowPluginFeedback', 'deactivation'));
 	}
 
 	/**
@@ -107,4 +101,4 @@ class SlideshowMain {
 /**
  * Activate plugin
  */
-SlideShowMain::bootStrap();
+SlideShowPluginMain::bootStrap();
