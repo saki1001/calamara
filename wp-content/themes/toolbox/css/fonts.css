@@ -3,11 +3,11 @@
 
 @font-face {
     font-family: 'Muli-Italic';
-    src: url('muli-italic-webfont.eot');
-    src: url('muli-italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('muli-italic-webfont.woff') format('woff'),
-         url('muli-italic-webfont.ttf') format('truetype'),
-         url('muli-italic-webfont.svg#MuliItalic') format('svg');
+    src: url('fonts/muli-italic-webfont.eot');
+    src: url('fonts/muli-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/muli-italic-webfont.woff') format('woff'),
+         url('fonts/muli-italic-webfont.ttf') format('truetype'),
+         url('fonts/muli-italic-webfont.svg#MuliItalic') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -18,11 +18,11 @@
 
 @font-face {
     font-family: 'Muli-Regular';
-    src: url('muli-regular-webfont.eot');
-    src: url('muli-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('muli-regular-webfont.woff') format('woff'),
-         url('muli-regular-webfont.ttf') format('truetype'),
-         url('muli-regular-webfont.svg#MuliRegular') format('svg');
+    src: url('fonts/muli-regular-webfont.eot');
+    src: url('fonts/muli-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/muli-regular-webfont.woff') format('woff'),
+         url('fonts/muli-regular-webfont.ttf') format('truetype'),
+         url('fonts/muli-regular-webfont.svg#MuliRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 
