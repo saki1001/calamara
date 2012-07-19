@@ -216,13 +216,20 @@ header h1 a {
     line-height: 1.2;
     margin-bottom: 15px;
     width: 100%;
+    font-weight: normal;
+}
+
+#main #content blockquote {
+    font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
+    margin: 0 50px;
+    color: #999999;
 }
 
 /* Sidebar
 -------------------------------------------------------------- */
 #main #sidebar {
-    width: 180px;
-    margin-left: 20px;
+    width: 170px;
+    margin-left: 30px;
     float: right;
     text-align: right;
 }
@@ -233,6 +240,7 @@ header h1 a {
 
 #main #sidebar ul li {
     margin-bottom: 15px;
+    line-height: 1.2;
 }
 
 #main #sidebar ul li.current a {
@@ -266,7 +274,7 @@ body.home #slideshow {
 }
 
 body.home #slideshow #slide_pager {
-    font-family: 'GudeaItalic', Helvetica, Arial, sans-serif;
+    font-family: 'MuliItalic', Helvetica, Arial, sans-serif;
     font-size: 5em;
     position: absolute;
     right: 0;
@@ -510,7 +518,7 @@ body.single-format-gallery #content article .background {
     height: 500px;
     position: absolute;
     z-index: -1;
-    background: url('../images/white-stripes-gray-bg.jpg') repeat 0 0;
+    background-color: rgba(0,187,205,0.25);
 }
 
 body.single-format-gallery #content article {
@@ -571,7 +579,9 @@ body.single-format-gallery #content .text-container p {
 }
 
 body.single-format-gallery #main h2.page-title {
-    width: 300px;
+    max-width: 350px;
+    height: 26px;
+    overflow: hidden;
     float: left;
 }
 
@@ -613,7 +623,7 @@ body.single-format-gallery #thumbs .thumb {
     font-size: 1.2em;
 }
 
-body.single-format-gallery #thumbs .thumb.current,
+body.single-format-gallery #thumbs .thumb.currentSlide,
 body.single-format-gallery #thumbs .thumb:hover {
     background-color: #999999;
 }
