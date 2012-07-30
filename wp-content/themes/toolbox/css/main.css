@@ -359,31 +359,31 @@ body.page #content figure img {
     visibility: hidden;
 }
 
-/* Page Template ---- Geotherapy Declaration
+/* Page Template ---- Geotherapy Declaration (ID #36)
 -------------------------------------------------------------- */
-body.page.geotherapy-declaration #content .entry-content.no-image h2 {
+body.page-id-36 #content .entry-content.no-image h2 {
     margin-bottom: 25px;
 }
 
-body.page.geotherapy-declaration #content .entry-content p.sub {
+body.page-id-36 #content .entry-content p.sub {
     font-size: 1.3em;
     margin-left: 30px;
 }
 
-/* Page Template ---- CV
+/* Page Template ---- CV (ID #29)
 -------------------------------------------------------------- */
-body.page.cv #content .entry-content h2 {
+body.page-id-29 #content .entry-content h2 {
     margin-bottom: 0;
 }
 
-body.page.cv #content .entry-content h3 {
+body.page-id-29 #content .entry-content h3 {
     margin-top: 30px;
     margin-bottom: 20px;
     float: left;
     width: 100%;
 }
 
-body.page.cv #content .entry-content h4 {
+body.page-id-29 #content .entry-content h4 {
     font-size: 1.5em;
     font-weight: normal;
     line-height: 1.2;
@@ -391,7 +391,7 @@ body.page.cv #content .entry-content h4 {
     float: left;
 }
 
-body.page.cv #content .entry-content ul {
+body.page-id-29 #content .entry-content ul {
     font-size: 1.5em;
     line-height: 1.2;
     margin-left: 0;
@@ -399,7 +399,7 @@ body.page.cv #content .entry-content ul {
     float: left;
 }
 
-body.page.cv #content .entry-content.no-image ul li {
+body.page-id-29 #content .entry-content.no-image ul li {
     padding-left: 0;
     margin-bottom: 20px;
     background: none;
