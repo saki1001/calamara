@@ -44,7 +44,20 @@
             <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
         <![endif]-->
         
+        <?php wp_enqueue_script("jquery"); ?>
+        
         <?php wp_head(); ?>
+        
+        <?php
+            
+            // CUSTOM JS
+            // Gallery Posts
+            if ( is_single() && has_post_format('gallery') ) :
+        ?>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/image-nav.js" type="text/javascript"></script>
+            
+        <? endif; ?>
+        
     </head>
     
     <body <?php body_class();?>>
