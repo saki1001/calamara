@@ -478,7 +478,6 @@ function get_body_class( $class = '' ) {
 
 		$post = get_page($page_id);
 
-        $classes[] = $post->post_name;
 		$classes[] = 'page-id-' . $page_id;
 
 		if ( $wpdb->get_var( $wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE post_parent = %d AND post_type = 'page' AND post_status = 'publish' LIMIT 1", $page_id) ) )
@@ -1221,7 +1220,7 @@ function get_the_password_form() {
 	$output = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
 	<p>' . __("This post is password protected. To view it please enter your password below:") . '</p>
 	<p><label for="' . $label . '">' . __("Password:") . ' <input name="post_password" id="' . $label . '" type="password" size="20" /></label> <input type="submit" name="Submit" value="' . esc_attr__("Submit") . '" /></p>
-	</form>
+</form>
 	';
 	return apply_filters('the_password_form', $output);
 }
