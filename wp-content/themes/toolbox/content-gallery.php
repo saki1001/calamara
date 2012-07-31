@@ -81,6 +81,5 @@
 		<span class="sep"> | </span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- #entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->

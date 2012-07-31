@@ -21,7 +21,3 @@
     </div>
     
 </article><!-- #post-<?php the_ID(); ?> -->
-
-<footer class="entry-meta">
-    <?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>
-</footer><!-- #entry-meta -->

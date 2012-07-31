@@ -56,5 +56,3 @@
     ?>
     
 </article><!-- #post-<?php the_ID(); ?> -->
-
-<?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>

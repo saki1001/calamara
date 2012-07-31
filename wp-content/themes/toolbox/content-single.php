@@ -45,6 +45,5 @@
             <?php echo the_date(); ?>
             <a href="<?php echo get_next_posts_link(); ?>">&rarr;</a>
         </div>
-		<?php edit_post_link( __( 'Edit', 'toolbox' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
