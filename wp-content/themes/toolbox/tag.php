@@ -11,42 +11,27 @@ get_header(); ?>
 <?php
     // BLOG for parent categories Blog and News
     if ( in_category('blog') || in_category('news') ) :
-       $contentClass = "class='blog-list'";
-       $postFormat = "content-blog-list";
+       $blogContent = true;
     else :
-        $mainClass = "";
-        $postFormat = "content";
+        $blogContent = false;
     endif;
-?>
     
-<?php if ( have_posts() ) : ?>
-    
-    <h2 class="page-title">
-        <?php
-            $parent_category = get_the_category();
-            echo $parent_category[0]->cat_name . ": " . single_tag_title( '', false )   ;
-        ?>
-    </h2>
-    
-    <section id="content" <?php echo $contentClass; ?> role="main">
+    if ( have_posts() ) :
         
-        <?php rewind_posts(); ?>
-            
-            <?php
-                while ( have_posts() ) : the_post(); 
-                
-                    get_template_part( $postFormat, get_post_format() );
-                
-                endwhile;
-            ?>
+        if ( $blogContent === true ) :
+            // Blog Template
+            include('content-blog.php');
+        else :
+            // Hide any other tags with
+            // Content Not Found Template
+            include('content-not-found.php');
+        endif;
         
-    <?php else :
-        
+    else :
+        // Content Not Found Template
         include('content-not-found.php');
         
-    endif; ?>
-    
-</section>
+    endif;
+?>
 
-<?php get_sidebar('blog'); ?>
 <?php get_footer(); ?>
