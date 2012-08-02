@@ -31,7 +31,7 @@ body {
     width: 950px;
     position: relative;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 0 30px;
 }
 
 header,
@@ -230,6 +230,7 @@ header h1 a {
 #main #sidebar {
     width: 170px;
     margin-left: 30px;
+    margin-top: 41px;
     float: right;
     text-align: right;
 }
@@ -413,6 +414,14 @@ body.page.contact #content .entry-content address {
     font-style: normal;
 }
 
+/* Archive Template (Uses Blog-List format)
+-------------------------------------------------------------- */
+body.archive #main #content {
+    width: 750px;
+    margin: 0;
+    float: left;
+}
+
 /* Category Template
 -------------------------------------------------------------- */
 body.category #main #content,
@@ -478,6 +487,18 @@ body.category #content .thumb-container figure a img {
     visibility: hidden;
 }
 
+/* Pagination
+-------------------------------------------------------------- */
+#content .list-footer {
+    width: 100%;
+    font-size: 1.6em;
+    line-height: 1.2;
+}
+
+#content .list-footer .current {
+    color:#006699;
+}
+
 /* Single Post
 -------------------------------------------------------------- */
 body.single #content {
@@ -491,10 +512,6 @@ body.single #content article .text-container p {
     max-width: 750px;
     margin: 0 0 20px 0;
 /*    float: left;*/
-}
-
-body.single #sidebar {
-    margin-top: 41px;
 }
 
 /* Category ---- Portfolio Single
@@ -629,14 +646,15 @@ body.single-format-gallery #thumbs .thumb:hover {
 }
 
 body.single-format-gallery #sidebar {
-    position: absolute;
+/*    position: absolute;
     top: 0;
     right: 0;
     background-color: #FFFFFF;
-    height: 100%;
+    height: 100%;*/
 }
 
-/* Blog List Format for News, Blog and Tag pages in these categories
+/* Blog List Format
+News, Blog and Tag pages in these categories
 -------------------------------------------------------------- */
 #content.blog-list article {
     width: 100%;
@@ -717,6 +735,30 @@ body.single-format-gallery #sidebar {
 }
 
 
+/* Blog Single Format
+News, Blog and Tag pages in these categories
+-------------------------------------------------------------- */
+#content.blog-single article {
+    margin-bottom: 30px;
+}
+
+#content.blog-single .post-footer {
+    width: 100%;
+    font-size: 1.6em;
+    line-height: 1.2;
+    overflow: hidden; /*clearfix*/
+}
+
+#content.blog-single .post-footer .post-nav {
+    float: left;
+}
+
+#content.blog-single .post-footer .post-tags {
+    max-width: 500px;
+    float: right;
+}
+
+
 /* Footer
 -------------------------------------------------------------- */
 
@@ -728,7 +770,11 @@ body.single-format-gallery #sidebar {
     font-size: 1.6em;
 }
 
-
+/* Content No Found
+-------------------------------------------------------------- */
+#content .not-found {
+    font-size: 1.6em;
+}
 
 /* Content
 -------------------------------------------------------------- */
