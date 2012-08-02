@@ -2,24 +2,30 @@
 /* Structure
 -------------------------------------------------------------- */
 /*Clearfixing main elements*/
-#page: after,
-/*header:after,*/
-header #site-title:after,
-/*#main-menu .menu-main-navigation-container:after,*/
-/*#main-menu #menu-main-navigation: after,*/
-#main:after,
-#content:after,
-footer: after {
-    content: "."; 
-    display: block; 
-    height: 0; 
-    clear: both;
-    visibility: hidden;
-    font-size: 0;
+body:before,
+body:after,
+#page:before,
+#page:after {
+    content:"";
+    display:table;
+}
+body:after,
+#page:after {
+    clear:both;
+}
+body,
+#page {
+    zoom:1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
 }
 
 body {
-/*    font-family: 'Gudea', Helvetica, Arial, sans-serif;*/
     font-family: 'Muli', Helvetica, Arial, sans-serif;
     font-size: 62.5%;
     line-height: 1;
@@ -29,14 +35,42 @@ body {
 
 #page {
     width: 950px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
     position: relative;
-    margin: 0 auto;
+    margin: 0 auto -139px; /* the bottom margin is the negative value of the footer's height */;
     padding: 0 30px;
 }
 
+/*
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+*/
+
+#footer, .push {
+    height: 139px; /* .push must be the same height as .footer */
+}
+
+.push {
+    width: 100%;
+    overflow: hidden; /*clearfix*/
+}
+
+#footer {
+    width: 950px;
+    text-align: right;
+    font-size: 1.6em;
+    background: url('../images/ctenophore-footer.jpg') no-repeat right top;
+    margin: 0 auto;
+}
+
+#footer div {
+    padding: 110px 0 10px;
+}
+
 header,
-#main,
-footer {
+#main {
     width: 950px;
     float: left;
 }
@@ -121,7 +155,7 @@ header h1 a {
     font-size: 1.8em;
     line-height: 1.2;
     float: right;
-    margin-top: 3px;
+    padding-top: 3px;
 }
 
 #main-menu .menu-main-navigation-container,
@@ -152,7 +186,6 @@ header h1 a {
     padding-bottom: .5em;
     background: #FFF;
     display: none;
-/*    float: left;*/
     position: absolute;
     top: 2em;
     left: 2em;
@@ -230,7 +263,7 @@ header h1 a {
 #main #sidebar {
     width: 170px;
     margin-left: 30px;
-    margin-top: 41px;
+    padding-top: 41px;
     float: right;
     text-align: right;
 }
@@ -272,6 +305,8 @@ body.home #slideshow {
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
+            width: 950px;
+            height: 633px;
 }
 
 body.home #slideshow #slide_pager {
@@ -756,18 +791,6 @@ News, Blog and Tag pages in these categories
 #content.blog-single .post-footer .post-tags {
     max-width: 500px;
     float: right;
-}
-
-
-/* Footer
--------------------------------------------------------------- */
-
-#footer {
-    padding: 50px 0 10px;
-/*    width: 100%;*/
-/*    float: left;*/
-    text-align: right;
-    font-size: 1.6em;
 }
 
 /* Content No Found
