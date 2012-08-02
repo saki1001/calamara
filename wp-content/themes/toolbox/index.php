@@ -16,7 +16,7 @@ get_header(); ?>
         
         <section id="content" role="main">
             <?php
-                get_template_part( 'content-home', get_post_format() );
+                get_template_part( 'content', 'home' );
             ?>
         </section>
 <?php get_footer(); ?>
