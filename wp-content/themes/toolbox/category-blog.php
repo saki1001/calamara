@@ -8,30 +8,16 @@
 
 get_header(); ?>
     
-    <?php if ( have_posts() ) : ?>
+<?php
+    if ( have_posts() ) :
+        // Blog Template
+        include('content-blog.php');
         
-        <h2 class="page-title">
-            <?php printf( single_cat_title( '', false ) ); ?>
-        </h2>
-        
-        <section id="content" class="blog-list" role="main">
-            
-            <?php while ( have_posts() ) : the_post(); ?>
-                
-                <?php
-                    // List Blog Excerpts Template
-                    get_template_part( 'content-blog-list', get_post_format() );
-                ?>
-                
-            <?php endwhile; ?>
-            
-        </section>
-        
-    <?php else :
+    else :
         // Content Not Found Template
         include('content-not-found.php');
         
-    endif; ?>
-    
-<?php get_sidebar('blog'); ?>
+    endif;
+?>
+
 <?php get_footer(); ?>
