@@ -8,30 +8,17 @@
 
 get_header(); ?>
     
-    <?php if ( have_posts() ) : ?>
+<?php
+    if ( have_posts() ) :
+        // Portfolio Template
+        include('content-portfolio.php');
         
-        <h2 class="page-title">
-            <?php printf( single_cat_title( '', false ) ); ?>
-        </h2>
-        
-        <section id="content" role="main">
-            
-            <?php while ( have_posts() ) : the_post(); ?>
-                
-                <?php
-                    // Show Thumbnails of Posts Template
-                    get_template_part( 'content-portfolio-thumbs', get_post_format() );
-                ?>
-                
-            <?php endwhile; ?>
-            
-        </section>
-        
-    <?php else :
+    else :
         // Content Not Found Template
         include('content-not-found.php');
         
-    endif; ?>
+    endif;
+?>
     
 <?php get_sidebar('cat-children'); ?>
 <?php get_footer(); ?>
