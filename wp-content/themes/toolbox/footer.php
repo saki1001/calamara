@@ -10,13 +10,14 @@
 ?>
 
     </div><!-- #main -->
-
-    <footer id="footer" role="contentinfo">
-        <div>
-            Mara G. Haseltine &copy;
-        </div>
-    </footer><!-- #footer -->
+    <div class="push"></div>
 </div><!-- #page -->
+
+<footer id="footer" role="contentinfo">
+    <div>
+        Mara G. Haseltine &copy;2012
+    </div>
+</footer><!-- #footer -->
 
 <?php wp_footer(); ?>
 
