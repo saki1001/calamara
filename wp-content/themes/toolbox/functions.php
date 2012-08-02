@@ -258,11 +258,13 @@ endif;
  * @since Toolbox 1.2
  */
 function toolbox_body_classes( $classes ) {
-    // Adds a class of single-author to blogs with only 1 published author
-    if ( ! is_multi_author() ) {
-        $classes[] = 'single-author';
+    global $post;
+    
+    // Adds the page name (slug) as a class
+    if ( is_page() ) {
+        $classes[] = $post->post_name;
     }
-
+    
     return $classes;
 }
 add_filter( 'body_class', 'toolbox_body_classes' );
