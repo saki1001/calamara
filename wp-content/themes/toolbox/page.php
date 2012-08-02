@@ -13,14 +13,23 @@
 
 get_header(); ?>
         
-        <div id="content" role="main">
+        <section id="content" role="main">
             
-            <?php while ( have_posts() ) : the_post(); ?>
-                
-                <?php get_template_part( 'content', 'page' ); ?>
-                
-            <?php endwhile; // end of the loop. ?>
+            <?php
+                while ( have_posts() ) : the_post();
+                    
+                    // Home Page
+                    if( is_home() || is_front_page() ) :
+                        get_template_part( 'content', 'home' );
+                        
+                    // All Other Pages
+                    else:
+                        get_template_part( 'content', 'page' );
+                    endif;
+                    
+                endwhile; // end of the loop.
+            ?>
             
-        </div><!-- #content -->
+        </section>
         
 <?php get_footer(); ?>
