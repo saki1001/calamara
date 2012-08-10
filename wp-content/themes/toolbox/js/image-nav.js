@@ -32,12 +32,48 @@ $j(document).ready(function() {
         
     });
     
-
+    // now set width of figure element
+    // for centering images in slideshow
+    $j('#scroll .image-container figure').each(function(i) {
+        
+        var width = $j(this).children('img').width();
+        
+        $j(this).css('width', width);
+        
+    });
     
+    // add pager elements
     $j.each(imagesArray, function(i) {
         
         var imgPosition = this.pos;
         $j('#thumbs #pager').append('<a href="#" class="thumb" data-index="' + i + '" data-position="' + imgPosition + '"></a>');
+        
+    });
+    
+    // get pager width
+    var pagerWidth = 0;
+    $j('#pager a').each(function() {
+        var pw = $j(this).outerWidth(true);
+        pagerWidth += pw;
+    });
+    
+    // now set width of pager element
+    // for centering pager links
+    $j('#thumbs #pager').css('width', pagerWidth);
+    
+    // find first and last image
+    $j('.image-container').each(function(i) {
+        
+        var imageIndex = $j(this).attr('data-index');
+        var lastIndex = String(imagesArray.length - 1);
+        
+        if(imageIndex === '0') {
+            $j(this).addClass('firstSlide');
+        }
+        
+        if(imageIndex === lastIndex) {
+            $j(this).addClass('lastSlide');
+        }
     });
     
     var labelCurrentPosition = function(num) {
@@ -54,6 +90,18 @@ $j(document).ready(function() {
         // add new currentSlide
         $j('.thumb[data-index="' + num +'"]').addClass('currentSlide');
         $j('#scroll .image-container[data-index="' + num +'"]').addClass('currentSlide');
+        
+        // clear any inactive classes
+        $j('.nav.inactive').removeClass('inactive');
+        
+        // make arrows inactive for first/last slide
+        if ($j('.currentSlide').hasClass('firstSlide')) {
+            $j('.nav.prev').addClass('inactive');
+        }
+        
+        if ($j('.currentSlide').hasClass('lastSlide')) {
+            $j('.nav.next').addClass('inactive');
+        }
         
     };
     
@@ -91,7 +139,7 @@ $j(document).ready(function() {
         var curPosition = $j('#scroll').position();
         
         // base animation time on ratio of how far you're moving
-        var animTime = Math.abs(Math.abs(parseInt(curPosition.left)) - Math.abs(parseInt(positionLeft)));
+        var animTime = Math.abs(Math.abs(parseInt(curPosition.left)) - Math.abs(parseInt(positionLeft)))/2;
         
         animateScroll(positionLeft, animTime);
         
@@ -109,7 +157,6 @@ $j(document).ready(function() {
         }
         
         var showImage = '.thumb[data-index="' + newDataIndex + '"]';
-        console.log($j(showImage));
         
         if ( $j(showImage)[0] != null ) {
             
@@ -123,8 +170,34 @@ $j(document).ready(function() {
         return false;
     };
     
+    var showNav = function() {
+        $j('.nav').fadeIn(100);
+    };
+    
+    var hideNav = function() {
+        $j('.nav').fadeOut(100);
+    };
+    
+    // show or hide images and text
+    var toggleImageText = function() {
+        if ($j('#content').hasClass('show-images')) {
+            $j('#content').removeClass('show-images');
+            $j('#content').addClass('show-text');
+        } else if ($j('#content').hasClass('show-text')) {
+            $j('#content').removeClass('show-text');
+            $j('#content').addClass('show-images');
+        } else {
+            // do nothing
+        }
+        
+        return false;
+    };
     
     $j('#thumbs .thumb').bind('click', showImage);
-    $j('#thumbs .nav').bind('click', showPrevNext);
-    
+    $j('.border .arrow').bind('click', showPrevNext);
+    $j('.toggle-link a').bind('click', toggleImageText);
+    $j('.scroll-container').bind({
+        'mouseenter': showNav,
+        'mouseleave': hideNav
+    });
 });
