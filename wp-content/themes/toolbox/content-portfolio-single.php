@@ -8,31 +8,34 @@
  * @since Toolbox 1.0
  */
 ?>
-<section id="content" class="portfolio-single" role="main">
+<section id="content" class="portfolio-single show-images" role="main">
     <h2 class="page-title">
         <?php
             the_title();
         ?>
     </h2>
-
-    <div id="thumbs">
-        <div class="text">
-            <a href="#text">View Story</a>
-        </div>
-        <div class="arrows">
-            <a href="#" class="nav prev">&larr;</a>
-            <a href="#" class="nav next">&rarr;</a>
-        </div>
-        <div id="pager">
-        <!-- filled dynamically -->
-        </div>
+    
+    <div class="toggle-link">
+        <a href="#" class="text-link">View Text</a>
+        <a href="#" class="image-link">View Images</a>
     </div>
-
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     
-        <div class="border-radius"></div>
+    <div class="scroll-container">
+        
+        <div class="border left">
+            <a href="#" class="nav arrow prev"></a>
+        </div>
+        <div class="border right">
+            <a href="#" class="nav arrow next"></a>
+        </div>
+        
+        <div id="thumbs" class="nav">
+            <div id="pager">
+            <!-- filled dynamically -->
+            </div>
+        </div>
         <div class="background"></div>
-    
+        
         <div id="scroll" class="entry-content">
             <?php
                 // Define args to get attachments
@@ -74,7 +77,7 @@
         
         </div>
     
-    </article><!-- #post-<?php the_ID(); ?> -->
+    </div>
 
     <div id="text" class="text-container">
         <?php the_content(); ?>
