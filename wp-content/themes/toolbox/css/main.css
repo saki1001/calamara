@@ -39,8 +39,8 @@ body {
     height: auto !important;
     height: 100%;
     position: relative;
-    margin: 0 auto -139px; /* the bottom margin is the negative value of the footer's height */;
-    padding: 0 30px;
+    margin: 0 auto -185px; /* the bottom margin is the negative value of the footer's height */;
+    padding: 0 52px;
 }
 
 /*
@@ -49,7 +49,7 @@ http://ryanfait.com/
 */
 
 #footer, .push {
-    height: 139px; /* .push must be the same height as .footer */
+    height: 185px; /* .push must be the same height as .footer */
 }
 
 .push {
@@ -66,7 +66,7 @@ http://ryanfait.com/
 }
 
 #footer div {
-    padding: 110px 0 10px;
+    padding: 150px 0 10px;
 }
 
 header,
@@ -124,7 +124,8 @@ header {
 /*    width: 100%;*/
 /*    float: left;*/
     position: relative;
-    padding: 110px 0 55px;
+/*    padding: 110px 0 55px;*/
+    padding: 146px 0 30px;
 }
 
 header h1 {
@@ -134,15 +135,22 @@ header h1 {
 }
 
 header h1 a {
-    color: #000 !important;
+/*    color: #000 !important;*/
+/*    visibility: hidden;*/
+    opacity: 0;
 }
 
 #logo {
     position: absolute;
-    top: 8px;
+/*    top: 8px;
     left: -128px;
     width: 214px;
     height: 202px;
+    background: url('../images/ctenophore-logo.jpg') no-repeat 0 0;*/
+    top: 30px;
+    left: -55px;
+    width: 332px;
+    height: 162px;
     background: url('../images/ctenophore-logo.jpg') no-repeat 0 0;
     z-index: -1;
 }
@@ -555,33 +563,174 @@ body.single-format-gallery #main {
     position: relative;
 }
 
-/*faking border radius with image overlay*/
-body.single-format-gallery #content article .border-radius {
-    width: 750px;
-    height: 500px;
-    position: absolute;
-    z-index: 10;
-    background: url('../images/border-radius-fake-750x500.png') no-repeat 0 0;
-}
-
-/*faking background color*/
-body.single-format-gallery #content article .background {
-    width: 750px;
-    height: 500px;
-    position: absolute;
-    z-index: -1;
-    background-color: rgba(0,187,205,0.25);
-}
-
-body.single-format-gallery #content article {
-    width: 750px;
-    position: relative;
-    height: 550px;
+body.single-format-gallery #main h2.page-title {
+    max-width: 350px;
+    height: 26px;
     overflow: hidden;
     float: left;
 }
 
-body.single-format-gallery #content article #scroll {
+body.single-format-gallery .toggle-link {
+    float: right;
+    position: relative;
+    margin-top: 8px;
+    padding-bottom: 19px;
+    font-size: 1.4em;
+}
+
+body.single-format-gallery #content.show-images .toggle-link a.image-link,
+body.single-format-gallery #content.show-images .text-container {
+    display: none;
+}
+
+body.single-format-gallery #content.show-text .toggle-link a.text-link,
+body.single-format-gallery #content.show-text .scroll-container {
+    display: none;
+}
+
+body.single-format-gallery #thumbs {
+    position: absolute;
+    left: 0;
+    bottom: 80px;
+    text-align: center;
+    z-index: 10;
+    width: 750px;
+    display: none;
+}
+
+body.single-format-gallery #thumbs #pager {
+    margin: 0 auto;
+    background-color:#E9E9E9;
+    height: 10px;
+    padding: 5px 0;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+}
+
+body.single-format-gallery #thumbs .thumb {
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    background-color: #CCCCCC;
+    margin: 0 10px;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+body.single-format-gallery #thumbs .thumb.currentSlide,
+body.single-format-gallery #thumbs .thumb:hover {
+    background-color: #999999;
+}
+
+/*faking border radius with image overlay*/
+/*body.single-format-gallery #content .scroll-container .border {
+    width: 70px;
+    height: 500px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+}
+
+body.single-format-gallery #content .scroll-container .border.left {
+    left: 0;
+    background: url('../images/border-radius-70x500-left.png') no-repeat 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .border.right {
+    right: 0;
+    background: url('../images/border-radius-70x500-right.png') no-repeat 0 0;
+}*/
+body.single-format-gallery #content .scroll-container .border {
+    width: 50px;
+    height: 433px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+}
+
+body.single-format-gallery #content .scroll-container .border.left {
+    left: 0;
+    background: url('../images/border-radius-50x433-left.png') no-repeat 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .border.right {
+    right: 0;
+    background: url('../images/border-radius-50x433-right.png') no-repeat 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav {
+    width: 45px;
+    height: 70px;
+    position: absolute;
+    z-index: 20;
+    top: 215px;
+    left: 12px;
+    background: url('../images/portfolio-arrow-sprite.png') no-repeat 0 0;
+    display: none;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav {
+    width: 50px;
+    height: 70px;
+    position: absolute;
+    z-index: 20;
+    top: 200px;
+    left: 0;
+    background: url('../images/slideshow-arrow-sprite.png') no-repeat 0 0;
+    display: none;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.inactive {
+    cursor: default;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.prev.inactive:hover {
+    background-position: 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.next.inactive:hover {
+    background-position: -45px 0;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.prev {
+    background-position: 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.next:hover {
+    background-position: -45px -70px;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.prev:hover {
+    background-position: 0 -70px;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.next {
+    background-position: -45px 0;
+}
+
+/*faking background color*/
+body.single-format-gallery #content .scroll-container .background {
+    width: 750px;
+    height: 433px;
+    position: absolute;
+    z-index: -1;
+    background-color: #E9E9E9;
+}
+
+body.single-format-gallery #content .scroll-container {
+    width: 750px;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    float: left;
+}
+
+body.single-format-gallery #content .scroll-container #scroll {
     height: 550px;
     position: absolute;
     top: 0;
@@ -589,27 +738,29 @@ body.single-format-gallery #content article #scroll {
     width: 10000px; /*set dynamically after this*/
 }
 
-body.single-format-gallery #content article #scroll .image-container {
+body.single-format-gallery #content .scroll-container #scroll .image-container {
     height: 550px;
+    width: 750px;
     float: left;
     position: relative;
-    opacity: 0.25;
+/*    opacity: 0.25;*/
 }
 
-body.single-format-gallery #content article #scroll .image-container.currentSlide {
+body.single-format-gallery #content .scroll-container #scroll .image-container.currentSlide {
     opacity: 1;
 }
 
-body.single-format-gallery #content article #scroll .image-container figure {
-    height: 500px;
+body.single-format-gallery #content .scroll-container #scroll .image-container figure {
     display: block;
+    margin: 0 auto;
 }
 
-body.single-format-gallery #content article #scroll .image-container figure img {
-    min-height: 500px;
+body.single-format-gallery #content .scroll-container #scroll .image-container figure img {
+/*    min-height: 500px;*/
+    margin: 0 auto;
 }
 
-body.single-format-gallery #content article #scroll .image-container figcaption {
+body.single-format-gallery #content .scroll-container #scroll .image-container figcaption {
     font-size: 1.5em;
     height: 50px;
     padding: 10px 10px 0 0;
@@ -630,63 +781,8 @@ body.single-format-gallery #content .text-container p {
 /*    float: left;*/
 }
 
-body.single-format-gallery #main h2.page-title {
-    max-width: 350px;
-    height: 26px;
-    overflow: hidden;
-    float: left;
-}
 
-body.single-format-gallery #thumbs {
-    float: right;
-    position: relative;
-    margin-top: 10px;
-    padding-bottom: 20px;
-}
 
-body.single-format-gallery #thumbs .text {
-    float: left;
-}
-
-body.single-format-gallery #thumbs .arrows {
-    float: right;
-}
-
-body.single-format-gallery #thumbs .arrows .nav {
-    float: left;
-    margin-left: 20px;
-}
-
-body.single-format-gallery #thumbs #pager {
-    float: left;
-}
-
-body.single-format-gallery #thumbs .thumb {
-    width: 10px;
-    height: 10px;
-    -webkit-border-radius: 10px;
-       -moz-border-radius: 10px;
-            border-radius: 10px;
-    background-color: #CCCCCC;
-    margin-left: 20px;
-    display: block;
-    float: left;
-    text-align: center;
-    font-size: 1.2em;
-}
-
-body.single-format-gallery #thumbs .thumb.currentSlide,
-body.single-format-gallery #thumbs .thumb:hover {
-    background-color: #999999;
-}
-
-body.single-format-gallery #sidebar {
-/*    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #FFFFFF;
-    height: 100%;*/
-}
 
 /* Blog List Format
 News, Blog and Tag pages in these categories
