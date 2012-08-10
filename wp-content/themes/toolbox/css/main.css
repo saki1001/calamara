@@ -655,12 +655,12 @@ body.single-format-gallery #content .scroll-container .border {
 
 body.single-format-gallery #content .scroll-container .border.left {
     left: 0;
-    background: url('../images/border-radius-50x433-left.png') no-repeat 0 0;
+    background: url('../images/border-radius-portfolio-left.png') no-repeat 0 0;
 }
 
 body.single-format-gallery #content .scroll-container .border.right {
     right: 0;
-    background: url('../images/border-radius-50x433-right.png') no-repeat 0 0;
+    background: url('../images/border-radius-portfolio-right.png') no-repeat 0 0;
 }
 
 body.single-format-gallery #content .scroll-container .border .nav {
