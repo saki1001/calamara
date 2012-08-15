@@ -64,13 +64,14 @@
     
     <div id="page">
         <header id="branding" role="banner">
-            <div id="logo"></div>
-            <h1 id="site-title">
-                <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                    <?php bloginfo( 'name' ); ?>
-                </a>
-            </h1>
-            
+            <div id="logo">
+                <h1 id="site-title">
+                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+                        <?php bloginfo( 'name' ); ?>
+                    </a>
+                </h1>
+            </div>
+            <h2>"Art that addresses the link between our biological and cultural evolution." &ndash; MGH</h2>
             <nav id="main-menu" role="navigation">
                 <?php
                     // default menu
