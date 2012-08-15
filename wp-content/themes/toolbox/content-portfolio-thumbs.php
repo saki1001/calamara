@@ -34,16 +34,21 @@
             // Get thumbnail and its URL
             $image = wp_get_attachment_image( $attachment->ID, 'thumbnail' );
             $imageUrl = wp_get_attachment_image_src( $attachment->ID, 'thumbnail' );
+            $postUrl = $imageUrl[0];
             
+        else :
+            
+            // Get post URL
+            $image = '';
+            $postUrl = get_permalink( $post->ID );
+            
+        endif;
     ?>
         <figure class="gallery-thumb">
-            <a href="<?php the_permalink(); ?>" style="background: url('<?php echo $imageUrl[0]; ?>') no-repeat center center;">
+            <a href="<?php the_permalink(); ?>" style="background: url('<?php echo $postUrl; ?>') no-repeat center center;">
                 <?php 
                     echo $image;
                 ?>
             </a>
         </figure>
-    <?php
-        endif;
-    ?>
 </div>
