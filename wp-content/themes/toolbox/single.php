@@ -21,8 +21,13 @@ get_header(); ?>
             // PORTFOLIO for parent categories New Work and Archives
                 if ( in_category('new-work') || $parent_cat_num === '10' ) :
                     $sidebar = 'cat-posts';
-                    get_template_part('content', 'portfolio-single' );
                     
+                    $format = get_post_format( $post->ID );
+                    if ( $format === 'gallery' ) :
+                        get_template_part('content', 'portfolio-gallery' );
+                    else :
+                        get_template_part('content', 'portfolio-standard' );
+                    endif;
             // BLOG for parent categories Blog and News
                 elseif ( in_category('blog') || in_category('news') ) :
                     $sidebar = 'blog';
