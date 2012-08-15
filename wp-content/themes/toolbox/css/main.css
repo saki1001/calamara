@@ -121,38 +121,40 @@ h1, h2, h3, h4, h5 {
 /* Header
 -------------------------------------------------------------- */
 header {
-/*    width: 100%;*/
-/*    float: left;*/
     position: relative;
-/*    padding: 110px 0 55px;*/
-    padding: 146px 0 30px;
+/*    padding: 146px 0 30px;*/
+    padding: 124px 0 30px;
 }
 
-header h1 {
-    font-size: 2.8em;
-    font-weight: bold;
-    float: left;
-}
-
-header h1 a {
-/*    color: #000 !important;*/
-/*    visibility: hidden;*/
-    opacity: 0;
-}
-
-#logo {
+header #logo {
     position: absolute;
-/*    top: 8px;
-    left: -128px;
-    width: 214px;
-    height: 202px;
-    background: url('../images/ctenophore-logo.jpg') no-repeat 0 0;*/
     top: 30px;
     left: -55px;
     width: 332px;
     height: 162px;
     background: url('../images/ctenophore-logo.jpg') no-repeat 0 0;
-    z-index: -1;
+}
+
+header h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    width: 100%;
+    padding-top: 100px;
+}
+
+header h1 a {
+    opacity: 0;
+    display: block;
+    width: 100%;
+    height: 62px;
+}
+
+header h2 {
+    font-size: 1.2em;
+    font-weight: normal;
+    color: #999;
+    padding-bottom: 10px;
+    float: right;
 }
 
 /* Menu
@@ -208,7 +210,7 @@ header h1 a {
 /*    background: #FFF;*/
     line-height: 1.2em;
     padding: .5em .5em .5em 1em;
-    width: 10em;
+    width: 12em;
     height: auto;
 }
 #main-menu li:hover > a,
@@ -301,13 +303,13 @@ body.home #content {
 }
 
 /*faking border radius with image overlay*/
-body.home #content .border-radius {
+/*body.home #content .border-radius {
     width: 950px;
     height: 633px;
     position: absolute;
     z-index: 10;
     background: url('../images/border-radius-fake-950x633.png') no-repeat 0 0;
-}
+}*/
 
 body.home #slideshow {
     -webkit-border-radius: 10px;
@@ -317,30 +319,9 @@ body.home #slideshow {
             height: 633px;
 }
 
-body.home #slideshow #slide_pager {
-    font-family: 'MuliItalic', Helvetica, Arial, sans-serif;
-    font-size: 5em;
-    position: absolute;
-    right: 0;
-    bottom: 20px;
-    z-index: 1000;
-/*    display: none;*/
-}
-
-body.home #slideshow #slide_pager a {
-    color: #FFF;
-}
-
-body.home #slideshow #slide_pager a.activeSlide {
-    color: #777777;
-}
-
-body.home #slideshow #slide_pager a:hover {
-    color: #006699;
-}
-
-body.home #slideshow #slide_pager {
-    margin-left: 1em;
+body.home #slideshow_text h2 {
+    font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
+    font-weight: normal;
 }
 
 /* Page Template
@@ -379,11 +360,7 @@ body.page #content .entry-content ul {
     margin-left: 30px;
 }
 
-body.page #content .entry-content.no-image ul {
-    line-height: 1.3;
-}
-
-body.page #content .entry-content.no-image ul li {
+body.page #content .entry-content ul li {
     padding-left: 12px;
     margin-bottom: 20px;
     background: url('../images/list-bullet-blue.png') no-repeat 0 7px;
@@ -444,9 +421,7 @@ body.page-id-29 #content .entry-content ul {
 }
 
 body.page-id-29 #content .entry-content.no-image ul li {
-    padding-left: 0;
     margin-bottom: 20px;
-    background: none;
 }
 
 /* Page Template ---- Contact
@@ -510,6 +485,8 @@ body.category #content .thumb-container figcaption p {
 
 body.category #content .thumb-container figure a {
     position: absolute;
+    width: 350px;
+    height: 200px;
     top: 0;
     left: 0;
     z-index: 2;
@@ -557,7 +534,23 @@ body.single #content article .text-container p {
 /*    float: left;*/
 }
 
-/* Category ---- Portfolio Single
+/* Category ---- Portfolio Gallery and Video
+-------------------------------------------------------------- */
+body.single-format-standard #content .text-container,
+body.single-format-gallery #content .text-container {
+    width: 750px;
+    float: left;
+}
+
+body.single-format-standard #content .text-container p,
+body.single-format-gallery #content .text-container p {
+    font-size: 1.6em;
+    line-height: 1.3;
+    max-width: 750px;
+    margin: 0 0 20px 0;
+}
+
+/* Category ---- Portfolio Gallery
 -------------------------------------------------------------- */
 body.single-format-gallery #main {
     position: relative;
@@ -587,11 +580,74 @@ body.single-format-gallery #content.show-text .toggle-link a.text-link,
 body.single-format-gallery #content.show-text .scroll-container {
     display: none;
 }
+body.single-format-gallery #content .scroll-container .border {
+    width: 44px;
+    height: 500px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+}
+
+body.single-format-gallery #content .scroll-container .border.left {
+    left: 0;
+    background: url('../images/border-radius-portfolio-left.png') no-repeat 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .border.right {
+    right: 0;
+    background: url('../images/border-radius-portfolio-right.png') no-repeat right 0;
+}
+
+/*body.single-format-gallery #content .scroll-container .border .nav {
+    width: 45px;
+    height: 70px;
+    position: absolute;
+    z-index: 20;
+    top: 215px;
+    left: 12px;
+    background: url('../images/portfolio-arrow-sprite.png') no-repeat 0 0;
+    display: none;
+}*/
+
+body.single-format-gallery #content .scroll-container .border .nav {
+    width: 24px;
+    height: 100px;
+    position: absolute;
+    z-index: 20;
+    top: 200px;
+    left: 10px;
+    display: none;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.inactive {
+    cursor: default;
+    visibility: hidden;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.prev {
+    background: url('../images/button-previous.png') no-repeat 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .border .nav.next {
+    background: url('../images/button-next.png') no-repeat 0 0;
+}
+
+body.single-format-gallery #content .scroll-container .nav {
+    zoom: 1;
+    filter: alpha(opacity = 50);
+    opacity: 0.5;
+}
+
+body.single-format-gallery #content .scroll-container .nav:hover {
+    zoom: 1;
+    filter: alpha(opacity = 80);
+    opacity: 0.8;
+}
 
 body.single-format-gallery #thumbs {
     position: absolute;
     left: 0;
-    bottom: 80px;
+    bottom: 70px;
     text-align: center;
     z-index: 10;
     width: 750px;
@@ -600,7 +656,8 @@ body.single-format-gallery #thumbs {
 
 body.single-format-gallery #thumbs #pager {
     margin: 0 auto;
-    background-color:#E9E9E9;
+    background-color:#808080;
+    border: 1px solid #CCCCCC;
     height: 10px;
     padding: 5px 0;
     -webkit-border-radius: 10px;
@@ -614,7 +671,7 @@ body.single-format-gallery #thumbs .thumb {
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
-    background-color: #CCCCCC;
+    background-color: #999999;
     margin: 0 10px;
     display: block;
     float: left;
@@ -624,99 +681,13 @@ body.single-format-gallery #thumbs .thumb {
 
 body.single-format-gallery #thumbs .thumb.currentSlide,
 body.single-format-gallery #thumbs .thumb:hover {
-    background-color: #999999;
-}
-
-/*faking border radius with image overlay*/
-/*body.single-format-gallery #content .scroll-container .border {
-    width: 70px;
-    height: 500px;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-}
-
-body.single-format-gallery #content .scroll-container .border.left {
-    left: 0;
-    background: url('../images/border-radius-70x500-left.png') no-repeat 0 0;
-}
-
-body.single-format-gallery #content .scroll-container .border.right {
-    right: 0;
-    background: url('../images/border-radius-70x500-right.png') no-repeat 0 0;
-}*/
-body.single-format-gallery #content .scroll-container .border {
-    width: 50px;
-    height: 433px;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-}
-
-body.single-format-gallery #content .scroll-container .border.left {
-    left: 0;
-    background: url('../images/border-radius-portfolio-left.png') no-repeat 0 0;
-}
-
-body.single-format-gallery #content .scroll-container .border.right {
-    right: 0;
-    background: url('../images/border-radius-portfolio-right.png') no-repeat 0 0;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav {
-    width: 45px;
-    height: 70px;
-    position: absolute;
-    z-index: 20;
-    top: 215px;
-    left: 12px;
-    background: url('../images/portfolio-arrow-sprite.png') no-repeat 0 0;
-    display: none;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav {
-    width: 50px;
-    height: 70px;
-    position: absolute;
-    z-index: 20;
-    top: 200px;
-    left: 0;
-    background: url('../images/slideshow-arrow-sprite.png') no-repeat 0 0;
-    display: none;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav.inactive {
-    cursor: default;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav.prev.inactive:hover {
-    background-position: 0 0;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav.next.inactive:hover {
-    background-position: -45px 0;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav.prev {
-    background-position: 0 0;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav.next:hover {
-    background-position: -45px -70px;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav.prev:hover {
-    background-position: 0 -70px;
-}
-
-body.single-format-gallery #content .scroll-container .border .nav.next {
-    background-position: -45px 0;
+    background-color: #CCCCCC;
 }
 
 /*faking background color*/
 body.single-format-gallery #content .scroll-container .background {
     width: 750px;
-    height: 433px;
+    height: 500px;
     position: absolute;
     z-index: -1;
     background-color: #E9E9E9;
@@ -725,7 +696,7 @@ body.single-format-gallery #content .scroll-container .background {
 body.single-format-gallery #content .scroll-container {
     width: 750px;
     position: relative;
-    height: 500px;
+    height: 550px;
     overflow: hidden;
     float: left;
 }
@@ -753,10 +724,10 @@ body.single-format-gallery #content .scroll-container #scroll .image-container.c
 body.single-format-gallery #content .scroll-container #scroll .image-container figure {
     display: block;
     margin: 0 auto;
+    min-height: 500px;
 }
 
 body.single-format-gallery #content .scroll-container #scroll .image-container figure img {
-/*    min-height: 500px;*/
     margin: 0 auto;
 }
 
@@ -764,24 +735,9 @@ body.single-format-gallery #content .scroll-container #scroll .image-container f
     font-size: 1.5em;
     height: 50px;
     padding: 10px 10px 0 0;
+    text-align: center;
     display: block;
 }
-
-body.single-format-gallery #content .text-container {
-    width: 750px;
-    padding-top: 20px;
-    float: left;
-}
-
-body.single-format-gallery #content .text-container p {
-    font-size: 1.6em;
-    line-height: 1.3;
-    max-width: 750px;
-    margin: 0 0 20px 0;
-/*    float: left;*/
-}
-
-
 
 
 /* Blog List Format
