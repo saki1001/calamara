@@ -71,7 +71,7 @@
                     </a>
                 </h1>
             </div>
-            <h2>"Art that addresses the link between our biological and cultural evolution." &ndash; MGH</h2>
+            
             <nav id="main-menu" role="navigation">
                 <?php
                     // default menu
