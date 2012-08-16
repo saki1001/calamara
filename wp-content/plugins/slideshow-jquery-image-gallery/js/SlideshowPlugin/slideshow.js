@@ -10,7 +10,7 @@ var Slideshow = {
     /** Functional variables (non-customizable) */
     slideshowContainer: '.slideshow_container',
     sliderBox: '.slideshow',
-    descriptionBox: '.slideshow_container .descriptionbox .text_container',
+    descriptionBox: '#slideshow_text .text_container',
     buttons: '.slideshow_container .button',
     buttonNext: '.slideshow_container .next',
     buttonPrevious: '.slideshow_container .previous',
@@ -114,8 +114,8 @@ var Slideshow = {
             slideShow.width = parseInt(jQuery(slideShow.slideshowContainer).parent().css('width'), 10);
 
         // Adjust button positioning
-        var positioning = ((slideShow.height - 100) / 2) + 100;
-        jQuery(slideShow.buttons).css({ 'margin-top': '-' + positioning + 'px' });
+        var positioning = ((slideShow.height - 100) / 2);
+        jQuery(slideShow.buttons).css({ 'margin-top': + positioning + 'px' });
 
         // Miscellaneous settings
         if(settings['stretch'] != '')
@@ -330,4 +330,17 @@ jQuery(document).ready(function(){
         Slideshow.showButtons(true);
         Slideshow.interval = setInterval(function(){ Slideshow.nextSlide(); }, Slideshow.intervalSpeed);
     }
+    
+    var showNav = function() {
+        jQuery('.button').fadeIn(200);
+    };
+    
+    var hideNav = function() {
+        jQuery('.button').fadeOut(200);
+    };
+    
+    jQuery('#slideshow').bind({
+        'mouseenter': showNav,
+        'mouseleave': hideNav
+    });
 });

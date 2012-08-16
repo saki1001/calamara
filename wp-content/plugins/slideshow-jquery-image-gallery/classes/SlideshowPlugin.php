@@ -52,11 +52,12 @@ class SlideshowPlugin {
 		$images = array();
 		$imageObjects = SlideshowPluginPostType::getAttachments($post->ID);
 		foreach($imageObjects as $key => $imageObject){
+		    $attachmentUrl = get_post_meta( $imageObject->ID, '_wp_attachment_url', true );
 			$images[$key] = array(
 				'img' => $imageObject->guid,
 				'title' => $imageObject->post_title,
 				'description' => $imageObject->post_content,
-				'url' => $imageObject->guid
+				'url' => $attachmentUrl
 			);
 		}
 
