@@ -32,21 +32,25 @@ $j(document).ready(function() {
         
     });
     
-    // now set width of figure element
+    // Set Image Width and Margin
     // for centering images in slideshow
     $j('#scroll .image-container figure').each(function(i) {
         
         var width = $j(this).children('img').width();
+        var height = $j(this).children('img').height();
+        var margin = (500 - height)/2 + 'px';
         
-        $j(this).css('width', width);
-        
+        $j(this).css({
+            'width': width,
+            'margin-top': margin
+        });
     });
     
     // add pager elements
     $j.each(imagesArray, function(i) {
         
         var imgPosition = this.pos;
-        $j('#thumbs #pager').append('<a href="#" class="thumb" data-index="' + i + '" data-position="' + imgPosition + '"></a>');
+        $j('#pager').append('<a href="#" class="page" data-index="' + i + '" data-position="' + imgPosition + '"></a>');
         
     });
     
@@ -59,7 +63,7 @@ $j(document).ready(function() {
     
     // now set width of pager element
     // for centering pager links
-    $j('#thumbs #pager').css('width', pagerWidth);
+    $j('#pager').css('width', pagerWidth);
     
     // find first and last image
     $j('.image-container').each(function(i) {
@@ -88,7 +92,7 @@ $j(document).ready(function() {
         $j('.currentSlide').removeClass('currentSlide');
         
         // add new currentSlide
-        $j('.thumb[data-index="' + num +'"]').addClass('currentSlide');
+        $j('.page[data-index="' + num +'"]').addClass('currentSlide');
         $j('#scroll .image-container[data-index="' + num +'"]').addClass('currentSlide');
         
         // clear any inactive classes
@@ -148,7 +152,7 @@ $j(document).ready(function() {
     
     var showPrevNext = function() {
         
-        var curDataIndex = parseInt($j('.thumb.currentSlide').attr('data-index'));
+        var curDataIndex = parseInt($j('.page.currentSlide').attr('data-index'));
         
         if ($j(this).hasClass('prev')) {
             var newDataIndex = curDataIndex - 1;
@@ -156,7 +160,7 @@ $j(document).ready(function() {
             var newDataIndex = curDataIndex + 1;
         }
         
-        var showImage = '.thumb[data-index="' + newDataIndex + '"]';
+        var showImage = '.page[data-index="' + newDataIndex + '"]';
         
         if ( $j(showImage)[0] != null ) {
             
@@ -193,10 +197,10 @@ $j(document).ready(function() {
         return false;
     };
     
-    $j('#thumbs .thumb').bind('click', showImage);
+    $j('#pager .page').bind('click', showImage);
     $j('.border .arrow').bind('click', showPrevNext);
     $j('.toggle-link a').bind('click', toggleImageText);
-    $j('.scroll-container').bind({
+    $j('#slideshow').bind({
         'mouseenter': showNav,
         'mouseleave': hideNav
     });
