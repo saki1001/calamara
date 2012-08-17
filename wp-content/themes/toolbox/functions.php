@@ -68,7 +68,7 @@ function toolbox_setup() {
     /**
      * Add support for the Gallery and Video Post Formats
      */
-    add_theme_support( 'post-formats', array( 'gallery' ) );
+    add_theme_support( 'post-formats', array( 'gallery', 'video' ) );
 }
 endif; // toolbox_setup
 
@@ -244,11 +244,16 @@ function toolbox_body_classes( $classes ) {
     if ( is_page() ) {
         $classes[] = $post->post_name;
     }
-    // if ( is_category() ) {
-    //     
-    //     foreach((get_the_category($post->ID)) as $category)
-    //         $classes[] = $category->category_nicename;
-    // }
+    if ( is_single() ) {
+        $format = get_post_format( $post->ID );
+        
+        if ( $format === 'gallery' || 'video' ) :
+            $classes[] = 'portfolio-gallery';
+        endif;
+        
+        // foreach((get_the_category($post->ID)) as $category)
+            // $classes[] = $category->category_nicename;
+    }
     
     return $classes;
 }
