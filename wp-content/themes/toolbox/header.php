@@ -48,13 +48,16 @@
         
         <?php wp_head(); ?>
         
-        <?php
+        <?php /*Custom JS Files*/ ?>
+        <?php if ( is_single() && has_post_format('gallery') ) : ?>
             
-            // CUSTOM JS
-            // Gallery Posts
-            if ( is_single() && has_post_format('gallery') ) :
-        ?>
             <script src="<?php echo get_template_directory_uri(); ?>/js/image-nav.js" type="text/javascript"></script>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/center-images.js" type="text/javascript"></script>
+            <script src="<?php echo get_template_directory_uri(); ?>/js/toggle-image-text.js" type="text/javascript"></script>
+            
+        <?php elseif ( is_single() && has_post_format('video') ) : ?>
+            
+            <script src="<?php echo get_template_directory_uri(); ?>/js/toggle-image-text.js" type="text/javascript"></script>
             
         <? endif; ?>
         
