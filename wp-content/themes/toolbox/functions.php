@@ -244,13 +244,10 @@ function toolbox_body_classes( $classes ) {
     if ( is_page() ) {
         $classes[] = $post->post_name;
     }
-    if ( is_single() ) {
-        $format = get_post_format( $post->ID );
-        
-        if ( $format === 'gallery' || 'video' ) :
+    if ( is_single() && (has_post_format('gallery') || has_post_format('video')) ) {
+            
             $classes[] = 'portfolio-gallery';
-        endif;
-        
+            
         // foreach((get_the_category($post->ID)) as $category)
             // $classes[] = $category->category_nicename;
     }
