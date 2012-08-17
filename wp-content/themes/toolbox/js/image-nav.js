@@ -32,20 +32,6 @@ $j(document).ready(function() {
         
     });
     
-    // Set Image Width and Margin
-    // for centering images in slideshow
-    $j('#scroll .image-container figure').each(function(i) {
-        
-        var width = $j(this).children('img').width();
-        var height = $j(this).children('img').height();
-        var margin = (500 - height)/2 + 'px';
-        
-        $j(this).css({
-            'width': width,
-            'margin-top': margin
-        });
-    });
-    
     // add pager elements
     $j.each(imagesArray, function(i) {
         
@@ -182,25 +168,9 @@ $j(document).ready(function() {
         $j('.nav').fadeOut(100);
     };
     
-    // show or hide images and text
-    var toggleImageText = function() {
-        if ($j('#content').hasClass('show-images')) {
-            $j('#content').removeClass('show-images');
-            $j('#content').addClass('show-text');
-        } else if ($j('#content').hasClass('show-text')) {
-            $j('#content').removeClass('show-text');
-            $j('#content').addClass('show-images');
-        } else {
-            // do nothing
-        }
-        
-        return false;
-    };
-    
     $j('#pager .page').bind('click', showImage);
     $j('.border .arrow').bind('click', showPrevNext);
-    $j('.toggle-link a').bind('click', toggleImageText);
-    $j('#slideshow').bind({
+    $j('#media').bind({
         'mouseenter': showNav,
         'mouseleave': hideNav
     });
