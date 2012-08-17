@@ -22,12 +22,16 @@ get_header(); ?>
                 if ( in_category('new-work') || $parent_cat_num === '10' ) :
                     $sidebar = 'cat-posts';
                     
-                    $format = get_post_format( $post->ID );
-                    if ( $format === 'gallery' ) :
-                        get_template_part('content', 'portfolio-gallery' );
+                    if ( has_post_format('gallery') ) :
+                        $portfolio_template = 'portfolio-gallery';
+                    elseif ( has_post_format('video') ) :
+                        $portfolio_template = 'portfolio-video';
                     else :
-                        get_template_part('content', 'portfolio-standard' );
+                        $portfolio_template = 'single';
                     endif;
+                    
+                    get_template_part('content', $portfolio_template );
+                    
             // BLOG for parent categories Blog and News
                 elseif ( in_category('blog') || in_category('news') ) :
                     $sidebar = 'blog';
