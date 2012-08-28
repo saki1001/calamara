@@ -26,7 +26,7 @@ html, body {
 }
 
 body {
-    font-family: 'Muli', Helvetica, Arial, sans-serif;
+    font-family: 'Muli-Regular', Helvetica, Arial, sans-serif;
     font-size: 62.5%;
     line-height: 1;
     color: #333333;
@@ -102,7 +102,6 @@ header,
 /* Links
 -------------------------------------------------------------- */
 a, a:link, a:visited {
-/*    color: #666666;*/
     color: #333333;
     text-decoration: none;
 }
@@ -112,17 +111,17 @@ a:active, a:hover {
     text-decoration: none;
 }
 
-/* Headings
+
+/* Headers
 -------------------------------------------------------------- */
 h1, h2, h3, h4, h5 {
-/*    font-family: 'GudeaBold', Helvetica, Arial, sans-serif;*/
+    font-weight: normal;
 }
 
 /* Header
 -------------------------------------------------------------- */
 header {
     position: relative;
-/*    padding: 146px 0 30px;*/
     padding: 124px 0 30px;
 }
 
@@ -149,23 +148,13 @@ header h1 a {
     height: 62px;
 }
 
-header h2 {
-    font-size: 1.2em;
-    font-weight: normal;
-    color: #999;
-    padding-bottom: 10px;
-    float: right;
-}
-
 /* Menu
 -------------------------------------------------------------- */
 #main-menu {
-    background: #FFF;
     display: block;
     font-size: 1.8em;
     line-height: 1.2;
     float: right;
-/*    padding-top: 3px;*/
     padding-top: 25px;
 }
 
@@ -184,6 +173,7 @@ header h2 {
     line-height: 2em;
     padding: 0 0 0 2em;
     text-decoration: none;
+    background-color: #FFFFFF;
 }
 
 #main-menu ul ul {
@@ -195,7 +185,7 @@ header h2 {
        -moz-border-radius: 0 0 10px 10px;
             border-radius: 0 0 10px 10px;
     padding-bottom: .5em;
-    background: #FFF;
+    background-color: #FFFFFF;
     display: none;
     position: absolute;
     top: 2em;
@@ -208,18 +198,18 @@ header h2 {
     top: 0;
 }
 #main-menu ul ul a {
-/*    background: #FFF;*/
     line-height: 1.2em;
     padding: .5em .5em .5em 1em;
     width: 12em;
     height: auto;
+    background-color: #FFF;
 }
 #main-menu li:hover > a,
 #main-menu ul ul :hover > a {
-    background: #FFF;
+    background-color: #FFF;
 }
 #main-menu ul ul a:hover {
-    background: #FFF;
+    background-color: #FFF;
 }
 #main-menu ul li:hover > ul {
     display: block;
@@ -251,7 +241,6 @@ header h2 {
 
 /* General
 -------------------------------------------------------------- */
-
 #main {
 }
 
@@ -385,8 +374,10 @@ body.page-id-36 #content .entry-content.no-image h2 {
 }
 
 body.page-id-36 #content .entry-content p.sub {
+    font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
     font-size: 1.3em;
     margin-left: 30px;
+    text-align: right;
 }
 
 /* Page Template ---- CV (ID #29)
@@ -430,17 +421,6 @@ body.page.contact #content .entry-content address {
     font-style: normal;
 }
 
-/* Single Post General
--------------------------------------------------------------- */
-body.single #content ul {
-    font-size: 1.6em;
-    line-height: 1.3;
-}
-
-body.single #content ul li {
-    margin-bottom: 10px;
-}
-
 /* Archive Template (Uses Blog-List format)
 -------------------------------------------------------------- */
 body.archive #main #content {
@@ -456,6 +436,18 @@ body.archive.tag #main #content {
     width: 750px;
     margin: 0;
     float: left;
+}
+
+/* Pagination
+-------------------------------------------------------------- */
+#content .list-footer {
+    width: 100%;
+    font-size: 1.6em;
+    line-height: 1.2;
+}
+
+#content .list-footer .current {
+    color:#006699;
 }
 
 /* Category ---- Portfolio Thumbnail
@@ -485,7 +477,6 @@ body.category #content .thumb-container figcaption {
 }
 
 body.category #content .thumb-container figcaption p {
-    font-weight: bold;
     font-size: 2em;
     color: #FFF;
     text-align: center;
@@ -516,19 +507,7 @@ body.category #content .thumb-container figure a img {
     visibility: hidden;
 }
 
-/* Pagination
--------------------------------------------------------------- */
-#content .list-footer {
-    width: 100%;
-    font-size: 1.6em;
-    line-height: 1.2;
-}
-
-#content .list-footer .current {
-    color:#006699;
-}
-
-/* Single Post
+/* Single Post General
 -------------------------------------------------------------- */
 body.single #content {
     width: 750px;
@@ -540,26 +519,18 @@ body.single #content article .text-container p {
     line-height: 1.3;
     max-width: 750px;
     margin: 0 0 20px 0;
-/*    float: left;*/
+}
+
+body.single #content ul {
+    font-size: 1.6em;
+    line-height: 1.3;
+}
+
+body.single #content ul li {
+    margin-bottom: 10px;
 }
 
 /* Category ---- Portfolio Gallery and Video
--------------------------------------------------------------- */
-body.single-format-standard #content .text-container,
-body.portfolio-gallery #content .text-container {
-    width: 750px;
-    float: left;
-}
-
-body.single-format-standard #content .text-container p,
-body.portfolio-gallery #content .text-container p {
-    font-size: 1.6em;
-    line-height: 1.3;
-    max-width: 750px;
-    margin: 0 0 20px 0;
-}
-
-/* Category ---- Portfolio Gallery
 -------------------------------------------------------------- */
 body.portfolio-gallery #main {
     position: relative;
@@ -599,6 +570,11 @@ body.portfolio-gallery #content #media {
 
 body.portfolio-gallery.single-format-video #content #media {
     margin-top: 0;
+}
+
+body.portfolio-gallery.single-format-video #content #media iframe {
+    position: relative;
+    z-index: 1;
 }
 
 body.portfolio-gallery #content #media .border {
@@ -738,6 +714,17 @@ body.portfolio-gallery #content #media .image-container figcaption {
     display: block;
 }
 
+body.portfolio-gallery #content .text-container {
+    width: 750px;
+    float: left;
+}
+
+body.portfolio-gallery #content .text-container p {
+    font-size: 1.6em;
+    line-height: 1.3;
+    max-width: 750px;
+    margin: 0 0 20px 0;
+}
 
 /* Blog List Format
 News, Blog and Tag pages in these categories
@@ -782,12 +769,13 @@ News, Blog and Tag pages in these categories
 #content.blog-list article .entry .entry-title a {
     font-size: 2.2em;
     line-height: 1.2;
-    font-weight: bold;
 }
 
 #content.blog-list article.thumb .entry .entry-title {
     width: 450px;
+    max-height: 55px;
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 #content.blog-list article.text .entry .entry-title {
