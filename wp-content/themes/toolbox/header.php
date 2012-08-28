@@ -29,12 +29,9 @@
             if ( $site_description && ( is_home() || is_front_page() ) )
                 echo " | $site_description";
             
-            // Add a page number if necessary:
-            if ( $paged >= 2 || $page >= 2 )
-                echo ' | ' . sprintf( __( 'Page %s', 'toolbox' ), max( $paged, $page ) );
-            
             ?>
         </title>
+        <meta name="description" content="<?php echo $site_description; ?>" />
         
         <link rel="stylesheet" type="text/css" media="all" href="<?php echo get_template_directory_uri(); ?>/style.css" />
         <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
@@ -65,13 +62,13 @@
     
     <body <?php body_class();?>>
     
+    <?php include_once('analytics/ga.php')?>
+    
     <div id="page">
         <header id="branding" role="banner">
             <div id="logo">
                 <h1 id="site-title">
-                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-                        <?php bloginfo( 'name' ); ?>
-                    </a>
+                    <a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"></a>
                 </h1>
             </div>
             
