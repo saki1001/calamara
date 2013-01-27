@@ -3,14 +3,21 @@
  * @package Toolbox
  */
 ?>
-<!-- WITH AND WITHOUT THUMBNAIL TEMPLATES -->
 <?php
+    // WITH AND WITHOUT THUMBNAIL TEMPLATES
+    $featImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
     $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+        
     if ( $images ) :
-        $total_images = count( $images );
-        $image = array_shift( $images );
-        $image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
-        $image_img_tag_url = wp_get_attachment_image_src( $image->ID, 'thumbnail' );
+        if ($featImg) :
+            // $image_img_tag = $featImg;
+            $image_img_tag_url = $featImg;
+        else : 
+            $total_images = count( $images );
+            $image = array_shift( $images );
+            // $image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+            $image_img_tag_url = wp_get_attachment_image_src( $image->ID, 'thumbnail' );
+        endif;
         
         $thumbClass = "thumb";
         $maxExcerptLength = "150";
@@ -46,7 +53,7 @@
         
     </div>
     
-    <?php if ($image_img_tag != "" ) : ?>
+    <?php if ($thumbClass == "thumb" ) : ?>
         
         <figure style="background: url('<?php echo $image_img_tag_url[0]; ?>') no-repeat center center;">
             <!-- background image -->
