@@ -537,9 +537,7 @@ body.portfolio-gallery #main {
 }
 
 body.portfolio-gallery #main h2.page-title {
-    max-width: 350px;
-    height: 26px;
-    overflow: hidden;
+    max-width: 575px;
     float: left;
 }
 
