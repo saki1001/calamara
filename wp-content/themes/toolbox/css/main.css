@@ -585,12 +585,12 @@ body.portfolio-gallery #content #media .border {
 
 body.portfolio-gallery #content #media .border.left {
     left: -5px;
-    background: url('../images/border-radius-portfolio-left.png') no-repeat 0 0;
+/*    background: url('../images/border-radius-portfolio-left.png') no-repeat 0 0;*/
 }
 
 body.portfolio-gallery #content #media .border.right {
     right: -5px;
-    background: url('../images/border-radius-portfolio-right.png') no-repeat right 0;
+/*    background: url('../images/border-radius-portfolio-right.png') no-repeat right 0;*/
 }
 
 body.portfolio-gallery #content #media .border .nav {
@@ -631,7 +631,7 @@ body.portfolio-gallery #content #media .nav:hover {
 body.portfolio-gallery #content #media .pager-container {
     position: absolute;
     left: 0;
-    bottom: 70px;
+    bottom: 18px;
     text-align: center;
     z-index: 10;
     width: 750px;
@@ -670,7 +670,7 @@ body.portfolio-gallery #content #media #pager .page:hover {
 
 body.portfolio-gallery #content #media .scroll-container {
     width: 750px;
-    height: 550px;
+    height: 600px;
     position: relative;
     overflow: hidden;
 }
@@ -684,7 +684,7 @@ body.portfolio-gallery #content #media #scroll {
 }
 
 body.portfolio-gallery #content #media .image-container {
-    height: 550px;
+    height: 600px;
     width: 750px;
     float: left;
     position: relative;
@@ -707,7 +707,7 @@ body.portfolio-gallery #content #media .image-container figure img {
 body.portfolio-gallery #content #media .image-container figcaption {
     font-size: 1.5em;
     height: 50px;
-    padding: 20px 10px 0 0;
+    padding: 45px 10px 0 0;
     text-align: center;
     display: block;
 }
