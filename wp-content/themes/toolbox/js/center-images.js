@@ -10,9 +10,11 @@ $j(document).ready(function() {
         var height = $j(this).children('img').height();
         var marginTop = (500 - height)/2 + 'px';
         
+        // add marginTop and negative marginTop to bottom
+        // to prevent container from becoming too large
         $j(this).css({
             'width': width,
-            'margin': marginTop + ' auto'
+            'margin': marginTop + ' auto -' + marginTop
         });
     });
 
