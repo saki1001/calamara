@@ -1,0 +1,102 @@
+#oh-plugin-content h4 {
+    color: #e95e0f;
+    font-size: 115%;
+}
+
+form.pod {
+    width: 100%;
+}
+
+dl.pod-list dt {
+    font-weight: bold;
+    clear: right;
+    float: left;
+    font-size: 85%;
+}
+
+dl.pod-list dd {
+    float: right;
+}
+
+form.pod label {
+    display: block;
+    font-size: 81.25%;
+    padding-top: 1.25em;
+    padding-bottom: 0.2em;
+}
+
+form.pod label.leftLabel {
+    position: relative;
+    display:block!important;
+    width: 100%;
+    text-align:left;
+    padding: 5px 0 5px 0;
+    line-height: 15px;
+}
+
+form.pod label.leftLabel input,
+form.pod label.leftLabel select {
+    position: relative;
+    float: right;
+    margin-top: -5px;
+}
+
+form.pod label.inLabel {
+    display: inline;
+    margin-right: 3px;
+}
+
+input[type="text"], input[type="password"], input[type="file"], select {
+    width: 220px;
+}
+
+.left {
+    float: left;
+}
+
+.half {
+    width: 49%;
+}
+
+input.ultra-short {
+    width: 30px;
+}
+
+input.short, select.short {
+    width: 60px;
+}
+
+input.medium, select.medium {
+    width: 100px;
+}
+
+input.long, select.long, textarea.long {
+    width: 565px;
+}
+
+textarea.full {
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+ul.pod-users {
+
+}
+
+ul.pod-users li {
+    float: left;
+    padding-bottom: 20px;
+    width: 150px;
+}
+
+ul.pod-users li a {
+    font-size: 130%;
+}
+
+.pod-plugin-footer-logo {
+    background: url("/wp-content/plugins/podcastde-wordpress-plugin/images/podcastde_icon.png") no-repeat;
+    padding-left: 18px;
+}

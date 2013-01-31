@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: podcast.de Plugin Standards 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-02 12:52+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fabio Bacigalupo <info1@open-haus.de>\n"
+"Language-Team: Fabio Bacigalupo <wordpress-plugin@podcast.de>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: wp-content/plugins/PodcastDePluginStandards.php
+#, fuzzy
+msgid "This plugin is developed by podcast.de."
+msgstr "This is the official <a href=\"http://www.podzen.com\" class=\"pod-plugin-footer-logo\">podzen.com</a> plugin for WordPress."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "podcastde-wordpress-plugin"
+msgstr "This is the official <a href=\"http://www.podcast.de\">podcast.de</a> plugin for WordPress."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "Users"
+msgstr "Users"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "No users"
+msgstr "Add at least one user to activate the plugin´s widget."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "Recommend us"
+msgstr "Recommend our service to your friends"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "User added successfully"
+msgstr "User added successfully"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "User deleted successfully"
+msgstr "User deleted successfully"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "Add user"
+msgstr "Add an user"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "Installed version of WordPress is too old"
+msgstr "Our plugin does not supported your WordPress installation because it is too old. Please think about upgrading it."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "Installed version of PHP is too old"
+msgstr "Our plugin does not supported your PHP installation because it is too old. Please think about upgrading it."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Mandatory parameter is missing"
+msgstr "A mandatory parameter is missing."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Could not add user"
+msgstr "The user could not be added. Are your sure you entered the username of a registered user at podcast.de?"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Delete user"
+msgstr "Delete user"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Add an user to enable widgets"
+msgstr "Add at least one user to activate the plugin´s widget."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Add a widget of type %s"
+msgstr "Add a <a href=\"%s\" title=\"To widgets\">widget of type %s</a> or another user."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Subscriptions"
+msgstr "Podcast subscriptions"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "My subscriptions"
+msgstr "My subscriptions"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Subscriptions widget"
+msgstr "Podcast subscriptions"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "User"
+msgstr "User"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Max items"
+msgstr "Number of items"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Include rss"
+msgstr "Show direct links to podcasts as icon?"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Include link"
+msgstr "Include a footer link?"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "%s´s subscriptions"
+msgstr "Subscriptions by %s"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Link title"
+msgstr "Display of footer link"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Link url"
+msgstr "Footer link"
+

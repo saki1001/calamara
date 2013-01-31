@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: podcast.de Plugin Standards 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-02 12:52+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Fabio Bacigalupo <info1@open-haus.de>\n"
+"Language-Team: Fabio Bacigalupo <wordpress-plugin@podcast.de>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: wp-content/plugins/PodcastDePluginStandards.php
+msgid "This plugin is developed by podcast.de."
+msgstr "Dies ist das offizielle <a href=\"http://blog.podcast.de/wordpress-plugin\" title=\"Mehr über das Plugin\">WordPress-Plugin</a> von <a href=\"http://www.podcast.de\" title=\"Zum Podcast-Verzeichnis\">podcast.de</a>."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "podcastde-wordpress-plugin"
+msgstr "podcast.de WordPress Plugin"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "Users"
+msgstr "Benutzer"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "No users"
+msgstr "Du hast bisher keinen podcast.de Benutzer angelegt."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "Recommend us"
+msgstr "Erzähle deinen Freunden von podcast.de"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "User added successfully"
+msgstr "Benutzer erfolgreich hinzugefügt"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/PodcastDeWordPressPlugin.php
+msgid "User deleted successfully"
+msgstr "Benutzer erfolgreich gelöscht"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "Add user"
+msgstr "Füge Benutzer hinzu"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "Installed version of WordPress is too old"
+msgstr "Deine WordPress-Version wird leider nicht mehr von unserem Plugin unterstützt. Bitte denke über eine Upgrade nach!"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/podcastde.php
+msgid "Installed version of PHP is too old"
+msgstr "Deine PHP-Version wird leider nicht mehr von unserem Plugin unterstützt. Bitte denke über eine Upgrade nach!"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Mandatory parameter is missing"
+msgstr "Ein erforderlicher Wert fehlt."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Could not add user"
+msgstr "Der Benutzer konnte nicht angelegt werden. Gibt es den Benutzer auf podcast.de?"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Delete user"
+msgstr "Lösche Benutzer"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Add an user to enable widgets"
+msgstr "Füge mind. einen podcast.de Benutzer zur Liste hinzu, um die Widgets zu aktivieren."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/lib/User.php
+msgid "Add a widget of type %s"
+msgstr "Füge ein <a href=\"%s\" title=\"Zur Widget-Seite\">Widget vom Typ %s</a> oder einen weiteren Benutzer hinzu."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Subscriptions"
+msgstr "Podcast-Abos"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "My subscriptions"
+msgstr "Lieblings-Podcasts"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Subscriptions widget"
+msgstr "Füge eine Liste von Podcasts eines podcast.de Benutzers als Widget zu deiner Seite. Über den Menüpunkt \"podcast.de\" kannst du weitere Benutzer hinzufügen."
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "User"
+msgstr "Benutzer"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Max items"
+msgstr "Anzahl"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Include rss"
+msgstr "Soll der direkte Link zum Podcast als Icon angezeigt werden?"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Include link"
+msgstr "Soll ein weiterführender Link unter der Liste angezeigt werden?"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "%s´s subscriptions"
+msgstr "Alle Podcast-Abos von %s"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Link title"
+msgstr "Titel des Links (Leer = Standard)"
+
+#: wp-content/plugins/podcastde-wordpress-plugin/widget.php
+msgid "Link url"
+msgstr "Internetadresse (Leer = Standard)"
+
