@@ -7,17 +7,18 @@
     // WITH AND WITHOUT THUMBNAIL TEMPLATES
     $featImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
     $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+       
+    if ( has_post_thumbnail($post->ID) ) :
+        // $image_img_tag = $featImg;
+        $image_img_tag_url = $featImg;
         
-    if ( $images ) :
-        if ($featImg) :
-            // $image_img_tag = $featImg;
-            $image_img_tag_url = $featImg;
-        else : 
-            $total_images = count( $images );
-            $image = array_shift( $images );
-            // $image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
-            $image_img_tag_url = wp_get_attachment_image_src( $image->ID, 'thumbnail' );
-        endif;
+        $thumbClass = "thumb";
+        $maxExcerptLength = "150";
+    elseif ( $images ) :
+        $total_images = count( $images );
+        $image = array_shift( $images );
+        // $image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+        $image_img_tag_url = wp_get_attachment_image_src( $image->ID, 'thumbnail' );
         
         $thumbClass = "thumb";
         $maxExcerptLength = "150";
