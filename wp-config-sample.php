@@ -16,13 +16,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'calamara-06-2012');
+define('DB_NAME', 'database_name_here');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'username_here');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'password_here');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -42,14 +42,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '4*J7YUbL{AO2AM~P-J90{d]Mb-~krK#PL-Hp%1!]s_Itv~IXTh3_/(5h5xyf_kH ');
-define('SECURE_AUTH_KEY',  'X9r7l 2Bw#E3;tUmPsr=Z$ZC?&LP$AHz2U!.H$8Ov|M!EJPL >22rRY<><LE90@B');
-define('LOGGED_IN_KEY',    'eW9Q}e&nC9aUKc7qW9O<>?J01G1Z(+eU+&-#9qeasne/nIIl]s?WBEfBzCBF&@Yt');
-define('NONCE_KEY',        '-vG=ZF;@PE3Qgtgt}H^$| U*oF9}s-pi[$L:%^rtC.)Lz::8-$*`WP+lRe6% +p/');
-define('AUTH_SALT',        'Cd4eVI]=)z~$bL$VT-poFsr(5<L|*MzyGQ<Qr%%xS|V4*19;-a.^hZ|r[~Zp3=*B');
-define('SECURE_AUTH_SALT', 'xhX=-|(-+FUpCJ<6*5]WBtzpD7Roc~3y5JuZhGsrm]l)BR$Lt#4eDa)m;-jr- -L');
-define('LOGGED_IN_SALT',   '*BhcV_r~C%;M=5BDQn9&(se+v9eP|9R)bPWyKc~-cq%<^2x-V%v|}V^%=$;o4t.#');
-define('NONCE_SALT',       '$(Wa1(-ab5H+Gs z(y]LVny9@e#O~&es9S]CE(ji[G6P5w{v;uE_]`ynQrC1Zz.,');
+define('AUTH_KEY',         'put your unique phrase here');
+define('SECURE_AUTH_KEY',  'put your unique phrase here');
+define('LOGGED_IN_KEY',    'put your unique phrase here');
+define('NONCE_KEY',        'put your unique phrase here');
+define('AUTH_SALT',        'put your unique phrase here');
+define('SECURE_AUTH_SALT', 'put your unique phrase here');
+define('LOGGED_IN_SALT',   'put your unique phrase here');
+define('NONCE_SALT',       'put your unique phrase here');
 
 /**#@-*/
 
@@ -78,7 +78,7 @@ define('WPLANG', '');
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
