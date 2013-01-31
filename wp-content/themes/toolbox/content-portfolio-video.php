@@ -28,7 +28,7 @@
             $html = new simple_html_dom();
             
             // Load HTML from a string
-            $html->load(get_the_content());
+            $html->load(apply_filters('the_content', get_the_content()));
             
             // Find all iframes
             $iframe = $html->find('iframe');
