@@ -39,7 +39,7 @@ class SlideshowPlugin {
 			if(is_array($post))
 				$post = $post[0];
 		}else
-			$post = wp_get_single_post($postId);
+			$post = get_post($postId);
 
 		// Exit function on error
 		if(empty($post))
