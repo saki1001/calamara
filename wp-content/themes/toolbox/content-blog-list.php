@@ -5,7 +5,7 @@
 ?>
 <?php
     // WITH AND WITHOUT THUMBNAIL TEMPLATES
-    $featImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+    $featImg = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' );
     $images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC' ) );
        
     if ( has_post_thumbnail($post->ID) ) :
