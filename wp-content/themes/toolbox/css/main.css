@@ -171,7 +171,7 @@ header h1 a {
 #main-menu a {
     display: block;
     line-height: 2em;
-    padding: 0 0 0 2em;
+    padding: 0 0 0 1.75em;
     text-decoration: none;
     background-color: #FFFFFF;
 }
@@ -189,7 +189,7 @@ header h1 a {
     display: none;
     position: absolute;
     top: 2em;
-    left: 2em;
+    left: 1.75em;
     z-index: 99999;
 }
 
@@ -360,11 +360,19 @@ body.page #content figure {
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 body.page #content figure img {
     visibility: hidden;
+}
+
+body.page #content figcaption {
+    width: 350px;
+    margin-bottom: 25px;
+    font-size: 1.3em;
+    font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
+    float: left;
 }
 
 /* Page Template ---- Geotherapy Declaration (ID #36)
@@ -656,7 +664,7 @@ body.portfolio-gallery #content #media #pager .page {
        -moz-border-radius: 10px;
             border-radius: 10px;
     background-color: #999999;
-    margin: 0 10px;
+    margin: 0 7px;
     display: block;
     float: left;
     text-align: center;
