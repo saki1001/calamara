@@ -45,10 +45,19 @@
                 
                 $image = wp_get_attachment_image( $attachment->ID, 'page' );
                 $imageUrl = wp_get_attachment_image_src( $attachment->ID, 'page' );
-                
-                echo '<figure style="background: url(' . $imageUrl[0] . ') no-repeat center center;">';
-                echo $image;
-                echo '</figure>';
+    ?>
+            <figure style="background: url(<?php echo $imageUrl[0]?>) no-repeat center center;">
+                <?php
+                    echo $image;
+                ?>
+            </figure>
+            <figcaption>
+                <?php
+                    // Insert image description
+                    echo $attachment->post_content;
+                ?>
+            </figcaption>
+    <?php
               }
         else :
             // do nothing
