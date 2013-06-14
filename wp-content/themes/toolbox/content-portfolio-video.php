@@ -9,15 +9,21 @@
  */
 ?>
 <section id="content" class="portfolio-single show-images" role="main">
-    <h2 class="page-title">
-        <?php
-            the_title();
-        ?>
-    </h2>
     
-    <div class="toggle-link">
-        <a href="#" class="text-link">View Text</a>
-        <a href="#" class="image-link">View Video</a>
+    <div class="page-header">
+        <h2 class="page-title">
+            <?php
+                the_title();
+            ?>
+        </h2>
+        
+        <div class="toggle-link">
+            <a href="#" class="text-link">View Text</a>
+            <a href="#" class="image-link">View Images</a>
+        </div>
+        
+        <?php include('content-social-icons.php'); ?>
+        
     </div>
     
     <div id="media">
