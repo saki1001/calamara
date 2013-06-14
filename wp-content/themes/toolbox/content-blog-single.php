@@ -9,12 +9,18 @@
  */
 ?>
 <section id="content" class="blog-single" role="main">
-    <h2 class="page-title">
-        <?php
-            the_title();
-        ?>
-    </h2>
-
+    
+    <div class="page-header">
+        <h2 class="page-title">
+            <?php
+                the_title();
+            ?>
+        </h2>
+        
+        <?php include('content-social-icons.php'); ?>
+        
+    </div>
+    
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     
         <div id="text" class="text-container">
