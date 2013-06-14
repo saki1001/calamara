@@ -19,4 +19,5 @@ get_header(); ?>
                 get_template_part( 'content', 'home' );
             ?>
         </section>
+
 <?php get_footer(); ?>
