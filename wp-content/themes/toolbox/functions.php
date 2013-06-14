@@ -382,6 +382,9 @@ add_theme_support( 'post-thumbnails' );
 // Adding Custom Image Size for Page Template
 add_image_size( 'page', 350, 0 );
 
+// Custom Thumbnail Retreival
+include('php/get-thumbnail-custom.php');
+
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.
  */
