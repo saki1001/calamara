@@ -1,0 +1,56 @@
+#slideshow_border {
+    position: absolute;
+    background: url('../images/border-radius-fake-950x633.png') no-repeat 0 0;
+    z-index: 1000;
+    width: 950px;
+    height: 633px;
+}
+
+#slideshow_wrap,
+.slideshow_container {
+    height: 700px !important;
+    overflow: visible !important;
+}
+
+.slideshow_content,
+.slideshow_view,
+.slideshow_slide {
+    height: 700px !important;
+}
+
+.slideshow_slide img {
+    height: 633px !important;
+}
+
+.slideshow_pagination {
+    display: none !important;
+    opacity: 0 !important;
+    bottom: 0 !important;
+}
+
+.slideshow_container_style-light .slideshow_button {
+    z-index: 2000 !important;
+}
+
+.slideshow_container .slideshow_description,
+.slideshow_container_style-light .slideshow_description {
+    top: 633px !important;
+    background: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+.slideshow_container .slideshow_description a  {
+    color: #020202 !important;
+}
+
+#main .slideshow_container h2,
+.slideshow_container .slideshow_slide_text h2 {
+    font-size: 2em !important;
+    padding-bottom: 10px;
+    width: auto;
+}
+
+.slideshow_container .slideshow_description p {
+    font-size: 1.4em !important;
+    padding: 0 10px 0 10px !important;
+}
