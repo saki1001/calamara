@@ -5,6 +5,9 @@
 ?>
 
 <?php
-    // Slideshow set in Home page
     the_content();
 ?>
+    <div id="slideshow_wrap">
+        <div id="slideshow_border"></div>
+        <?php do_action('slideshow_deploy', '17'); ?>
+    </div>
