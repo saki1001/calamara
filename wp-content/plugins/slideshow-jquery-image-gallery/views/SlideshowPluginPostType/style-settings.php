@@ -1,32 +1,29 @@
-<table border="0">
-	<tr>
-		<td><?php _e('Style', 'slideshow-plugin'); ?></td>
-		<td>
-			<select class="style-list" name="style">
-				<?php foreach($styles as $key => $name): ?>
-					<option value="<?php echo $key; ?>" <?php selected($settings['style'], $key); ?>><?php echo $name; ?></option>
-				<?php endforeach; ?>
-				<option value="custom-style" <?php selected($settings['style'], 'custom-style'); ?>><?php _e('Custom Style', 'slideshow-plugin') ?></option>
-			</select>
-		</td>
-		<td><i><?php _e('The style used for this slideshow', 'slideshow-plugin'); ?></i></td>
+<table>
+	<?php if(count($settings) > 0): $i = 0; ?>
+
+	<?php foreach($settings as $key => $value): ?>
+
+	<?php if( !isset($value, $value['type'], $value['default'], $value['description']) || !is_array($value)) continue; ?>
+
+	<tr <?php if(isset($value['dependsOn'])) echo 'style="display:none;"'; ?>>
+		<td><?php echo $value['description']; ?></td>
+		<td><?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(htmlspecialchars(SlideshowPluginSlideshowSettingsHandler::$styleSettingsKey), $key, $value); ?></td>
+		<td><?php _e('Default', 'slideshow-plugin'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
 	</tr>
+
+	<?php endforeach; ?>
+
+	<?php endif; ?>
 </table>
 
-<table border="0" class="custom-style">
-	<tr>
-		<td><strong><?php _e('Custom Style Editor', 'slideshow-plugin'); ?></strong></td>
-		<td></td>
-	</tr>
-	<tr>
-		<td><?php _e('Custom style', 'slideshow-plugin'); ?></td>
-		<td><textarea rows="20" cols="60" class="custom-style-textarea" name="custom-style"><?php echo $settings['custom-style']; ?></textarea></td>
-		<input type="hidden" class="custom-style-default-css-url" value="<?php  ?>" />
-	</tr>
-</table>
-
-<style type="text/css">
-	.custom-style{
-		display: none;
-	}
-</style>
+<p>
+	<?php
+		echo sprintf(__(
+				'Custom styles can be created and customized %shere%s.',
+				'slideshow-plugin'
+			),
+			'<a href="' . admin_url() . '/edit.php?post_type=slideshow&page=general_settings#custom-styles" target="_blank">',
+			'</a>'
+		);
+	?>
+</p>

@@ -1,13 +1,13 @@
 <?php
 /*
  Plugin Name: Slideshow
- Plugin URI: http://stefanboonstra.com
- Description: This plugin offers a slideshow that is easily deployable in your website. Images can be assigned through the media page. Options are customizable for every single slideshow on your website. **DO NOT UPDATE** This is a customized version based on 1.3.5. Any updates will break the slideshow on the homepage.
- Version: 9999
- Requires at least: 3.0
+ Plugin URI: http://wordpress.org/extend/plugins/slideshow-jquery-image-gallery/
+ Description: The slideshow plugin is easily deployable on your website. Add any image that has already been uploaded to add to your slideshow, add text slides, or even add a video. Options and styles are customizable for every single slideshow on your website.
+ Version: 2.2.11
+ Requires at least: 3.3
  Author: StefanBoonstra
- Author URI: http://stefanboonstra.com
- License: GPL
+ Author URI: http://stefanboonstra.com/
+ License: GPLv2
 */
 
 /**
@@ -15,43 +15,54 @@
  * methods for the other classes to use like the auto-includer and the
  * base path/url returning method.
  *
+ * @since 1.0.0
  * @author Stefan Boonstra
- * @version 03-07-12
+ * @version 03-03-2013
  */
 class SlideshowPluginMain {
 
 	/** Variables */
-	static $version = '1.3.5';
+	static $version = '2.2.11';
 
 	/**
 	 * Bootstraps the application by assigning the right functions to
 	 * the right action hooks.
+	 *
+	 * @since 1.0.0
 	 */
 	static function bootStrap(){
+
 		self::autoInclude();
 
 		// Initialize localization on init
 		add_action('init', array(__CLASS__, 'localize'));
 
-		// Deploy slide show on do_action('slideshow_deploy'); hook.
+		// For ajax requests
+		SlideshowPluginAjax::init();
+
+		// Register slideshow post type
+		SlideshowPluginPostType::init();
+
+		// Add general settings page
+		SlideshowPluginGeneralSettings::init();
+
+		// Deploy slideshow on do_action('slideshow_deploy'); hook.
 		add_action('slideshow_deploy', array('SlideshowPlugin', 'deploy'));
 
-		// Add shortcode
-		add_shortcode(SlideshowPluginShortcode::$shortCode, array('SlideshowPluginShortcode', 'slideshowDeploy'));
+		// Initialize shortcode
+		SlideshowPluginShortcode::init();
 
 		// Register widget
 		add_action('widgets_init', array('SlideshowPluginWidget', 'registerWidget'));
 
-		// Register slideshow post type
-		SlideshowPluginPostType::initialize();
-
-		// Plugin feedback
-		add_action('admin_head', array('SlideshowPluginFeedback', 'adminInitialize'));
-		register_deactivation_hook(__FILE__, array('SlideshowPluginFeedback', 'deactivation'));
+		// Initialize plugin updater
+		SlideshowPluginInstaller::init();
 	}
 
 	/**
 	 * Translates the plugin
+	 *
+	 * @since 1.0.0
 	 */
 	static function localize(){
 		load_plugin_textdomain(
@@ -64,6 +75,7 @@ class SlideshowPluginMain {
 	/**
 	 * Returns url to the base directory of this plugin.
 	 *
+	 * @since 1.0.0
 	 * @return string pluginUrl
 	 */
 	static function getPluginUrl(){
@@ -73,6 +85,7 @@ class SlideshowPluginMain {
 	/**
 	 * Returns path to the base directory of this plugin
 	 *
+	 * @since 1.0.0
 	 * @return string pluginPath
 	 */
 	static function getPluginPath(){
@@ -81,12 +94,14 @@ class SlideshowPluginMain {
 
 	/**
 	 * This function will load classes automatically on-call.
+	 *
+	 * @since 1.0.0
 	 */
 	function autoInclude(){
 		if(!function_exists('spl_autoload_register'))
 			return;
 
-		function slideshowFileAutoloader($name) {
+		function slideshowPluginAutoLoader($name) {
 			$name = str_replace('\\', DIRECTORY_SEPARATOR, $name);
 			$file = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'classes' . DIRECTORY_SEPARATOR . $name . '.php';
 
@@ -94,7 +109,7 @@ class SlideshowPluginMain {
 				require_once $file;
 		}
 
-		spl_autoload_register('slideshowFileAutoloader');
+		spl_autoload_register('slideshowPluginAutoLoader');
 	}
 }
 

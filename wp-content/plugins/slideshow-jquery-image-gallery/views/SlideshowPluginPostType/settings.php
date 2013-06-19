@@ -1,59 +1,31 @@
-<table border="0">
+<table>
+	<?php $groups = array(); ?>
+	<?php if(count($settings) > 0): ?>
+	<?php foreach($settings as $key => $value): ?>
+
+	<?php if( !isset($value, $value['type'], $value['default'], $value['description']) || !is_array($value)) continue; ?>
+
+	<?php if(!empty($value['group']) && !isset($groups[$value['group']])): $groups[$value['group']] = true; ?>
 	<tr>
-		<td><?php _e('Number of seconds the slide takes to slide in', 'slideshow-plugin'); ?></td>
-		<td><input type="text" name="slideSpeed" value="<?php echo $settings['slideSpeed']; ?>" size="5" /></td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php echo $defaultSettings['slideSpeed'] ?></i></td>
-	</tr>
-	<tr>
-		<td><?php _e('Number of seconds the description takes to slide in', 'slideshow-plugin'); ?></td>
-		<td><input type="text" name="descriptionSpeed" value="<?php echo $settings['descriptionSpeed']; ?>" size="5" /></td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php echo $defaultSettings['descriptionSpeed'] ?></i></td>
-	</tr>
-	<tr>
-		<td><?php _e('Seconds between changing slides', 'slideshow-plugin'); ?></td>
-		<td><input type="text" name="intervalSpeed" value="<?php echo $settings['intervalSpeed']; ?>" size="5" /></td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php echo $defaultSettings['intervalSpeed'] ?></i></td>
-	</tr>
-	<tr>
-		<td><?php _e('Width of the slideshow', 'slideshow-plugin'); ?></td>
-		<td><input type="text" name="width" value="<?php echo $settings['width']; ?>" size="5" /></td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php echo $defaultSettings['width'] ?> - <?php _e('Defaults to parent\'s width.', 'slideshow-plugin'); ?></i></td>
-	</tr>
-	<tr>
-		<td><?php _e('Height of the slideshow', 'slideshow-plugin'); ?></td>
-		<td><input type="text" name="height" value="<?php echo $settings['height']; ?>" size="5" /></td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php echo $defaultSettings['height'] ?></i></td>
-	</tr>
-	<tr>
-		<td><?php _e('Fit image into slideshow (stretching it)', 'slideshow-plugin'); ?></td>
-		<td>
-			<label><input type="radio" name="stretch" value="true" <?php checked($settings['stretch'], 'true'); ?> /> <?php _e('Yes', 'slideshow-plugin'); ?></label><br />
-			<label><input type="radio" name="stretch" value="false" <?php checked($settings['stretch'], 'false'); ?> /> <?php _e('No', 'slideshow-plugin'); ?></label>
+		<td colspan="3" style="border-bottom: 1px solid #dfdfdf; text-align: center;">
+			<span style="display: inline-block; position: relative; top: 9px; padding: 0 12px; background: #f8f8f8;">
+				<?php echo $value['group']; ?> <?php _e('settings', 'slideshow-plugin'); ?>
+			</span>
 		</td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php if($defaultSettings['stretch'] == 'true') _e('Yes', 'slideshow-plugin'); else _e('No', 'slideshow-plugin'); ?></i></td>
 	</tr>
 	<tr>
-		<td><?php _e('Activate buttons (so the user can scroll through the slides)', 'slideshow-plugin'); ?></td>
-		<td>
-			<label><input type="radio" name="controllable" value="true" <?php checked($settings['controllable'], 'true'); ?> /> <?php _e('Yes', 'slideshow-plugin'); ?></label><br />
-			<label><input type="radio" name="controllable" value="false" <?php checked($settings['controllable'], 'false'); ?> /> <?php _e('No', 'slideshow-plugin'); ?></label>
-		</td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php if($defaultSettings['controllable'] == 'true') _e('Yes', 'slideshow-plugin'); else _e('No', 'slideshow-plugin'); ?></i></td>
+		<td colspan="3"></td>
 	</tr>
-	<tr>
-		<td><?php _e('Send user to image URL on click', 'slideshow-plugin'); ?></td>
-		<td>
-			<label><input type="radio" name="urlsActive" value="true" <?php checked($settings['urlsActive'], 'true'); ?> /> <?php _e('Yes', 'slideshow-plugin'); ?></label><br />
-			<label><input type="radio" name="urlsActive" value="false" <?php checked($settings['urlsActive'], 'false'); ?> /> <?php _e('No', 'slideshow-plugin'); ?></label>
-		</td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php if($defaultSettings['urlsActive'] == 'true') _e('Yes', 'slideshow-plugin'); else _e('No', 'slideshow-plugin'); ?></i></td>
+	<?php endif; ?>
+	<tr
+		<?php echo !empty($value['group'])? 'class="group-' . strtolower(str_replace(' ', '-', $value['group'])) . '"': ''; ?>
+		<?php echo !empty($value['dependsOn'])? 'style="display:none;"': ''; ?>
+	>
+		<td><?php echo $value['description']; ?></td>
+		<td><?php echo SlideshowPluginSlideshowSettingsHandler::getInputField(SlideshowPluginSlideshowSettingsHandler::$settingsKey, htmlspecialchars($key), $value); ?></td>
+		<td><?php _e('Default', 'slideshow-plugin'); ?>: &#39;<?php echo (isset($value['options']))? $value['options'][$value['default']]: $value['default']; ?>&#39;</td>
 	</tr>
-	<tr>
-		<td><?php _e('Show title and description', 'slideshow-plugin'); ?></td>
-		<td>
-			<label><input type="radio" name="showText" value="true" <?php checked($settings['showText'], 'true'); ?> /> <?php _e('Yes', 'slideshow-plugin'); ?></label><br />
-			<label><input type="radio" name="showText" value="false" <?php checked($settings['showText'], 'false'); ?> /> <?php _e('No', 'slideshow-plugin'); ?></label>
-		</td>
-		<td><i><?php _e('Default', 'slideshow-plugin'); ?>: <?php if($defaultSettings['showText'] == 'true') _e('Yes', 'slideshow-plugin'); else _e('No', 'slideshow-plugin'); ?></i></td>
-	</tr>
+
+	<?php endforeach; ?>
+	<?php endif; ?>
 </table>

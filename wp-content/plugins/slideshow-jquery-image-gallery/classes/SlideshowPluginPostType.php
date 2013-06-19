@@ -3,43 +3,32 @@
  * SlideshowPluginPostType creates a post type specifically designed for
  * slideshows and their individual settings
  *
+ * @since 1.0.0
  * @author: Stefan Boonstra
- * @version: 03-07-12
+ * @version: 01-02-2013
  */
 class SlideshowPluginPostType {
 
 	/** Variables */
-	private static $adminIcon = 'images/adminIcon.png';
 	static $postType = 'slideshow';
-	static $settings = null;
-	static $settingsMetaKey = 'settings';
-	static $defaultSettings = array(
-		'slideSpeed' => 1,
-		'descriptionSpeed' => 0.3,
-		'intervalSpeed' => 5,
-		'width' => 0,
-		'height' => 200,
-		'stretch' => 'false',
-		'controllable' => 'true',
-		'urlsActive' => 'false',
-		'showText' => 'true'
-	);
-	static $defaultStyleSettings = array(
-		'style' => 'style-dark.css',
-		'custom-style' => ''
-	);
 
 	/**
 	 * Initialize Slideshow post type.
 	 * Called on load of plugin
+	 *
+	 * @since 1.3.0
 	 */
-	static function initialize(){
+	static function init(){
 		add_action('init', array(__CLASS__, 'registerSlideshowPostType'));
-		add_action('save_post', array(__CLASS__, 'save'));
+		add_action('admin_print_styles', array(__CLASS__, 'enqueueAdminStyles'));
+		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueAdminScripts'));
+		add_action('save_post', array('SlideshowPluginSlideshowSettingsHandler', 'save'));
 	}
 
 	/**
 	 * Registers new posttype slideshow
+	 *
+	 * @since 1.0.0
 	 */
 	static function registerSlideshowPostType(){
 		register_post_type(
@@ -47,7 +36,7 @@ class SlideshowPluginPostType {
 			array(
 				'labels' => array(
 					'name' => __('Slideshows', 'slideshow-plugin'),
-					'singlular_name' => __('Slideshow', 'slideshow-plugin'),
+					'singular_name' => __('Slideshow', 'slideshow-plugin'),
 					'add_new_item' => __('Add New Slideshow', 'slideshow-plugin'),
 					'edit_item' => __('Edit slideshow', 'slideshow-plugin'),
 					'new_item' => __('New slideshow', 'slideshow-plugin'),
@@ -63,10 +52,27 @@ class SlideshowPluginPostType {
 				'query_var' => true,
 				'rewrite' => true,
 				'capability_type' => 'post',
+				'capabilities' => array(
+					'edit_post' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'read_post' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'delete_post' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'edit_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'edit_others_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'publish_posts' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'read_private_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+
+					'read' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'delete_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'delete_private_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'delete_published_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'delete_others_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'edit_private_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'edit_published_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+				),
 				'has_archive' => true,
 				'hierarchical' => false,
 				'menu_position' => null,
-				'menu_icon' => SlideshowPluginMain::getPluginUrl() . '/' . self::$adminIcon,
+				'menu_icon' => SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/adminIcon.png',
 				'supports' => array('title'),
 				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
 			)
@@ -74,7 +80,74 @@ class SlideshowPluginPostType {
 	}
 
 	/**
+	 * Enqueues the admin stylesheets when one a slideshow edit page.
+	 *
+	 * @since 2.2.2
+	 */
+	static function enqueueAdminStyles(){
+
+		// Return when function doesn't exist
+		if(!function_exists('get_current_screen'))
+			return;
+
+		// Return when not on a slideshow edit page.
+		$currentScreen = get_current_screen();
+		if($currentScreen->post_type != self::$postType)
+			return;
+
+		wp_enqueue_style(
+			'slideshow-plugin-post-type-stylesheet',
+			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/style.css',
+			array(),
+			SlideshowPluginMain::$version
+		);
+	}
+
+	/**
+	 * Enqueues scripts for when the admin page is a slideshow edit page.
+	 *
+	 * @since 2.1.11
+	 */
+	static function enqueueAdminScripts(){
+
+		// Return if function doesn't exist
+		if(!function_exists('get_current_screen'))
+			return;
+
+        // Return when not on a slideshow edit page.
+		$currentScreen = get_current_screen();
+		if($currentScreen->post_type != self::$postType)
+			return;
+
+		// Enqueue associating script
+		wp_enqueue_script(
+			'post-type-handler',
+			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/post-type-handler.js',
+			array('jquery'),
+			SlideshowPluginMain::$version
+		);
+
+		// TODO: These scripts have been moved here from the footer. They need to be always printed in the header
+		// TODO: a solution for this needs to be found.
+		// Enqueue scripts required for sorting the slides list
+		wp_enqueue_script('jquery-ui-sortable');
+
+		// Enqueue JSColor
+		wp_enqueue_script(
+			'jscolor-colorpicker',
+			SlideshowPluginMain::getPluginUrl() . '/js/SlideshowPluginPostType/jscolor/jscolor.js',
+			null,
+			SlideshowPluginMain::$version
+		);
+
+		// Enqueue slide insert script and style
+		SlideshowPluginSlideInserter::enqueueFiles();
+	}
+
+	/**
 	 * Adds custom meta boxes to slideshow post type.
+	 *
+	 * @since 1.0.0
 	 */
 	static function registerMetaBoxes(){
 		add_meta_box(
@@ -112,188 +185,123 @@ class SlideshowPluginPostType {
 			'normal',
 			'low'
 		);
+
+		// Add support plugin message on edit slideshow
+		if(isset($_GET['action']) && strtolower($_GET['action']) == strtolower('edit'))
+			add_action('admin_notices', array(__CLASS__,  'supportPluginMessage'));
+	}
+
+	/**
+	 * Shows the support plugin message
+	 *
+	 * @since 2.0.0
+	 */
+	static function supportPluginMessage(){
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
 	}
 
 	/**
 	 * Shows some information about this slideshow
+	 *
+	 * @since 1.0.0
 	 */
 	static function informationMetaBox(){
 		global $post;
 
 		$snippet = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
-		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=%s]', $post->ID));
+		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
 
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php');
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php';
 	}
 
 	/**
 	 * Shows slides currently in slideshow
+	 *
+	 * TODO Tidy up, it's probably best to move all to 'slides.php'
+	 *
+	 * @since 1.0.0
 	 */
 	static function slidesMetaBox(){
 		global $post;
 
-		// Media upload button
-		$uploadButton = SlideshowPluginUpload::getUploadButton();
+		// Get views
+		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
 
-		// Get slideshow attachments
-		$attachments = self::getAttachments($post->ID);
+		// Insert slide buttons
+		echo '<p style="text-align: center;">
+			<i>' . __('Insert', 'slideshow-plugin') . ':</i><br/>' .
+			SlideshowPluginSlideInserter::getImageSlideInsertButton() .
+			SlideshowPluginSlideInserter::getTextSlideInsertButton() .
+			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
+		'</p>';
 
-		// Set url from which a substitute icon can be fetched
-		$noPreviewIcon = SlideshowPluginMain::getPluginUrl() . '/images/no-img.png';
+		// No views/slides message
+		if(count($views) <= 0)
+			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
 
-		// Include slides preview file
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/slides.php');
+		// Style
+		echo '<style type="text/css">
+			.sortable li {
+				cursor: pointer;
+			}
+
+			.sortable-slide-placeholder {
+				border: 1px solid #f00;
+			}
+		</style>';
+
+		// Start list
+		echo '<ul class="sortable-slides-list">';
+
+		// Print views
+		if(is_array($views))
+			foreach($views as $view)
+				echo $view->toBackEndHTML();
+
+		// Templates
+		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
+
+		// End list
+		echo '</ul>';
 	}
 
 	/**
 	 * Shows style used for slideshow
+	 *
+	 * @since 1.3.0
 	 */
 	static function styleMetaBox(){
 		global $post;
 
 		// Get settings
-		$defaultSettings = self::$defaultStyleSettings;
-		$settings = self::getSettings($post->ID);
-
-		// Get styles from style folder
-		$styles = array();
-		$cssExtension = '.css';
-		if($handle = opendir(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/'))
-			while(($file = readdir($handle)) !== false)
-				if(strlen($file) >= strlen($cssExtension) && substr($file, strlen($file) - strlen($cssExtension)) === $cssExtension)
-					// Converts the css file's name (style-mystyle.css) and converts it to a user readable name by
-					// cutting the style- prefix off, replacing hyphens with spaces and getting rid of the .css.
-					// Then it capitalizes every word and saves it to the $styles array under the original $file name.
-					$styles[$file] = ucwords(str_replace(
-						'-',
-						' ',
-						preg_replace(
-							'/style-/',
-							'',
-							substr(
-								$file,
-								0,
-								'-' . strlen($cssExtension)),
-							1
-					)));
+		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
 
 		// Fill custom style with default css if empty
-		if(empty($settings['custom-style'])){
+		if(isset($settings['custom']) && isset($settings['custom']['value']) && empty($settings['custom']['value'])){
 			ob_start();
-			include(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/style-dark.css');
-			$settings['custom-style'] = ob_get_clean();
+			include(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/style-custom.css');
+			$settings['custom']['value'] = ob_get_clean();
 		}
 
-		// Enqueue associating script
-		wp_enqueue_script(
-			'style-settings',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/style-settings.js',
-			array('jquery'),
-			false,
-			true
-		);
-
 		// Include style settings file
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php');
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
 	}
 
 	/**
 	 * Shows settings for particular slideshow
+	 *
+	 * @since 1.0.0
 	 */
 	static function settingsMetaBox(){
 		global $post;
 
+		// Nonce
+		wp_nonce_field(SlideshowPluginSlideshowSettingsHandler::$nonceAction, SlideshowPluginSlideshowSettingsHandler::$nonceName);
+
 		// Get settings
-		$defaultSettings = self::$defaultSettings;
-		$settings = self::getSettings($post->ID);
+		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
 
 		// Include
-		include(SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php');
-	}
-
-	/**
-	 * Called for saving metaboxes
-	 *
-	 * @param int $postId
-	 * @return int $postId On failure
-	 */
-	static function save($postId){
-		// Verify nonce, check if user has sufficient rights and return on auto-save.
-		if((isset($_POST['nonce']) && !wp_verify_nonce($_POST['nonce'], plugin_basename(__FILE__))) ||
-			!current_user_can('edit_post', $postId) ||
-			defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
-			return $postId;
-
-		// Get old settings
-		$oldSettings = get_post_meta($postId, self::$settingsMetaKey, true);
-		if(!is_array($oldSettings))
-			$oldSettings = array();
-
-		// Filter post results, otherwise we'd save all post variables like post_id and ping_status.
-		$settings = array();
-		$defaultSettings = array_merge(
-			self::$defaultSettings,
-			self::$defaultStyleSettings);
-		foreach($_POST as $key => $value)
-			if(isset($defaultSettings[$key]))
-				$settings[$key] = $value;
-
-		// Save settings
-		update_post_meta(
-			$postId,
-			self::$settingsMetaKey,
-			array_merge(
-				self::$defaultSettings,
-				self::$defaultStyleSettings,
-				$oldSettings,
-				$settings
-		));
-	}
-
-	/**
-	 * Gets settings for the slideshow with the settings meta key
-	 *
-	 * @return mixed $settings
-	 */
-	static function getSettings($postId){
-		if(!isset(self::$settings)){
-			// Get settings
-			$currentSettings = get_post_meta(
-				$postId,
-				self::$settingsMetaKey,
-				true
-			);
-
-			if(empty($currentSettings))
-				$currentSettings = array();
-
-			// Merge settings
-			self::$settings = $settings = array_merge(
-				self::$defaultSettings,
-				self::$defaultStyleSettings,
-				$currentSettings
-			);
-		}else
-			$settings = self::$settings;
-
-		return $settings;
-	}
-
-	/**
-	 * Get all attachments attached to the parsed postId
-	 *
-	 * @param int $postId
-	 * @return mixed $attachments
-	 */
-	static function getAttachments($postId){
-		if(!is_numeric($postId))
-			return array();
-
-		return get_posts(array(
-			'post_type' => 'attachment',
-			'numberposts' => -1,
-			'post_status' => null,
-			'post_parent' => $postId
-		));
+		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
 	}
 }
