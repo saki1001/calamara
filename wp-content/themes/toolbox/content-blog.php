@@ -14,14 +14,24 @@
         ?>
     </h2>
     
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php
+        // Loop for Sticky Posts
+        if ( is_category('news') ) :
+            $category_name = 'news';
+            get_sticky_posts($category_name);
+            
+        elseif ( is_category('blog') ) :
+            $category_name = 'blog';
+            get_sticky_posts($category_name);
+        else :
+            // do nothing
+        endif;
         
-        <?php
-            // List Blog Excerpts Template
+        // Loop for regular posts
+        while ( have_posts() ) : the_post();
             get_template_part( 'content', 'blog-list' );
-        ?>
-        
-    <?php endwhile; ?>
+        endwhile;
+    ?>
     
     <div class="list-footer">
     <?php
