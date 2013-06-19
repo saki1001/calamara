@@ -376,6 +376,24 @@ function get_category_tags($args) {
 	return $tags;
 }
 
+function get_sticky_posts($category_name) {
+    /* Get all sticky posts */
+    $sticky = get_option( 'sticky_posts' );
+    $args = array(
+        'category_name' => $category_name,
+        'post__in'  => get_option( 'sticky_posts' ),
+        'ignore_sticky_posts' => 1
+    );
+    $the_query = new WP_Query( $args );
+    
+    /* Sort the stickies with the newest ones at the top */
+    rsort( $sticky );
+    
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+        get_template_part( 'content', 'blog-list' );
+    endwhile;
+}
+
 // Adding Thumbnails
 add_theme_support( 'post-thumbnails' );
 
