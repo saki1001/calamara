@@ -376,11 +376,11 @@ function get_category_tags($args) {
 	return $tags;
 }
 
-function get_sticky_posts($category_name) {
+function get_sticky_posts($category_slug) {
     /* Get all sticky posts */
     $sticky = get_option( 'sticky_posts' );
     $args = array(
-        'category_name' => $category_name,
+        'category_name' => $category_slug,
         'post__in'  => get_option( 'sticky_posts' ),
         'ignore_sticky_posts' => 1
     );
@@ -392,6 +392,8 @@ function get_sticky_posts($category_name) {
     while ( $the_query->have_posts() ) : $the_query->the_post();
         get_template_part( 'content', 'blog-list' );
     endwhile;
+    
+    wp_reset_postdata();
 }
 
 // Adding Thumbnails
