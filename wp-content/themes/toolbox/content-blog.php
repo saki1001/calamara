@@ -23,8 +23,11 @@
         // Loop for all posts in this category
         // Except stickies
         $sticky = get_option( 'sticky_posts' );
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        
         $args = array(
             'category_name' => $category_slug,
+            'paged' => $paged,
             'post__not_in'  => get_option( 'sticky_posts' )
         );
         $the_query = new WP_Query( $args );
