@@ -3,6 +3,7 @@
     <h2 class="page-title">
         <?php
             $category = get_the_category();
+            $category_slug = $category[0]->slug;
             
             // Print Category Title
             echo $category[0]->cat_name;
@@ -16,21 +17,24 @@
     
     <?php
         // Loop for Sticky Posts
-        if ( is_category('news') ) :
-            $category_name = 'news';
-            get_sticky_posts($category_name);
-            
-        elseif ( is_category('blog') ) :
-            $category_name = 'blog';
-            get_sticky_posts($category_name);
-        else :
-            // do nothing
-        endif;
+        // (function in functions.php)
+        get_sticky_posts($category_slug);
+        
+        // Loop for all posts in this category
+        // Except stickies
+        $sticky = get_option( 'sticky_posts' );
+        $args = array(
+            'category_name' => $category_slug,
+            'post__not_in'  => get_option( 'sticky_posts' )
+        );
+        $the_query = new WP_Query( $args );
         
         // Loop for regular posts
-        while ( have_posts() ) : the_post();
+        while ( $the_query->have_posts() ) : $the_query->the_post();
             get_template_part( 'content', 'blog-list' );
         endwhile;
+        
+        wp_reset_postdata();
     ?>
     
     <div class="list-footer">
