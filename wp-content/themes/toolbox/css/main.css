@@ -582,6 +582,17 @@ body.category #content .thumb-container figure a img {
     visibility: hidden;
 }
 
+/* Show links in body content of all posts
+-------------------------------------------------------------- */
+#content .text-container a {
+    color: #006699;
+    text-decoration: none;
+}
+
+#content .text-container a:hover {
+    color: #333333;
+}
+
 /* Single Post General
 -------------------------------------------------------------- */
 body.single #content {
@@ -896,6 +907,15 @@ News, Blog and Tag pages in these categories
     line-height: 1.2;
     overflow: hidden; /*clearfix*/
     float: left;
+}
+
+#content.blog-single .post-footer a {
+    color: #006699;
+    text-decoration: none;
+}
+
+#content.blog-single .post-footer:hover {
+    color: #333333;
 }
 
 #content.blog-single .post-footer .post-nav {
