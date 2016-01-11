@@ -5,11 +5,10 @@
  *
  * @since 1.0.0
  * @author: Stefan Boonstra
- * @version: 01-02-2013
  */
-class SlideshowPluginPostType {
-
-	/** Variables */
+class SlideshowPluginPostType
+{
+	/** @var string $postType */
 	static $postType = 'slideshow';
 
 	/**
@@ -18,130 +17,73 @@ class SlideshowPluginPostType {
 	 *
 	 * @since 1.3.0
 	 */
-	static function init(){
-		add_action('init', array(__CLASS__, 'registerSlideshowPostType'));
-		add_action('admin_print_styles', array(__CLASS__, 'enqueueAdminStyles'));
-		add_action('admin_enqueue_scripts', array(__CLASS__, 'enqueueAdminScripts'));
-		add_action('save_post', array('SlideshowPluginSlideshowSettingsHandler', 'save'));
+	static function init()
+	{
+		add_action('init'                 , array(__CLASS__, 'registerSlideshowPostType'));
+		add_action('save_post'            , array('SlideshowPluginSlideshowSettingsHandler', 'save'));
+		add_action('admin_enqueue_scripts', array('SlideshowPluginSlideInserter', 'localizeScript'), 11);
+
+		add_action('admin_action_slideshow_jquery_image_gallery_duplicate_slideshow', array(__CLASS__, 'duplicateSlideshow'), 11);
+
+		add_filter('post_updated_messages', array(__CLASS__, 'alterSlideshowMessages'));
+		add_filter('post_row_actions'     , array(__CLASS__, 'duplicateSlideshowActionLink'), 10, 2);
 	}
 
 	/**
-	 * Registers new posttype slideshow
+	 * Registers new post type slideshow
 	 *
 	 * @since 1.0.0
 	 */
-	static function registerSlideshowPostType(){
+	static function registerSlideshowPostType()
+	{
+		global $wp_version;
+
 		register_post_type(
 			self::$postType,
 			array(
-				'labels' => array(
-					'name' => __('Slideshows', 'slideshow-plugin'),
-					'singular_name' => __('Slideshow', 'slideshow-plugin'),
-					'add_new_item' => __('Add New Slideshow', 'slideshow-plugin'),
-					'edit_item' => __('Edit slideshow', 'slideshow-plugin'),
-					'new_item' => __('New slideshow', 'slideshow-plugin'),
-					'view_item' => __('View slideshow', 'slideshow-plugin'),
-					'search_items' => __('Search slideshows', 'slideshow-plugin'),
-					'not_found' => __('No slideshows found', 'slideshow-plugin'),
-					'not_found_in_trash' => __('No slideshows found', 'slideshow-plugin')
+				'labels'               => array(
+					'name'               => __('Slideshows', 'slideshow-jquery-image-gallery'),
+					'singular_name'      => __('Slideshow', 'slideshow-jquery-image-gallery'),
+					'add_new_item'       => __('Add New Slideshow', 'slideshow-jquery-image-gallery'),
+					'edit_item'          => __('Edit slideshow', 'slideshow-jquery-image-gallery'),
+					'new_item'           => __('New slideshow', 'slideshow-jquery-image-gallery'),
+					'view_item'          => __('View slideshow', 'slideshow-jquery-image-gallery'),
+					'search_items'       => __('Search slideshows', 'slideshow-jquery-image-gallery'),
+					'not_found'          => __('No slideshows found', 'slideshow-jquery-image-gallery'),
+					'not_found_in_trash' => __('No slideshows found', 'slideshow-jquery-image-gallery')
 				),
-				'public' => false,
-				'publicly_queryable' => false,
-				'show_ui' => true,
-				'show_in_menu' => true,
-				'query_var' => true,
-				'rewrite' => true,
-				'capability_type' => 'post',
-				'capabilities' => array(
-					'edit_post' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'read_post' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
-					'delete_post' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'edit_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'edit_others_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'publish_posts' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
-					'read_private_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+				'public'               => false,
+				'publicly_queryable'   => false,
+				'show_ui'              => true,
+				'show_in_menu'         => true,
+				'query_var'            => true,
+				'rewrite'              => true,
+				'capability_type'      => 'post',
+				'capabilities'         => array(
+					'edit_post'              => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'read_post'              => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'delete_post'            => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'edit_posts'             => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'edit_others_posts'      => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'publish_posts'          => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'read_private_posts'     => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
 
-					'read' => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
-					'delete_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'delete_private_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'read'                   => SlideshowPluginGeneralSettings::$capabilities['addSlideshows'],
+					'delete_posts'           => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'delete_private_posts'   => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
 					'delete_published_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'delete_others_posts' => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
-					'edit_private_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
-					'edit_published_posts' => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'delete_others_posts'    => SlideshowPluginGeneralSettings::$capabilities['deleteSlideshows'],
+					'edit_private_posts'     => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
+					'edit_published_posts'   => SlideshowPluginGeneralSettings::$capabilities['editSlideshows'],
 				),
-				'has_archive' => true,
-				'hierarchical' => false,
-				'menu_position' => null,
-				'menu_icon' => SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/adminIcon.png',
-				'supports' => array('title'),
+				'has_archive'          => true,
+				'hierarchical'         => false,
+				'menu_position'        => null,
+				'menu_icon'            => version_compare($wp_version, '3.8', '<') ? SlideshowPluginMain::getPluginUrl() . '/images/' . __CLASS__ . '/adminIcon.png' : 'dashicons-format-gallery',
+				'supports'             => array('title'),
 				'register_meta_box_cb' => array(__CLASS__, 'registerMetaBoxes')
 			)
 		);
-	}
-
-	/**
-	 * Enqueues the admin stylesheets when one a slideshow edit page.
-	 *
-	 * @since 2.2.2
-	 */
-	static function enqueueAdminStyles(){
-
-		// Return when function doesn't exist
-		if(!function_exists('get_current_screen'))
-			return;
-
-		// Return when not on a slideshow edit page.
-		$currentScreen = get_current_screen();
-		if($currentScreen->post_type != self::$postType)
-			return;
-
-		wp_enqueue_style(
-			'slideshow-plugin-post-type-stylesheet',
-			SlideshowPluginMain::getPluginUrl() . '/style/' . __CLASS__ . '/style.css',
-			array(),
-			SlideshowPluginMain::$version
-		);
-	}
-
-	/**
-	 * Enqueues scripts for when the admin page is a slideshow edit page.
-	 *
-	 * @since 2.1.11
-	 */
-	static function enqueueAdminScripts(){
-
-		// Return if function doesn't exist
-		if(!function_exists('get_current_screen'))
-			return;
-
-        // Return when not on a slideshow edit page.
-		$currentScreen = get_current_screen();
-		if($currentScreen->post_type != self::$postType)
-			return;
-
-		// Enqueue associating script
-		wp_enqueue_script(
-			'post-type-handler',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/post-type-handler.js',
-			array('jquery'),
-			SlideshowPluginMain::$version
-		);
-
-		// TODO: These scripts have been moved here from the footer. They need to be always printed in the header
-		// TODO: a solution for this needs to be found.
-		// Enqueue scripts required for sorting the slides list
-		wp_enqueue_script('jquery-ui-sortable');
-
-		// Enqueue JSColor
-		wp_enqueue_script(
-			'jscolor-colorpicker',
-			SlideshowPluginMain::getPluginUrl() . '/js/SlideshowPluginPostType/jscolor/jscolor.js',
-			null,
-			SlideshowPluginMain::$version
-		);
-
-		// Enqueue slide insert script and style
-		SlideshowPluginSlideInserter::enqueueFiles();
 	}
 
 	/**
@@ -149,10 +91,11 @@ class SlideshowPluginPostType {
 	 *
 	 * @since 1.0.0
 	 */
-	static function registerMetaBoxes(){
+	static function registerMetaBoxes()
+	{
 		add_meta_box(
 			'information',
-			__('Information', 'slideshow-plugin'),
+			__('Information', 'slideshow-jquery-image-gallery'),
 			array(__CLASS__, 'informationMetaBox'),
 			self::$postType,
 			'normal',
@@ -161,7 +104,7 @@ class SlideshowPluginPostType {
 
 		add_meta_box(
 			'slides-list',
-			__('Slides List', 'slideshow-plugin'),
+			__('Slides List', 'slideshow-jquery-image-gallery'),
 			array(__CLASS__, 'slidesMetaBox'),
 			self::$postType,
 			'side',
@@ -170,7 +113,7 @@ class SlideshowPluginPostType {
 
 		add_meta_box(
 			'style',
-			__('Slideshow Style', 'slideshow-plugin'),
+			__('Slideshow Style', 'slideshow-jquery-image-gallery'),
 			array(__CLASS__, 'styleMetaBox'),
 			self::$postType,
 			'normal',
@@ -179,7 +122,7 @@ class SlideshowPluginPostType {
 
 		add_meta_box(
 			'settings',
-			__('Slideshow Settings', 'slideshow-plugin'),
+			__('Slideshow Settings', 'slideshow-jquery-image-gallery'),
 			array(__CLASS__, 'settingsMetaBox'),
 			self::$postType,
 			'normal',
@@ -187,8 +130,54 @@ class SlideshowPluginPostType {
 		);
 
 		// Add support plugin message on edit slideshow
-		if(isset($_GET['action']) && strtolower($_GET['action']) == strtolower('edit'))
+		if (isset($_GET['action']) &&
+			strtolower($_GET['action']) == strtolower('edit'))
+		{
 			add_action('admin_notices', array(__CLASS__,  'supportPluginMessage'));
+		}
+	}
+
+	/**
+	 * Changes the "Post published/updated" message to a "Slideshow created/updated" message without the link to a
+	 * frontend page.
+	 *
+	 * @since 2.2.20
+	 * @param mixed $messages
+	 * @return mixed $messages
+	 */
+	static function alterSlideshowMessages($messages)
+	{
+		if (!function_exists('get_current_screen'))
+		{
+			return $messages;
+		}
+
+		$currentScreen = get_current_screen();
+
+		// Return when not on a slideshow edit page
+		if ($currentScreen->post_type != SlideshowPluginPostType::$postType)
+		{
+			return $messages;
+		}
+
+		$messageID = filter_input(INPUT_GET, 'message', FILTER_VALIDATE_INT);
+
+		if (!$messageID)
+		{
+			return $messages;
+		}
+
+		switch ($messageID)
+		{
+			case 6:
+				$messages[$currentScreen->base][$messageID] = __('Slideshow created', 'slideshow-jquery-image-gallery');
+				break;
+
+			default:
+				$messages[$currentScreen->base][$messageID] = __('Slideshow updated', 'slideshow-jquery-image-gallery');
+		}
+
+		return $messages;
 	}
 
 	/**
@@ -196,8 +185,9 @@ class SlideshowPluginPostType {
 	 *
 	 * @since 2.0.0
 	 */
-	static function supportPluginMessage(){
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/support-plugin.php';
+	static function supportPluginMessage()
+	{
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'support-plugin.php');
 	}
 
 	/**
@@ -205,64 +195,30 @@ class SlideshowPluginPostType {
 	 *
 	 * @since 1.0.0
 	 */
-	static function informationMetaBox(){
+	static function informationMetaBox()
+	{
 		global $post;
 
-		$snippet = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
-		$shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
+		$data            = new stdClass();
+		$data->snippet   = htmlentities(sprintf('<?php do_action(\'slideshow_deploy\', \'%s\'); ?>', $post->ID));
+		$data->shortCode = htmlentities(sprintf('[' . SlideshowPluginShortcode::$shortCode . ' id=\'%s\']', $post->ID));
 
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/information.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'information.php', $data);
 	}
 
 	/**
 	 * Shows slides currently in slideshow
 	 *
-	 * TODO Tidy up, it's probably best to move all to 'slides.php'
-	 *
 	 * @since 1.0.0
 	 */
-	static function slidesMetaBox(){
+	static function slidesMetaBox()
+	{
 		global $post;
 
-		// Get views
-		$views = SlideshowPluginSlideshowSettingsHandler::getViews($post->ID);
+		$data         = new stdClass();
+		$data->slides = SlideshowPluginSlideshowSettingsHandler::getSlides($post->ID);
 
-		// Insert slide buttons
-		echo '<p style="text-align: center;">
-			<i>' . __('Insert', 'slideshow-plugin') . ':</i><br/>' .
-			SlideshowPluginSlideInserter::getImageSlideInsertButton() .
-			SlideshowPluginSlideInserter::getTextSlideInsertButton() .
-			SlideshowPluginSlideInserter::getVideoSlideInsertButton() .
-		'</p>';
-
-		// No views/slides message
-		if(count($views) <= 0)
-			echo '<p>' . __('Add slides to this slideshow by using one of the buttons above.', 'slideshow-plugin') . '</p>';
-
-		// Style
-		echo '<style type="text/css">
-			.sortable li {
-				cursor: pointer;
-			}
-
-			.sortable-slide-placeholder {
-				border: 1px solid #f00;
-			}
-		</style>';
-
-		// Start list
-		echo '<ul class="sortable-slides-list">';
-
-		// Print views
-		if(is_array($views))
-			foreach($views as $view)
-				echo $view->toBackEndHTML();
-
-		// Templates
-		SlideshowPluginSlideshowSlide::getBackEndTemplates(false);
-
-		// End list
-		echo '</ul>';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'slides.php', $data);
 	}
 
 	/**
@@ -270,21 +226,14 @@ class SlideshowPluginPostType {
 	 *
 	 * @since 1.3.0
 	 */
-	static function styleMetaBox(){
+	static function styleMetaBox()
+	{
 		global $post;
 
-		// Get settings
-		$settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
+		$data           = new stdClass();
+		$data->settings = SlideshowPluginSlideshowSettingsHandler::getStyleSettings($post->ID, true);
 
-		// Fill custom style with default css if empty
-		if(isset($settings['custom']) && isset($settings['custom']['value']) && empty($settings['custom']['value'])){
-			ob_start();
-			include(SlideshowPluginMain::getPluginPath() . '/style/SlideshowPlugin/style-custom.css');
-			$settings['custom']['value'] = ob_get_clean();
-		}
-
-		// Include style settings file
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/style-settings.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'style-settings.php', $data);
 	}
 
 	/**
@@ -292,16 +241,126 @@ class SlideshowPluginPostType {
 	 *
 	 * @since 1.0.0
 	 */
-	static function settingsMetaBox(){
+	static function settingsMetaBox()
+	{
 		global $post;
 
 		// Nonce
 		wp_nonce_field(SlideshowPluginSlideshowSettingsHandler::$nonceAction, SlideshowPluginSlideshowSettingsHandler::$nonceName);
 
-		// Get settings
-		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
+		$data           = new stdClass();
+		$data->settings = SlideshowPluginSlideshowSettingsHandler::getSettings($post->ID, true);
 
-		// Include
-		include SlideshowPluginMain::getPluginPath() . '/views/' . __CLASS__ . '/settings.php';
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'settings.php', $data);
+	}
+
+	/**
+	 * Hooked on the post_row_actions filter, adds a "duplicate" action to each slideshow on the slideshow's overview
+	 * page.
+	 *
+	 * @param array $actions
+	 * @param WP_Post $post
+	 * @return array $actions
+	 */
+	static function duplicateSlideshowActionLink($actions, $post)
+	{
+		if (current_user_can('slideshow-jquery-image-gallery-add-slideshows') &&
+			$post->post_type === self::$postType)
+		{
+			$url = add_query_arg(array(
+				'action' => 'slideshow_jquery_image_gallery_duplicate_slideshow',
+				'post'   => $post->ID,
+			));
+
+			$actions['duplicate'] = '<a href="' . wp_nonce_url($url, 'duplicate-slideshow_' . $post->ID, 'nonce') . '">' . __('Duplicate', 'slideshow-jquery-image-gallery') . '</a>';
+		}
+
+		return $actions;
+	}
+
+	/**
+	 * Checks if a "duplicate" slideshow action was performed and whether or not the current user has the permission to
+	 * perform this action at all.
+	 */
+	static function duplicateSlideshow()
+	{
+		$postID           = filter_input(INPUT_GET, 'post'     , FILTER_VALIDATE_INT);
+		$nonce            = filter_input(INPUT_GET, 'nonce'    , FILTER_SANITIZE_STRING);
+		$postType         = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+		$errorRedirectURL = remove_query_arg(array('action', 'post', 'nonce'));
+
+		// Check if nonce is correct and user has the correct privileges
+		if (!wp_verify_nonce($nonce, 'duplicate-slideshow_' . $postID) ||
+			!current_user_can('slideshow-jquery-image-gallery-add-slideshows') ||
+			$postType !== self::$postType)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		$post = get_post($postID);
+
+		// Check if the post was retrieved successfully
+		if (!$post instanceof WP_Post ||
+			$post->post_type !== self::$postType)
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		$current_user = wp_get_current_user();
+
+		// Create post duplicate
+		$newPostID = wp_insert_post(array(
+			'comment_status' => $post->comment_status,
+			'ping_status'    => $post->ping_status,
+			'post_author'    => $current_user->ID,
+			'post_content'   => $post->post_content,
+			'post_excerpt'   => $post->post_excerpt,
+			'post_name'      => $post->post_name,
+			'post_parent'    => $post->post_parent,
+			'post_password'  => $post->post_password,
+			'post_status'    => 'draft',
+			'post_title'     => $post->post_title . (strlen($post->post_title) > 0 ? ' - ' : '') . __('Copy', 'slideshow-jquery-image-gallery'),
+			'post_type'      => $post->post_type,
+			'to_ping'        => $post->to_ping,
+			'menu_order'     => $post->menu_order,
+		));
+
+		if (is_wp_error($newPostID))
+		{
+			wp_redirect($errorRedirectURL);
+
+			die();
+		}
+
+		// Get all taxonomies
+		$taxonomies = get_object_taxonomies($post->post_type);
+
+		// Add taxonomies to new post
+		foreach ($taxonomies as $taxonomy)
+		{
+			$postTerms = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'slugs'));
+
+			wp_set_object_terms($newPostID, $postTerms, $taxonomy, false);
+		}
+
+		// Get all post meta
+		$postMetaRecords = get_post_meta($post->ID);
+
+		// Add post meta records to new post
+		foreach ($postMetaRecords as $postMetaKey => $postMetaValues)
+		{
+			foreach ($postMetaValues as $postMetaValue)
+			{
+				update_post_meta($newPostID, $postMetaKey, maybe_unserialize($postMetaValue));
+			}
+		}
+
+		wp_redirect(admin_url('post.php?action=edit&post=' . $newPostID));
+
+		die();
 	}
 }

@@ -7,13 +7,16 @@
  *
  * @since 1.2.0
  * @author: Stefan Boonstra
- * @version: 01-02-2013
  */
-class SlideshowPluginShortcode {
-
-	/** Variables */
+class SlideshowPluginShortcode
+{
+	/** @var string $shortCode */
 	public static $shortCode = 'slideshow_deploy';
+
+	/** @var string $bookmark */
 	public static $bookmark = '!slideshow_deploy!';
+
+	/** @var array $postIDs */
 	private static $postIds = array();
 
 	/**
@@ -22,47 +25,56 @@ class SlideshowPluginShortcode {
 	 *
 	 * @since 2.1.16
 	 */
-	static function init(){
+	static function init()
+	{
 		// Register shortcode
 		add_shortcode(self::$shortCode, array(__CLASS__, 'slideshowDeploy'));
 
 		// Admin
-		if(is_admin()){
+		if (is_admin())
+		{
 			// Add shortcode inserter HTML
 			add_action('media_buttons',  array(__CLASS__, 'shortcodeInserter'), 11);
 
 			// Enqueue shortcode inserter script
-			add_action('admin_enqueue_scripts', array(__CLASS__, 'shortcodeInserterScript'));
+			add_action('admin_enqueue_scripts', array(__CLASS__, 'localizeScript'), 11);
 		}
 	}
 
 	/**
 	 * Function slideshowDeploy adds a bookmark to where ever a shortcode
 	 * is found and adds the postId to an array, it then is loaded after
-	 * Wordpress has done its HTML checks.
+	 * WordPress has done its HTML checks.
 	 *
 	 * @since 1.2.0
-	 * @param mixed $atts
+	 * @param mixed $attributes
 	 * @return String $output
 	 */
-	static function slideshowDeploy($atts){
+	static function slideshowDeploy($attributes)
+	{
 		$postId = '';
-		if(isset($atts['id']))
-			$postId = $atts['id'];
 
-		$output = '';
+		if (isset($attributes['id']))
+		{
+			$postId = $attributes['id'];
+		}
+
 		$settings = SlideshowPluginSlideshowSettingsHandler::getSettings($postId);
-		if($settings['avoidFilter'] == 'true'){
-			// Filter content after all Wordpress HTML parsers are done, then replace bookmarks with raw HTML
-			add_filter('the_content', array(__CLASS__, 'insertSlideshow'), 999);
-			add_filter('the_excerpt', array(__CLASS__, 'insertSlideshow'), 999);
+
+		if ($settings['avoidFilter'] == 'true' &&
+			strlen(current_filter()) > 0)
+		{
+			// Avoid current filter, call function to replace the bookmark with the slideshow
+			add_filter(current_filter(), array(__CLASS__, 'insertSlideshow'), 999);
 
 			// Save post id
 			self::$postIds[] = $postId;
 
 			// Set output
 			$output = self::$bookmark;
-		}else{
+		}
+		else
+		{
 			// Just output the slideshow, without filtering
 			$output = SlideshowPlugin::prepare($postId);
 		}
@@ -79,15 +91,22 @@ class SlideshowPluginShortcode {
 	 * @param String $content
 	 * @return String $content
 	 */
-	static function insertSlideshow($content){
+	static function insertSlideshow($content)
+	{
 		// Loop through post ids
-		if(is_array(self::$postIds) && count(self::$postIds) > 0)
-			foreach(self::$postIds as $postId){
+		if (is_array(self::$postIds) &&
+			count(self::$postIds) > 0)
+		{
+			foreach (self::$postIds as $postId)
+			{
 				$updatedContent = preg_replace("/" . self::$bookmark . "/", SlideshowPlugin::prepare($postId), $content, 1);
 
-				if(is_string($updatedContent))
+				if (is_string($updatedContent))
+				{
 					$content = $updatedContent;
+				}
 			}
+		}
 
 		// Reset postIds, so a shortcode in a next post can be used
 		self::$postIds = array();
@@ -100,16 +119,17 @@ class SlideshowPluginShortcode {
 	 *
 	 * @since 2.1.16
 	 */
-	static function shortcodeInserter(){
-		// Get slideshows
-		$slideshows = new WP_Query(array(
-			'post_type' => SlideshowPluginPostType::$postType,
-			'orderby' => 'post_date',
+	static function shortcodeInserter()
+	{
+		$data             = new stdClass();
+		$data->slideshows = new WP_Query(array(
+			'post_type'      => SlideshowPluginPostType::$postType,
+			'orderby'        => 'post_date',
 			'posts_per_page' => -1,
-			'order' => 'DESC'
+			'order'          => 'DESC'
 		));
 
-		include(SlideshowPluginMain::getPluginPath() . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . __CLASS__ . DIRECTORY_SEPARATOR . 'shortcode-inserter.php');
+		SlideshowPluginMain::outputView(__CLASS__ . DIRECTORY_SEPARATOR . 'shortcode-inserter.php', $data);
 	}
 
 	/**
@@ -117,20 +137,14 @@ class SlideshowPluginShortcode {
 	 *
 	 * @since 2.1.16
 	 */
-	static function shortcodeInserterScript(){
-		wp_enqueue_script(
-			'slideshow-shortcode-inserter',
-			SlideshowPluginMain::getPluginUrl() . '/js/' . __CLASS__ . '/shortcode-inserter.js',
-			array('jquery'),
-			SlideshowPluginMain::$version
-		);
-
+	static function localizeScript()
+	{
 		wp_localize_script(
-			'slideshow-shortcode-inserter',
-			'SlideshowShortcodeInserter',
+			'slideshow-jquery-image-gallery-backend-script',
+			'slideshow_jquery_image_gallery_backend_script_shortcode',
 			array(
-				'undefinedSlideshowMessage' => __('No slideshow selected.', 'slideshow-plugin'),
-				'shortcode' => SlideshowPluginShortcode::$shortCode
+				'data' => array('shortcode' => SlideshowPluginShortcode::$shortCode),
+				'localization' => array('undefinedSlideshow' => __('No slideshow selected.', 'slideshow-jquery-image-gallery'))
 			)
 		);
 	}

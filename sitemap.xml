@@ -1,734 +1,993 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://dev.calamara.com/wp-content/plugins/google-xml-sitemaps-v3-for-qtranslate/sitemap.xsl"?><!-- generator="wordpress/3.5.1" -->
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="http://www.calamara.com/wp-content/plugins/google-xml-sitemaps-v3-for-qtranslate/sitemap.xsl"?><!-- generator="wordpress/3.5.1" -->
 <!-- sitemap-generator-url="http://www.arnebrachhold.de" sitemap-generator-version="3.2.8.1" -->
-<!-- generated-on="February 28, 2013 2:48 am" -->
+<!-- generated-on="January 10, 2016 10:23 pm" -->
 <!-- Debug: Total comment count: 0 -->
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">	<url>
-		<loc>http://dev.calamara.com/</loc>
-		<lastmod>2013-02-13T21:16:07+00:00</lastmod>
+		<loc>http://www.calamara.com/</loc>
+		<lastmod>2016-01-07T02:19:27+00:00</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1.0</priority>
 	</url>
 <!-- Debug: Start Postings -->
-<!-- Debug: Priority report of postID 1232: Comments: 0 of 0 = 0 points -->
+<!-- Debug: Priority report of postID 3710: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/new-work/supernatural/</loc>
-		<lastmod>2013-02-28T02:45:00+00:00</lastmod>
+		<loc>http://www.calamara.com/new-work/homologous-hope/</loc>
+		<lastmod>2016-01-10T22:19:37+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2084: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/la-boheme-a-portrait-of-our-oceans-in-peril-solo-show-at-agnes-b-opening-saturday-march-9th-6pm/</loc>
+		<lastmod>2016-01-10T21:16:01+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4071: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/agnes-b-et-les-artistes-se-mobilisent-pour-le-climat-avec-tara-dec-4th-2015-for-cop21/</loc>
+		<lastmod>2016-01-10T01:17:01+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4062: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/featured-artist-in-bioart-altered-realities-by-william-myers-2015/</loc>
+		<lastmod>2016-01-09T13:55:47+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4294: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/new-work/rose/</loc>
+		<lastmod>2016-01-08T02:50:39+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	<url>
+		<loc>http://www.calamara.com/cv/</loc>
+		<lastmod>2016-01-08T01:24:41+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
+		<loc>http://www.calamara.com/geotherapy-declaration/</loc>
+		<lastmod>2016-01-04T22:44:49+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+<!-- Debug: Priority report of postID 4110: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/blog/new-invention-receipe-for-gpf-cavair-pearls-with-green-flourescent-protien-at-sva-biolab-summer-2015/</loc>
+		<lastmod>2016-01-03T00:53:39+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4085: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/blog/happy-future-water-baby-okiagari-koboshi-doll-project-europe-in-support-of-fukishima/</loc>
+		<lastmod>2016-01-02T03:58:54+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4052: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/sci-art-in-america-featured-artist-for-straight-talk-october-2015/</loc>
+		<lastmod>2016-01-02T03:23:56+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4026: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/making-the-invisible-visible-post-mortem-catalogue-essay-august-2015/</loc>
+		<lastmod>2016-01-02T02:33:11+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3928: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/blog/message-from-a-turtle-in-a-human-body-julie-susse/</loc>
+		<lastmod>2015-12-29T22:11:52+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4021: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/blog/confessions-of-a-sea-creature-trapped-in-an-artists-body/</loc>
+		<lastmod>2015-12-29T22:08:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4013: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/sneak-peak-coral-rose-thursday-june-18th-mineral-enriched-romantic-micro-portraits/</loc>
+		<lastmod>2015-06-12T01:23:33+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	<url>
+		<loc>http://www.calamara.com/artists-statement/</loc>
+		<lastmod>2015-06-03T00:02:11+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+<!-- Debug: Priority report of postID 806: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/current-an-exhibition/</loc>
+		<lastmod>2015-01-20T20:11:41+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4003: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/feb-16th-morbid-anatomy-museum-death-through-the-microscope-la-boheme-a-portrait-of-todays-oceans-in-peril/</loc>
+		<lastmod>2015-01-20T19:41:30+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 4000: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/feb-3rd-sva-geotherapy-101-from-the-nano-to-the-geo-how-art-can-heal-the-planet-art-lecture/</loc>
+		<lastmod>2015-01-20T19:17:34+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3988: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/lecture-supernatural-art-animism-and-our-relationship-to-our-biosphere-jan-22nd-tatiana-pages-gallery-harlem/</loc>
+		<lastmod>2015-01-20T19:06:44+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3983: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/art-of-the-invisible-ocean-explorers-club-feat-monday-night-lecture-dec-15th/</loc>
+		<lastmod>2015-01-20T18:51:45+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3956: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/supernatural-tatiana-pages-gallery-in-harlem-nyc-dec-8th-feb-3rd-2015/</loc>
+		<lastmod>2014-12-13T00:49:32+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3799: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/dumbo-arts-festival-sept-27th-28th/</loc>
+		<lastmod>2014-09-26T14:26:37+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/oyster-island-interview/</loc>
+		<lastmod>2014-09-25T16:17:25+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 41: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/i-am-obsessed-with-plankton/</loc>
+		<lastmod>2014-09-25T16:17:25+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 66: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/mascara-ti-a-rare-egyptian-plankton/</loc>
+		<lastmod>2014-09-25T16:17:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 49: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/my-voyage-with-tara-oceans/</loc>
+		<lastmod>2014-09-25T16:17:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 101: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/ode-to-wolf-hilbertz-the-father-of-mineral-accreation/</loc>
+		<lastmod>2014-09-25T16:17:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 87: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/ozma-with-plankton-brain-shes-an-ideal-leader/</loc>
+		<lastmod>2014-09-25T16:17:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 69: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/oh-my-goddess-microscopic-plastic-in-the-plankton/</loc>
+		<lastmod>2014-09-25T16:17:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 60: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/explorers-club-annual-dinner-mara-returns-flag-75/</loc>
+		<lastmod>2014-09-25T16:17:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 385: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/why-fuzzy-rope-is-a-bad-idea-for-oyster-restoration/</loc>
+		<lastmod>2014-09-25T16:17:24+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 397: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/tara-oceans-2012-feb-5th-11th-year-of-the-water-dragon/</loc>
+		<lastmod>2014-09-25T16:17:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 947: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/super-natural/</loc>
+		<lastmod>2014-09-25T16:17:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 964: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/ernst-haeckle/</loc>
+		<lastmod>2014-09-25T16:17:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 390: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/recipe-for-the-ultimate-restoration-of-urban-oyster-habitat/</loc>
+		<lastmod>2014-09-25T16:17:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1879: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/the-brick/</loc>
+		<lastmod>2014-09-25T16:17:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 956: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/pregnant-sea-horse-from-the-hudson-river/</loc>
+		<lastmod>2014-09-25T16:17:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 988: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/haeckles-art-forms-in-nature-5/</loc>
+		<lastmod>2014-09-25T16:17:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1013: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/radiolarian-design/</loc>
+		<lastmod>2014-09-25T16:17:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1016: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/reef-design/</loc>
+		<lastmod>2014-09-25T16:17:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1022: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/amphibious-reef-design/</loc>
+		<lastmod>2014-09-25T16:17:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1247: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/calamara-is-on-the-move/</loc>
+		<lastmod>2014-09-25T16:17:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2181: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/year-of-the-water-snake-2013/</loc>
+		<lastmod>2014-09-25T16:17:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1502: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/oysters-in-battery-park/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2183: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/end-of-pier-40/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2166: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/ecad-2013/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1035: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/plankton/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1718: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/the-siene-is-alive/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1556: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/ultimate-substrate-for-the-urban-oyster-an-experiment/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1515: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/niki-graffiti/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1511: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/niki-de-saint-phalle/</loc>
+		<lastmod>2014-09-25T16:17:21+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 77: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/la-boheme-a-portrait-of-todays-oceans-in-peril/</loc>
+		<lastmod>2014-09-25T16:17:20+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3667: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/arctic-ctenophore-glamour-shot-captured-and-imaged-by-christian-sardet/</loc>
+		<lastmod>2014-09-25T16:17:20+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 380: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/uranium-for-art-not-bombs/</loc>
+		<lastmod>2014-09-25T16:17:20+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2876: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/new-3-5-min-rock-u-mentary-video-vive-la-haute-mer-save-the-seas-and-ourselves-sign-the-petition-www-lahautemer-org-2/</loc>
+		<lastmod>2014-09-25T16:17:20+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3658: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/uncategorized/me-saging-tonight-for-prepping-to-show-off-the-ravenous-ctnephores-tonight/</loc>
+		<lastmod>2014-09-25T16:17:20+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3790: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/apresentando-september-3-october-4-at-sao-paulos-galeria-virgilio-bust-of-kai-matusmiya-by-mara/</loc>
+		<lastmod>2014-09-18T17:12:28+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3816: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/nov-13th-geotherapy-from-the-nano-to-the-geo-lecture-how-art-can-heal-the-planet-cold-spring-harbor-labscold-pring-harbor-ny/</loc>
+		<lastmod>2014-09-18T17:10:15+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3805: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/submerge-nyc-marine-science-festival-october-5th/</loc>
+		<lastmod>2014-09-18T14:51:02+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3772: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/vesalius-continuum-in-zakynthos-greece-sept-4th-8th-2014/</loc>
+		<lastmod>2014-08-26T20:03:07+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 3755: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/watch-the-trailer-for-invisible-ocean-plankton-and-plastic/</loc>
+		<lastmod>2014-05-09T22:25:51+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 110: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/large-scale-sculpture/la-boheme/</loc>
+		<lastmod>2014-05-07T18:59:28+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 121: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/large-scale-sculpture/sars-inhibited/</loc>
+		<lastmod>2014-05-07T18:57:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 1457: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/new-work/mr-and-mrs-piling/</loc>
-		<lastmod>2013-02-28T02:44:32+00:00</lastmod>
+		<loc>http://www.calamara.com/archives/environmental-art/mr-and-mrs-piling/</loc>
+		<lastmod>2014-05-07T18:38:55+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 1371: Comments: 0 of 0 = 0 points -->
+<!-- Debug: Priority report of postID 3705: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/new-work/microscopy/</loc>
-		<lastmod>2013-02-28T02:43:43+00:00</lastmod>
+		<loc>http://www.calamara.com/news/homologous-hope-installed-at-upenns-basser-research-center-for-breast-cancer-research/</loc>
+		<lastmod>2014-05-07T18:15:57+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
+<!-- Debug: Priority report of postID 3695: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/artist-bio/</loc>
-		<lastmod>2013-02-28T01:15:49+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-<!-- Debug: Priority report of postID 888: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/artist-is-residence-dublin-ireland-2/</loc>
-		<lastmod>2013-02-28T01:13:15+00:00</lastmod>
+		<loc>http://www.calamara.com/news/3695/</loc>
+		<lastmod>2013-10-08T17:12:48+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 636: Comments: 0 of 0 = 0 points -->
+<!-- Debug: Priority report of postID 3615: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/art-and-science-many-voices-one-inspiration/</loc>
-		<lastmod>2013-02-28T01:11:49+00:00</lastmod>
+		<loc>http://www.calamara.com/news/new-work-the-ravenous-ctenephores-open-studio-for-dumbo-arts-festival-sept-28th-29th-10am-6pm/</loc>
+		<lastmod>2013-09-20T01:38:06+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 680: Comments: 0 of 0 = 0 points -->
+<!-- Debug: Priority report of postID 789: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/the-new-school-oyster-midden/</loc>
-		<lastmod>2013-02-28T01:07:18+00:00</lastmod>
+		<loc>http://www.calamara.com/archives/environmental-art/transcriptease/</loc>
+		<lastmod>2013-09-13T11:57:57+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 1092: Comments: 0 of 0 = 0 points -->
+<!-- Debug: Priority report of postID 773: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/imagine-science-films-artist-in-residence/</loc>
-		<lastmod>2013-02-27T22:58:12+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 892: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/dumbo-arts-festival/</loc>
-		<lastmod>2013-02-27T22:44:09+00:00</lastmod>
+		<loc>http://www.calamara.com/archives/environmental-art/enchanted-oyster-sweet-spot/</loc>
+		<lastmod>2013-09-13T11:42:54+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 769: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/the-quest-for-the-ultimate-habitat-for-the-urban-oyster/</loc>
-		<lastmod>2013-02-27T22:43:15+00:00</lastmod>
+		<loc>http://www.calamara.com/news/the-quest-for-the-ultimate-habitat-for-the-urban-oyster/</loc>
+		<lastmod>2013-08-29T20:03:24+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 763: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/an-artists-vision-of-what-a-healthy-future-would-look-like-from-the-nano-to-the-geo/</loc>
-		<lastmod>2013-02-27T22:37:15+00:00</lastmod>
+		<loc>http://www.calamara.com/news/an-artists-vision-of-what-a-healthy-future-would-look-like-from-the-nano-to-the-geo/</loc>
+		<lastmod>2013-08-21T17:57:37+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 759: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/september-21-26th-science-and-innovation-week-2009-at-the-institute-of-science-and-technology-of-mexico-city/</loc>
+		<lastmod>2013-08-21T17:30:36+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 755: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/guardian-interview-with-julia-levitt-on-coral-reefs-biomimicry-and-eco-art/</loc>
+		<lastmod>2013-08-21T17:08:14+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 745: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/environmental-art/the-gill/</loc>
+		<lastmod>2013-08-21T16:48:01+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 744: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/may-10th-october-8th-transformative-lines-sculpture-guild-exhibition-nolan-park-on-governors-island-ny/</loc>
+		<lastmod>2013-08-21T16:25:00+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 678: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/symposium-connecting-to-the-urban-environment/</loc>
+		<lastmod>2013-08-15T09:49:18+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 680: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/the-new-school-oyster-midden/</loc>
+		<lastmod>2013-08-15T09:45:18+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 673: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/new-school-free-press-article-2/</loc>
+		<lastmod>2013-08-13T18:53:25+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 653: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/oysters-and-geotherapy/</loc>
+		<lastmod>2013-08-08T14:57:49+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 636: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/art-and-science-many-voices-one-inspiration/</loc>
+		<lastmod>2013-08-08T14:57:06+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 627: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/global-coral-reef-alliance/</loc>
+		<lastmod>2013-08-08T14:50:12+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 623: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/landscapes-of-todays-science/</loc>
+		<lastmod>2013-08-08T14:43:16+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 621: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/lecture-the-ultimate-oyster-reef-for-new-york-city/</loc>
+		<lastmod>2013-08-08T14:36:35+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 617: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/estrogen-tales/</loc>
+		<lastmod>2013-08-08T14:29:30+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 612: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/blue-salon/</loc>
+		<lastmod>2013-08-08T13:08:49+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 615: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/visions-from-the-nanoworld/</loc>
+		<lastmod>2013-08-08T13:04:27+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 607: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/biology-and-art/</loc>
+		<lastmod>2013-08-05T21:08:35+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 610: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/solar-powered-oyster-reef/</loc>
+		<lastmod>2013-08-05T21:03:02+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 600: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/biorock-workshop/</loc>
+		<lastmod>2013-08-03T17:26:30+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 587: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/medtronic-prize-for-scientific-contributions-to-womens-health/</loc>
+		<lastmod>2013-08-03T17:11:34+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 581: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/ribosomes-on-the-move/</loc>
+		<lastmod>2013-08-03T17:03:42+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 572: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/art-meets-genomics/</loc>
+		<lastmod>2013-08-03T16:28:28+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 567: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/1152003-3/</loc>
+		<lastmod>2013-08-03T16:21:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 795: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/encounters/</loc>
-		<lastmod>2013-02-27T22:35:14+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 806: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/current-an-exhibition/</loc>
-		<lastmod>2013-02-27T22:34:41+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 810: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/tara-oceans-artist-in-residency-ongoing-collaboration/</loc>
-		<lastmod>2013-02-27T22:33:21+00:00</lastmod>
+		<loc>http://www.calamara.com/news/encounters/</loc>
+		<lastmod>2013-08-02T20:40:34+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 804: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/art-researches-science-the-future-third-and-final-segment-exhibition-and-lecture/</loc>
-		<lastmod>2013-02-27T22:30:25+00:00</lastmod>
+		<loc>http://www.calamara.com/news/art-researches-science-the-future-third-and-final-segment-exhibition-and-lecture/</loc>
+		<lastmod>2013-08-02T20:36:59+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 351: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/video/video-test-2/</loc>
+		<lastmod>2013-07-22T20:53:58+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 201: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/early-work/figurative/</loc>
+		<lastmod>2013-07-20T19:56:42+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 338: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/concepts/bio-filtered-brooklyn-aquarium/</loc>
+		<lastmod>2013-07-20T19:14:20+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 171: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/early-work/anthropomorphic/</loc>
+		<lastmod>2013-07-19T16:19:08+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 155: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/small-scale-sculpture/estrogen/</loc>
+		<lastmod>2013-07-19T16:12:38+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 151: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/environmental-art/dream-catcher/</loc>
+		<lastmod>2013-07-19T16:03:53+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1491: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/video/enchanted-star-sand-2/</loc>
+		<lastmod>2013-07-11T20:30:15+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 147: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/environmental-art/oyster-island/</loc>
+		<lastmod>2013-07-09T18:56:30+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 141: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/archives/environmental-art/meandering-midden/</loc>
+		<lastmod>2013-07-05T18:33:32+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 810: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/tara-oceans-artist-in-residency-ongoing-collaboration/</loc>
+		<lastmod>2013-06-24T22:42:22+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1092: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/imagine-science-films-artist-in-residence/</loc>
+		<lastmod>2013-06-16T14:10:23+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1157: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/publication-innovative-methods-of-marine-ecosystem-restoration/</loc>
+		<lastmod>2013-06-11T18:53:03+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1232: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/new-work/supernatural/</loc>
+		<lastmod>2013-06-08T19:45:35+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1257: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/new-work/uranium-infused-tintinnid-champagne-glasses/</loc>
+		<lastmod>2013-06-07T21:10:25+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1371: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/new-work/microscopy/</loc>
+		<lastmod>2013-06-07T21:05:53+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1344: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/new-work/la-boheme-series-two/</loc>
+		<lastmod>2013-06-07T21:03:33+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 1654: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/publication-the-biology-and-ecology-of-tintinnid-ciliates-models-for-marine-plankton/</loc>
+		<lastmod>2013-06-07T20:35:30+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+	<url>
+		<loc>http://www.calamara.com/artist-bio/</loc>
+		<lastmod>2013-06-04T20:07:44+00:00</lastmod>
+		<changefreq>weekly</changefreq>
+		<priority>0.6</priority>
+	</url>
+<!-- Debug: Priority report of postID 2205: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/smithsonian-article-with-live-video-embed-from-march-9th-opening-at-agnes-b-galerie/</loc>
+		<lastmod>2013-06-04T14:29:27+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2090: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/screening-of-shellshocked-at-the-american-museum-of-natural-history-sunday-march-10th/</loc>
+		<lastmod>2013-05-25T17:19:59+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2100: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/interview-release-by-imagine-science-films/</loc>
+		<lastmod>2013-05-25T17:06:32+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2150: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/interview-with-the-scientist-2/</loc>
+		<lastmod>2013-05-25T16:36:44+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 2234: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/feature-on-nprs-science-friday-the-perils-of-plankton/</loc>
+		<lastmod>2013-05-21T20:34:19+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 888: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/artist-is-residence-dublin-ireland-2/</loc>
+		<lastmod>2013-02-28T01:13:15+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.2</priority>
+	</url>
+<!-- Debug: Priority report of postID 892: Comments: 0 of 0 = 0 points -->
+	<url>
+		<loc>http://www.calamara.com/news/dumbo-arts-festival/</loc>
+		<lastmod>2013-02-27T22:44:09+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 876: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/artist-in-residence-tara-oceans-feb-march-2011/</loc>
+		<loc>http://www.calamara.com/news/artist-in-residence-tara-oceans-feb-march-2011/</loc>
 		<lastmod>2013-02-27T22:10:59+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 872: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/ecad-explorers-club-annual-dinner/</loc>
+		<loc>http://www.calamara.com/news/ecad-explorers-club-annual-dinner/</loc>
 		<lastmod>2013-02-27T22:08:13+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 865: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/artists-and-exploration-panel-discussion/</loc>
+		<loc>http://www.calamara.com/news/artists-and-exploration-panel-discussion/</loc>
 		<lastmod>2013-02-27T22:07:25+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 896: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/earth-consciousness-exhibit/</loc>
+		<loc>http://www.calamara.com/news/earth-consciousness-exhibit/</loc>
 		<lastmod>2013-02-27T22:02:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 910: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/the-explorers-club-presents-tara-oceans-3/</loc>
+		<loc>http://www.calamara.com/news/the-explorers-club-presents-tara-oceans-3/</loc>
 		<lastmod>2013-02-27T22:00:33+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 915: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/geek-down-presents-new-biologies/</loc>
+		<loc>http://www.calamara.com/news/geek-down-presents-new-biologies/</loc>
 		<lastmod>2013-02-27T21:59:20+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 900: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/shellshocked-premiers/</loc>
+		<loc>http://www.calamara.com/news/shellshocked-premiers/</loc>
 		<lastmod>2013-02-27T21:57:55+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1257: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/new-work/uranium-infused-tintinnid-champagne-glasses/</loc>
-		<lastmod>2013-02-27T21:32:31+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1344: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/new-work/la-boheme-series-two/</loc>
-		<lastmod>2013-02-27T21:17:33+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 129: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/new-work/la-boheme-2/</loc>
+		<loc>http://www.calamara.com/new-work/la-boheme-2/</loc>
 		<lastmod>2013-02-27T21:11:06+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-	<url>
-		<loc>http://dev.calamara.com/artists-statement/</loc>
-		<lastmod>2013-02-27T17:32:37+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-<!-- Debug: Priority report of postID 49: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/my-voyage-with-tara-oceans/</loc>
-		<lastmod>2013-02-26T17:30:28+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 87: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/ozma-with-plankton-brain-shes-an-ideal-leader/</loc>
-		<lastmod>2013-02-26T17:28:39+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/oyster-island-interview/</loc>
-		<lastmod>2013-02-26T17:26:00+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 41: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/i-am-obsessed-with-plankton/</loc>
-		<lastmod>2013-02-26T17:24:13+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 66: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/mascara-ti-a-rare-egyptian-plankton/</loc>
-		<lastmod>2013-02-26T17:19:26+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 69: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/oh-my-goddess-microscopic-plastic-in-the-plankton/</loc>
-		<lastmod>2013-02-26T17:17:27+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 77: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/la-boheme-a-portrait-of-todays-oceans-in-peril/</loc>
-		<lastmod>2013-02-26T17:15:52+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 380: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/uranium-for-art-not-bombs/</loc>
-		<lastmod>2013-02-26T17:13:09+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 385: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/why-fuzzy-rope-is-a-bad-idea-for-oyster-restoration/</loc>
-		<lastmod>2013-02-26T17:11:37+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 390: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/recipe-for-the-ultimate-restoration-of-urban-oyster-habitat/</loc>
-		<lastmod>2013-02-26T17:09:47+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 947: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/super-natural/</loc>
-		<lastmod>2013-02-26T17:06:45+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1016: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/reef-design/</loc>
-		<lastmod>2013-02-26T17:01:02+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1022: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/amphibious-reef-design/</loc>
-		<lastmod>2013-02-26T16:57:23+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1035: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/plankton/</loc>
-		<lastmod>2013-02-26T16:55:14+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1157: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/publication-innovative-methods-of-marine-ecosystem-restoration/</loc>
-		<lastmod>2013-02-26T16:52:23+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1247: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/calamara-is-on-the-move/</loc>
-		<lastmod>2013-02-26T16:49:23+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1502: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/oysters-in-battery-park/</loc>
-		<lastmod>2013-02-26T16:46:36+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1879: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/the-brick/</loc>
-		<lastmod>2013-02-26T16:29:46+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1718: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/the-siene-is-alive/</loc>
-		<lastmod>2013-02-26T16:28:53+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1556: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/ultimate-substrate-for-the-urban-oyster-an-experiment/</loc>
-		<lastmod>2013-02-26T16:27:56+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1654: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/publication-the-biology-and-ecology-of-tintinnid-ciliates-models-for-marine-plankton/</loc>
-		<lastmod>2013-02-26T16:19:08+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 171: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/early-work/anthropomorphic/</loc>
-		<lastmod>2013-02-12T19:43:23+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 201: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/early-work/figurative/</loc>
-		<lastmod>2013-02-12T19:30:01+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 351: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/video/video-test-2/</loc>
-		<lastmod>2013-02-11T20:25:47+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1491: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/video/enchanted-star-sand-2/</loc>
-		<lastmod>2013-02-11T20:22:58+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1515: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/niki-graffiti/</loc>
-		<lastmod>2013-02-07T02:52:42+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 600: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/biorock-workshop/</loc>
-		<lastmod>2013-01-31T15:35:22+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 612: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/blue-salon/</loc>
-		<lastmod>2013-01-31T15:35:03+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 849: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/concepts/cell-garden/</loc>
+		<loc>http://www.calamara.com/archives/concepts/cell-garden/</loc>
 		<lastmod>2013-01-24T00:53:26+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 338: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/concepts/bio-filtered-brooklyn-aquarium/</loc>
-		<lastmod>2013-01-24T00:52:24+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 853: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/concepts/those-could-be-anything/</loc>
+		<loc>http://www.calamara.com/archives/concepts/those-could-be-anything/</loc>
 		<lastmod>2013-01-24T00:51:22+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 859: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/concepts/inflatable-estrogen/</loc>
+		<loc>http://www.calamara.com/archives/concepts/inflatable-estrogen/</loc>
 		<lastmod>2013-01-24T00:48:59+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 935: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/concepts/mitochondrian-renewable-energy-pool/</loc>
+		<loc>http://www.calamara.com/archives/concepts/mitochondrian-renewable-energy-pool/</loc>
 		<lastmod>2013-01-24T00:48:07+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 926: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/concepts/lipid-love-starring-rhodopsin-as-visual-purple-2/</loc>
+		<loc>http://www.calamara.com/archives/concepts/lipid-love-starring-rhodopsin-as-visual-purple-2/</loc>
 		<lastmod>2013-01-24T00:46:25+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 151: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/environmental-art/dream-catcher/</loc>
-		<lastmod>2013-01-24T00:40:36+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 141: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/environmental-art/meandering-midden/</loc>
-		<lastmod>2013-01-24T00:40:01+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 789: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/environmental-art/transcriptease/</loc>
-		<lastmod>2013-01-24T00:35:19+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 818: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/environmental-art/radiolarian-reef/</loc>
+		<loc>http://www.calamara.com/archives/environmental-art/radiolarian-reef/</loc>
 		<lastmod>2013-01-24T00:34:34+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 745: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/environmental-art/the-gill/</loc>
-		<lastmod>2013-01-24T00:33:02+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 147: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/environmental-art/oyster-island/</loc>
-		<lastmod>2013-01-24T00:30:03+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 773: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/environmental-art/enchanted-oyster-sweet-spot/</loc>
-		<lastmod>2013-01-24T00:26:50+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 155: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/small-scale-sculpture/estrogen/</loc>
-		<lastmod>2013-01-24T00:24:14+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 844: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/small-scale-sculpture/follicle-stimulator-hormone-4/</loc>
+		<loc>http://www.calamara.com/archives/small-scale-sculpture/follicle-stimulator-hormone-4/</loc>
 		<lastmod>2013-01-24T00:23:12+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 940: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/archives/large-scale-sculpture/human-genome-science-building/</loc>
+		<loc>http://www.calamara.com/archives/large-scale-sculpture/human-genome-science-building/</loc>
 		<lastmod>2013-01-24T00:22:10+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 121: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/large-scale-sculpture/sars-inhibited/</loc>
-		<lastmod>2013-01-24T00:20:11+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 110: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/archives/large-scale-sculpture/la-boheme/</loc>
-		<lastmod>2013-01-24T00:19:09+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 828: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/hecate-future-moon/</loc>
+		<loc>http://www.calamara.com/news/hecate-future-moon/</loc>
 		<lastmod>2013-01-21T21:20:43+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 	<url>
-		<loc>http://dev.calamara.com/contact/</loc>
+		<loc>http://www.calamara.com/contact/</loc>
 		<lastmod>2013-01-21T19:59:43+00:00</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>0.6</priority>
 	</url>
-<!-- Debug: Priority report of postID 1511: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/niki-de-saint-phalle/</loc>
-		<lastmod>2013-01-11T16:38:48+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 964: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/ernst-haeckle/</loc>
-		<lastmod>2013-01-11T16:35:42+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 988: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/haeckles-art-forms-in-nature-5/</loc>
-		<lastmod>2013-01-11T16:34:49+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 610: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/solar-powered-oyster-reef/</loc>
-		<lastmod>2012-12-02T01:05:11+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 623: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/landscapes-of-todays-science/</loc>
-		<lastmod>2012-12-02T01:03:29+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 615: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/visions-from-the-nanoworld/</loc>
-		<lastmod>2012-12-02T01:01:40+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 617: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/estrogen-tales/</loc>
-		<lastmod>2012-12-02T00:59:46+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 621: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/lecture-the-ultimate-oyster-reef-for-new-york-city/</loc>
-		<lastmod>2012-12-02T00:57:46+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 678: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/symposium-connecting-to-the-urban-environment/</loc>
-		<lastmod>2012-12-02T00:54:43+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 653: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/oysters-and-geotherapy/</loc>
-		<lastmod>2012-12-02T00:52:54+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 744: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/may-10th-october-8th-transformative-lines-sculpture-guild-exhibition-nolan-park-on-governors-island-ny/</loc>
-		<lastmod>2012-12-02T00:51:08+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 755: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/guardian-interview-with-julia-levitt-on-coral-reefs-biomimicry-and-eco-art/</loc>
-		<lastmod>2012-12-02T00:49:21+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 627: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/global-coral-reef-alliance/</loc>
-		<lastmod>2012-12-02T00:44:14+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 607: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/biology-and-art/</loc>
-		<lastmod>2012-12-02T00:41:30+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 587: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/medtronic-prize-for-scientific-contributions-to-womens-health/</loc>
-		<lastmod>2012-12-02T00:35:49+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 572: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/art-meets-genomics/</loc>
-		<lastmod>2012-12-02T00:31:29+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 567: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/1152003-3/</loc>
-		<lastmod>2012-12-02T00:29:43+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 759: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/september-21-26th-science-and-innovation-week-2009-at-the-institute-of-science-and-technology-of-mexico-city/</loc>
-		<lastmod>2012-12-02T00:27:10+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
 <!-- Debug: Priority report of postID 792: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/the-green-salon-nyc/</loc>
+		<loc>http://www.calamara.com/news/the-green-salon-nyc/</loc>
 		<lastmod>2012-12-02T00:23:28+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
-<!-- Debug: Priority report of postID 956: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/pregnant-sea-horse-from-the-hudson-river/</loc>
-		<lastmod>2012-11-27T18:30:06+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 1013: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/radiolarian-design/</loc>
-		<lastmod>2012-11-27T18:24:54+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-	<url>
-		<loc>http://dev.calamara.com/cv/</loc>
-		<lastmod>2012-11-27T18:12:36+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
-	<url>
-		<loc>http://dev.calamara.com/geotherapy-declaration/</loc>
-		<lastmod>2012-11-27T17:36:55+00:00</lastmod>
-		<changefreq>weekly</changefreq>
-		<priority>0.6</priority>
-	</url>
 <!-- Debug: Priority report of postID 815: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/art-tour-from-governors-to-garrison/</loc>
+		<loc>http://www.calamara.com/news/art-tour-from-governors-to-garrison/</loc>
 		<lastmod>2012-08-31T18:40:17+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>
 <!-- Debug: Priority report of postID 690: Comments: 0 of 0 = 0 points -->
 	<url>
-		<loc>http://dev.calamara.com/news/estrogen-2/</loc>
+		<loc>http://www.calamara.com/news/estrogen-2/</loc>
 		<lastmod>2012-08-28T17:37:38+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 673: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/new-school-free-press-article-2/</loc>
-		<lastmod>2012-08-23T18:41:51+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 581: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/news/ribosomes-on-the-move/</loc>
-		<lastmod>2012-08-23T17:50:26+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 397: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/tara-oceans-2012-feb-5th-11th-year-of-the-water-dragon/</loc>
-		<lastmod>2012-08-23T17:34:57+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 60: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/explorers-club-annual-dinner-mara-returns-flag-75/</loc>
-		<lastmod>2012-08-16T18:51:25+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.2</priority>
-	</url>
-<!-- Debug: Priority report of postID 101: Comments: 0 of 0 = 0 points -->
-	<url>
-		<loc>http://dev.calamara.com/blog/ode-to-wolf-hilbertz-the-father-of-mineral-accreation/</loc>
-		<lastmod>2012-08-16T16:56:24+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.2</priority>
 	</url>

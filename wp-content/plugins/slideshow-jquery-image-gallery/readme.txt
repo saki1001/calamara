@@ -1,11 +1,11 @@
-=== Slideshow ===
+﻿=== Slideshow ===
 
 Contributors: stefanboonstra
 Donate link: http://stefanboonstra.com/donate-to-slideshow/
 Tags: responsive, slideshow, slider, slide show, images, image, photo, video, text, gallery, galleries, jquery, javascript
-Requires at least: 3.3
-Tested up to: 3.5.1
-Stable tag: 2.2.11
+Requires at least: 3.5
+Tested up to: 4.3
+Stable tag: 2.3.1
 License: GPLv2
 
 Integrate a fancy slideshow in just five steps. - Rainbows. Rainbows everywhere.
@@ -26,8 +26,8 @@ different images, settings and styles for each one of them.
  - Create as many slideshows with as many slides as you like
  - Image slides
  - Text slides
- - Video slides
- - Completely responsive
+ - YouTube Video slides
+ - Responsive
  - Place it anywhere on your website
  - Run multiple slideshows on the same page
  - Change animations and handling
@@ -36,27 +36,38 @@ different images, settings and styles for each one of them.
 
 = Languages =
 
- - Chinese (26% Translated by [Kevin Tell](http://www.ivygg.com/))
- - Czech (98% Translated by Edhel)
- - Dutch (100%)
- - English (100%)
- - French (59% Translated by [Wptheme](http://wptheme.fr/))
- - Hebrew (62% Translated by Eli Segev)
- - Russian (100% Translated by Dmitry Fatakov and [Oleg Fritz](http://www.facebook.com/profile.php?id=100001331241069))
- - Spanish (61% Translated by [Violeta Rosales](https://twitter.com/violetisha))
- - Swedish (100% Translated by [Åke Isacsson](http://www.nojdkund.se/))
- - Turkish (100% Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
-
-Feel free to send me your own translation of the plugin to my e-mail address: wordpress@stefanboonstra.com. The original
-translation file can be downloaded
-[by clicking here](http://plugins.svn.wordpress.org/slideshow-jquery-image-gallery/trunk/languages/slideshow-plugin-original.po)
-and saving the page to your computer. This file can be easily edited with [PoEdit](http://www.poedit.net/), a free
-translation tool. Many thanks in advance!
+ - Bulgarian	  (87%  - bg_BG - Translated by [Ilko Ivanov](http://software.avalonbg.com/en/index.php))
+ - Chinese        (65%  - zh_CN - Translated by [Kevin Tell](http://www.ivygg.com/) and [Leo Newbiesup](http://smallseotips.com/))
+ - Czech          (81%  - cs_CZ - Translated by Edhel)
+ - Dutch          (100% - nl_NL - Translated by [Stefan Boonstra](http://stefanboonstra.com/) (That's me!))
+ - English        (100%)
+ - Finnish        (83%  - fi    - Translated by A. Nonymous)
+ - French         (91%  - fr_FR - Translated by [Romain Sandri](http://www.onidesign.fr/))
+ - German         (99%  - de_DE - Translated by [Markus Amann](http://www.dema-itsupport.com/) and others)
+ - Hebrew         (53%  - he_IL - Translated by Eli Segev)
+ - Italian        (83%  - it_IT - Translated by [Tecnikgeek](http://tecnikgeek.com/))
+ - Japanese       (82%  - ja    - Translated by [Michihide Hotta](http://net-newbie.com/))
+ - Norwegian      (99%  - nb_NO - Translated by A. Nonymous)
+ - Persian        (100% - fa_IR - Translated by [W3Design](http://w3design.ir/))
+ - Polish         (83%  - pl_PL - Translated by Wicher Wiater)
+ - Portuguese     (92%  - pt_BR - Translated by [Piero Luiz](http://www.newer7.com.br/) and others)
+ - Portuguese     (83%  - pt_PT - Translated by [Filipe Catraia](http://www.filipecatraia.com/))
+ - Russian        (100% - ru_RU - Translated by [Coupofy](http://www.coupofy.com/) and Dmitry Fatakov)
+ - Serbo-Croatian (91%  - sr_RS - Translated by [Webhosting Hub](http://www.webhostinghub.com/))
+ - Spanish        (51%  - es_ES - Translated by [Violeta Rosales](https://twitter.com/violetisha))
+ - Swedish        (91%  - sv_SE - Translated by [Åke Isacsson](http://www.nojdkund.se/) and Wilhelm Svenselius)
+ - Turkish        (83%  - tr_TR - Translated by [İlker Akdoğan](http://www.kelkirpi.net/))
+ - Ukrainian      (100% - uk_UK - Translated by [Coupofy](http://www.coupofy.com/))
 
 = Project board =
 
 Check upcoming features, bug-fixes and development progress that are currently on the Slideshow project board at:
 [Slideshow project board - Trello.com](https://trello.com/board/slideshow-plugin-wordpress/506311260cc04591010463c2)
+
+= Need the (uncompressed) source code? =
+
+Find the Slideshow project's source code in my [GitHub](https://github.com/Boonstra/Slideshow) repository. The
+uncompressed files can be compiled using [Prepros](http://alphapixels.com/prepros/), or [CodeKit](http://incident57.com/codekit/).
 
 
 == Installation ==
@@ -164,6 +175,122 @@ personal taste.
 
 
 == Changelog ==
+
+= 2.3.1 =
+*   Fixed: Text and video slides could not be inserted.
+
+= 2.3.0 =
+*   Refactored the slideshow plugin's backend codebase to prepare for a larger backend rewrite.
+*   Removed backwards compatibility on inserting images with pre-3.5 versions of WordPress.
+*   Slideshows now work on infinite scroll and single page websites through the "Enable lazy loading" option.
+*   Fixed: YouTube thumbnail image disappeared after clicking the slideshow's navigation buttons.
+
+= 2.2.25 =
+*   Changed localization domain to match the plugin's slug in order to support language packs.
+
+= 2.2.24 =
+*   Compatible with WordPress 4.3.
+*   Widget constructor no longer uses deprecated PHP 4 style constructor.
+*	Fixed: Mismatch between session ID and settings ID.
+*	Fixed: Unescaped data in slideshow editor.
+*	Fixed: Resizing issues.
+*   Added Ukrainian translation and updated Russian translation, thanks to Coupofy.
+
+= 2.2.23 =
+*   Fixed: Despite default stylesheets now loading through static file again, admin-ajax.php was still being called.
+*   Fixed: Invalid HTML in the shortcode inserter. Thanks to [Iazel](https://wordpress.org/support/profile/iazel).
+*	Fixed: HTML5 validation issue when loading stylesheets in the head of the document.
+*   Fixed: Slideshows now load their settings by slideshow ID, instead of the variable session ID.
+*   Updated Spanish translation, thanks to Manuel Ballesta Ruiz.
+
+= 2.2.22 =
+*   Compatible with WordPress 4.2.
+*	Default stylesheets are no longer dynamically loaded through admin-ajax.php.
+*	Fixed: Security vulnerability in the SlideshowPluginSlideshowStylesheet class.
+*	Fixed: An issue with admin-ajax.php when the frontend uses HTTP, while the backend uses HTTPS. Thanks to [Chris Scott](https://github.com/chrisscott)
+*	Fixed: A bug that caused the previous slide button and the navigation bullets to malfunction on "Cross Fade" setting.
+*   Fixed: Slideshow container calculation now uses the JavaScript round function instead of the floor function.
+*	Fixed: Separated assignment of $sessionID and increment of SlideshowPlugin::$sessionCounter.
+*   Added Norwegian translation by A. Nonymous.
+*   Updated Persian translation by W3Design.
+*   Updated German translation by A. Nonymous.
+*	Updated Brazilian Portuguese by A. Nonymous.
+
+= 2.2.21 =
+*	Compatible with WordPress 3.9.
+*	Added "Cross Fade" option to the animation settings.
+*	Updated the API to support retrieving the direction of the animation on the animation event.
+*	Fixed: Slideshow moving to next slide on keyboard navigation. By [Ben Wetzel](https://github.com/bensashi)
+*	Fixed: HTML5 validation issue.
+*	Fixed: Permission check that checked for "edit_post" instead of "edit_slideshow".
+
+= 2.2.20 =
+*	Compatible with WordPress 3.8.
+*	Accessibility improvements by [Ben Wetzel](https://github.com/bensashi)
+*	Title and description element types can now be set from backend and anchor tags are omitted when no URL is set.
+*	Improved functional stylesheet.
+*	Post published/updated message doesn't show a link to a non-existant page anymore.
+*	New tags are available for custom stylesheets: %site-url%, %stylesheet-url% and %template-url%
+*	Fixed: When the slideshow would not have any height, slides would not hide outside of the slideshow.
+*	Added Serbo-Croatian translation by Webhosting Hub.
+*	Updated Persian translation by W3Design.
+*	Updated Chinese translation by Leo Newbiesup.
+*	Updated Swedish translation by Wilhelm Svenselius.
+
+= 2.2.19 =
+*	Slideshows can now detect when their stylesheet isn't loaded and load their own when this is the case.
+*   The functional stylesheet should now provide a more stable base for all slideshows.
+*	Fixed: Uploading images through the WordPress 3.5 uploader on a slideshow's edit page would return an error.
+*	Fixed: Images with a 'max-width: 100%;' style rule would size wrongly on responsive websites.
+*	Fixed: The randomization method returned error messages.
+
+= 2.2.18 =
+*	Added option to select whether or not search engines should follow a slide's link.
+*   Improved filter avoiding mechanism.
+*   Disappearing settings now have a more apparent animation.
+*	Fixed: First slide of a slideshow wouldn't show when the slideshow's content had no size on page load.
+*   Added Brazilian Portuguese translation by Piero Luiz.
+*   Updated French translation by Romain Sandri.
+
+= 2.2.17 =
+*   Fixed: Images disappeared when their width was larger than the slide's width and image behaviour was set to 'Natural and centered'
+
+= 2.2.16 =
+*   Inserting images can now be done using the WordPress 3.5 uploader.
+*   Images can now fill up an entire slide without losing their dimensions, using the 'Zoom to fit' option.
+*   Fixed: Descriptions came up and stayed up on fly-over.
+*   Fixed: Image calculations failed in a few because of a 'jQuery.outerWidth()' bug.
+*   Fixed: Control panel wasn't correctly initialized when slideshow was set to automatically slide to the next slide.
+
+= 2.2.15 =
+*   The image dimension calculation algorithm now uses a more stable and more efficient way to determine the size of images.
+*   Added slideshow API.
+*   Fixed: WP Color Picker (Iris) adds a hashtag to color codes. As slideshow does this as well, text slides didn't display color properly.
+
+= 2.2.14 =
+*   Fixed: Slideshow didn't show because of a JavaScript error when calculating an unstretched image's dimension.
+
+= 2.2.13 =
+*   The SlideshowPluginAjax.php has been re-added to SVN.
+
+= 2.2.12 =
+*   Compatible with WordPress 3.6.
+*   Complete javascript revision to be better manageable with the help of the Prepros tool.
+*   Related videos can now be enabled or disabled on YouTube videos.
+*   YouTube API now is only loaded when a video slide needs to be shown.
+*   Re-arranged the 'General Settings' page to have a 'General Settings' tab that contains overall system settings.
+*   Added option to choose the loading location of the stylesheets, as IE8 and older don't always allow in-body styling.
+*   Implemented a new algorithm for randomizing slides.
+*   Slideshow can now wait for a slide to load before showing it.
+*   Fixed: The 'Enable responsiveness' setting disappeared when disabling the 'Show title and description' option.
+*   Added Turkish translation by İlker Akdoğan.
+*   Added Polish translation by Wicher Wiater.
+*   Added Finnish translation by an anonymous supporter.
+*   Updated French translation by Romain Sandri.
+*   Added Portuguese translation by Filipe Catraia.
+*   Added Persian translation by W3Design.
+*   Added Italian translation by Tecnikgeek.
+*   Added Japanese translation by Michihide Hotta.
 
 = 2.2.11 =
 *   Fixed: The slideshow script loaded the YouTube API twice.
@@ -421,3 +548,5 @@ personal taste.
 
 *	[Stefan Boonstra](http://stefanboonstra.com/)
 *   [Slideshow project board](https://trello.com/board/slideshow-plugin-wordpress/506311260cc04591010463c2)
+*   [GitHub](https://github.com/Boonstra/Slideshow)
+*   [Prepros](http://alphapixels.com/prepros/)
