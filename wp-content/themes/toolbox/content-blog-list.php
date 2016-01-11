@@ -35,7 +35,7 @@
     <?php if ( 'post' == get_post_type() ) : ?>
         
         <div class="entry-meta">
-            <?php echo date('m. d', strtotime(get_the_date())); ?>
+            <?php echo date('m. d. y', strtotime(get_the_date())); ?>
         </div>
         
     <?php endif; ?>
