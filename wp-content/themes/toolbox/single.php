@@ -19,7 +19,7 @@ get_header(); ?>
         if ( have_posts() ) :
             while ( have_posts() ) : the_post();
             // PORTFOLIO for parent categories New Work and Archives
-                if ( in_category('new-work') || $parent_cat_num === '10' ) :
+                if ( in_category('new-work') || $parent_cat_num === 10 ) :
                     $sidebar = 'cat-posts';
                     
                     if ( has_post_format('gallery') ) :
