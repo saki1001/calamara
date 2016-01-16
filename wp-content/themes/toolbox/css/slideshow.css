@@ -34,21 +34,21 @@
 
 .slideshow_container .slideshow_description_box,
 .slideshow_container_style-light .slideshow_description_box {
-    top: 533px !important;
+    top: 633px !important;
     height: 100px;
-    background: rgba(0,0,0,0.5) !important;
+    background: transparent !important;
     opacity: 1 !important;
 }
 
 .slideshow_container .slideshow_description_box a  {
-    color: #FFF !important;
+    color: #020202 !important;
     display: block;
 }
 
 #main .slideshow_container h2,
 .slideshow_container .slideshow_description_box .slideshow_title {
     font-size: 2em !important;
-    padding: 10px 10px 15px 10px;
+    padding: 15px 10px 15px 10px;
     width: auto;
 }
 
