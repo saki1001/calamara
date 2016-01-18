@@ -65,6 +65,7 @@ http://ryanfait.com/
     font-size: 1.6em;
     background: url('../images/ctenophore-footer.jpg') no-repeat right top;
     margin: 0 auto;
+    padding: 0 52px;
     position: relative;
     z-index: 2;
 }
