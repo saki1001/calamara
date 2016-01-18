@@ -14,6 +14,9 @@
 </div><!-- #page -->
 
 <footer id="footer" role="contentinfo">
+
+	<?php include('content-social-links.php'); ?>
+
     <div>
         Mara G. Haseltine &copy;2016
     </div>
