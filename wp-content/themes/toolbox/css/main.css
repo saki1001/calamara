@@ -55,6 +55,8 @@ http://ryanfait.com/
 .push {
     width: 100%;
     overflow: hidden; /*clearfix*/
+    position: relative;
+    z-index: -1;
 }
 
 #footer {
@@ -63,6 +65,8 @@ http://ryanfait.com/
     font-size: 1.6em;
     background: url('../images/ctenophore-footer.jpg') no-repeat right top;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 #footer div {
@@ -271,6 +275,15 @@ header h1 a {
 
 /* Social Icons
 -------------------------------------------------------------- */
+#main #content .social-icons,
+#footer .social-icons {
+    width: 100%;
+}
+
+#main #content .social-icons {
+    float: left;
+}
+
 #main #content .page-header {
     width: 100%;
     margin-bottom: 20px;
@@ -281,58 +294,78 @@ header h1 a {
     padding-bottom: 5px;
 }
 
-#main #content .social-icons {
-    width: 100%;
-    float: left;
+#footer .social-icons {
+    margin-left: 10px;
+    position: absolute;
+    bottom: 15px;
 }
 
-#main #content .social-icons li {
+#main #content .social-icons li,
+#footer .social-icons li {
     margin-right: 5px;
     margin-bottom: 0;
     list-style: none;
     float: left;
 }
 
-#main #content .social-icons li a {
+#main #content ul.social-icons,
+#footer ul.social-icons {
+    margin-left: 0px;
+}
+
+#main #content ul.social-icons li,
+#footer ul.social-icons li {
+    padding-left: 0px;
+    background: none;
+}
+
+/*Social Media Icons*/
+.social-icons li a {
     width: 20px;
     height: 20px;
     background: url('../images/social-icons.png') no-repeat 0 0;
     display: block;
 }
 
-#main #content ul.social-icons {
-    margin-left: 0px;
-}
-
-#main #content ul.social-icons li {
-    padding-left: 0px;
-    background: none;
-}
-
-/*Social Media Icons*/
-#main #content .social-icons li a.pintrest {
+.social-icons li a.pintrest {
     background-position: 0 0;
 }
 
-#main #content .social-icons li a.twitter {
+.social-icons li a.twitter {
     background-position: -20px 0;
 }
 
-#main #content .social-icons li a.facebook {
+.social-icons li a.facebook {
     background-position: -40px 0;
 }
 
+.social-icons li a.google {
+    background-position: -102px 0;
+}
+
+.social-icons li a.instagram {
+    background-position: -80px 0;
+}
+
 /*Social Media Icons -- Hover*/
-#main #content .social-icons li a.pintrest:hover {
+.social-icons li a.pintrest:hover {
     background-position: 0 -20px;
 }
 
-#main #content .social-icons li a.twitter:hover {
+.social-icons li a.twitter:hover {
     background-position: -20px -20px;
 }
 
-#main #content .social-icons li a.facebook:hover {
+.social-icons li a.facebook:hover {
     background-position: -40px -20px;
+}
+
+.social-icons li a.google:hover {
+    background-position: -102px -20px;
+}
+
+.social-icons li a.instagram:hover {
+    background-position: -80px -20px;
 }
 
 /* Sidebar
