@@ -3,7 +3,7 @@
  * Plugin Name: iOS Images Fixer
  * Plugin URI: http://bishoy.me/wp-plugins/ios-images-fixer/
  * Description: This plugin fixes iOS-taken images' orientation upon uploading using ImageMagic Library if available or PHP GD as a fallback. No settings editing required, just activate the plugin and try uploading an image from your idevice! If you like this free plugin, please <a href="http://bishoy.me/donate" target="_blank">consider a donation</a>.
- * Version: 1.2.2
+ * Version: 1.2.3
  * Author: Bishoy A.
  * Author URI: http://bishoy.me
  * License: GPL2
@@ -56,7 +56,23 @@ class BAImageFixer {
 		if ( is_admin() ){ 
 			add_action( 'admin_notices', array( self::get_instance(), 'required_function_notice' ) );
 			add_action( 'admin_menu', array( self::get_instance(), 'imf_menu' ) );
+			add_action( 'admin_enqueue_scripts', array( self::get_instance(), 'admin_enqueue' ) );
+			add_filter( 'iosif_admin_pointers-media_page_ios-images-fixer', array( self::get_instance(), 'register_donate_pointer' ) );
 		}
+	}
+
+	public function register_donate_pointer( $p ) {
+	    $p['iosif'] = array(
+	        'target' => '#iosif-donate-link',
+	        'options' => array(
+	            'content' => sprintf( '<h3> %s </h3> <p> %s </p>',
+	                __( 'Working good?' ,'iosif'),
+	                __( 'Did this plugin work good for you? You can buy me a beer :) It\'s much appreciated!','iosif')
+	            ),
+	            'position' => array( 'edge' => 'top', 'align' => 'left' )
+	        )
+	    );
+	    return $p;
 	}
 
 	/**
@@ -67,6 +83,53 @@ class BAImageFixer {
 	public function imf_menu() {
 		$fixer_page = add_media_page('Fix iOS images', 'Fix iOS images', 'manage_options', 'ios-images-fixer', array( self::get_instance(), 'ios_fixer_page' ) );
 		add_action( 'admin_head-' . $fixer_page, array( self::get_instance(), 'admin_head' ) );
+	}
+
+	public function admin_enqueue() {
+		// Don't run on WP < 3.3
+		if ( get_bloginfo( 'version' ) < '3.3' )
+		    return;
+		 
+		// Get the screen ID
+		$screen = get_current_screen();
+		$screen_id = $screen->id;
+
+		// Get pointers for this screen
+		$pointers = apply_filters( 'iosif_admin_pointers-' . $screen_id, array() );
+
+		// No pointers? Then we stop.
+		if ( ! $pointers || ! is_array( $pointers ) )
+		    return;
+
+		// Get dismissed pointers
+	    $dismissed = explode( ',', (string) get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+	    $valid_pointers = array();
+	 
+	    // Check pointers and remove dismissed ones.
+	    foreach ( $pointers as $pointer_id => $pointer ) {
+	 
+	        // Sanity check
+	        if ( in_array( $pointer_id, $dismissed ) || empty( $pointer )  || empty( $pointer_id ) || empty( $pointer['target'] ) || empty( $pointer['options'] ) )
+	            continue;
+	 
+	        $pointer['pointer_id'] = $pointer_id;
+	 
+	        // Add the pointer to $valid_pointers array
+	        $valid_pointers['pointers'][] =  $pointer;
+	    }
+	 
+	    // No valid pointers? Stop here.
+	    if ( empty( $valid_pointers ) )
+	        return;
+	 
+	    // Add pointers style to queue.
+	    wp_enqueue_style( 'wp-pointer' );
+	 
+	    // Add pointers script to queue. Add custom script.
+	    wp_enqueue_script( 'iosif-pointer', plugins_url( 'assets/js/iosif-pointer.js', __FILE__ ), array( 'wp-pointer' ) );
+	 
+	    // Add pointer options to script.
+	    wp_localize_script( 'iosif-pointer', 'iosifPointer', $valid_pointers );
 	}
 
 	/**
@@ -148,7 +211,7 @@ class BAImageFixer {
 	public static function get_broken_images() {
 		$query_images_args = array(
 		    'post_type'      => 'attachment', 
-		    'post_mime_type' =>'image/jpeg', 
+		    'post_mime_type' => 'image/jpeg', 
 		    'post_status'    => 'inherit', 
 		    'posts_per_page' => -1,
 		);
@@ -163,6 +226,9 @@ class BAImageFixer {
 				$broken_images[] = $image;
 			}
 		}
+
+		wp_reset_postdata();
+
 		return $broken_images;
 	}
 

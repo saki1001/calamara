@@ -3,9 +3,9 @@
 
 function to_plugin_options()
     {
-        $options = get_option('tto_options');
+        $options = tto_get_settings();
         
-        if (isset($_POST['form_submit']))
+        if (isset($_POST['to_form_submit']) &&  wp_verify_nonce($_POST['to_form_nonce'],'to_form_submit') )
             {
                     
                 $options['capability'] = sanitize_key($_POST['capability']);
@@ -20,7 +20,7 @@ function to_plugin_options()
                         
                     ?>
                       <div class="wrap"> 
-                        <div id="icon-settings" class="icon32"></div>
+                        
                             <h2><?php _e( "General Settings", 'taxonomy-terms-order' ) ?></h2>
                             
                             <?php tto_info_box() ?>
@@ -35,11 +35,11 @@ function to_plugin_options()
                                             <th scope="row" style="text-align: right;"><label><?php _e( "Minimum Level to use this plugin", 'taxonomy-terms-order' ) ?></label></th>
                                             <td>
                                                 <select id="role" name="capability">
-                                                    <option value="read" <?php if (isset($options['capability']) && $options['capability'] == "read") echo 'selected="selected"'?>><?php _e('Subscriber', 'cpt') ?></option>
-                                                    <option value="edit_posts" <?php if (isset($options['capability']) && $options['capability'] == "edit_posts") echo 'selected="selected"'?>><?php _e('Contributor', 'cpt') ?></option>
-                                                    <option value="publish_posts" <?php if (isset($options['capability']) && $options['capability'] == "publish_posts") echo 'selected="selected"'?>><?php _e('Author', 'cpt') ?></option>
-                                                    <option value="publish_pages" <?php if (isset($options['capability']) && $options['capability'] == "publish_pages") echo 'selected="selected"'?>><?php _e('Editor', 'cpt') ?></option>
-                                                    <option value="install_plugins" <?php if (!isset($options['capability']) || empty($options['capability']) || (isset($options['capability']) && $options['capability'] == "install_plugins")) echo 'selected="selected"'?>><?php _e('Administrator', 'cpt') ?></option>
+                                                    <option value="read" <?php if (isset($options['capability']) && $options['capability'] == "read") echo 'selected="selected"'?>><?php _e('Subscriber', 'taxonomy-terms-order') ?></option>
+                                                    <option value="edit_posts" <?php if (isset($options['capability']) && $options['capability'] == "edit_posts") echo 'selected="selected"'?>><?php _e('Contributor', 'taxonomy-terms-order') ?></option>
+                                                    <option value="publish_posts" <?php if (isset($options['capability']) && $options['capability'] == "publish_posts") echo 'selected="selected"'?>><?php _e('Author', 'taxonomy-terms-order') ?></option>
+                                                    <option value="publish_pages" <?php if (isset($options['capability']) && $options['capability'] == "publish_pages") echo 'selected="selected"'?>><?php _e('Editor', 'taxonomy-terms-order') ?></option>
+                                                    <option value="install_plugins" <?php if (!isset($options['capability']) || empty($options['capability']) || (isset($options['capability']) && $options['capability'] == "install_plugins")) echo 'selected="selected"'?>><?php _e('Administrator', 'taxonomy-terms-order') ?></option>
                                                 </select>
                                             </td>
                                         </tr>
@@ -48,17 +48,21 @@ function to_plugin_options()
                                         <tr valign="top">
                                             <th scope="row" style="text-align: right;"><label><?php _e( "Auto Sort", 'taxonomy-terms-order' ) ?></label></th>
                                             <td>
-                                                <select id="role" name="autosort">
+                                                <select id="autosort" name="autosort">
                                                     <option value="0" <?php if ($options['autosort'] == "0") echo 'selected="selected"'?>><?php _e('OFF', 'taxonomy-terms-order') ?></option>
                                                     <option value="1" <?php if ($options['autosort'] == "1") echo 'selected="selected"'?>><?php _e('ON', 'taxonomy-terms-order') ?></option>
-                                                </select> *(<?php _e( "global setting", 'taxonomy-terms-order' ) ?>) <?php _e( "Additional description and details at ", 'taxonomy-terms-order' ) ?><a target="_blank" href="http://www.nsp-code.com/taxonomy-terms-order-and-auto-sort-admin-sort-description-an-usage/"><?php _e( "Auto Sort Description", 'taxonomy-terms-order' ) ?></a>
+                                                </select>
+                                                <label for="autosort"> *(<?php _e( "global setting", 'taxonomy-terms-order' ) ?>) <?php _e( "Additional description and details at ", 'taxonomy-terms-order' ) ?><a target="_blank" href="http://www.nsp-code.com/taxonomy-terms-order-and-auto-sort-admin-sort-description-an-usage/"><?php _e( "Auto Sort Description", 'taxonomy-terms-order' ) ?></a></label>
                                             </td>
                                         </tr>
                                         
                                         <tr valign="top">
                                             <th scope="row" style="text-align: right;"><label><?php _e( "Admin Sort", 'taxonomy-terms-order' ) ?></label></th>
                                             <td>
-                                                <input id="adminsort" type="checkbox" <?php if ($options['adminsort'] == "1") {echo ' checked="checked"';} ?> value="1" name="adminsort">
+                                                <select id="adminsort" name="adminsort">
+                                                    <option value="0" <?php if ($options['adminsort'] == "0") echo 'selected="selected"'?>><?php _e('OFF', 'taxonomy-terms-order') ?></option>
+                                                    <option value="1" <?php if ($options['adminsort'] == "1") echo 'selected="selected"'?>><?php _e('ON', 'taxonomy-terms-order') ?></option>
+                                                </select>
                                                 <label for="adminsort"><?php _e("This will change the order of terms within the admin interface", 'taxonomy-terms-order') ?>. <?php _e( "Additional description and details at ", 'taxonomy-terms-order' ) ?><a target="_blank" href="http://www.nsp-code.com/taxonomy-terms-order-and-auto-sort-admin-sort-description-an-usage/"><?php _e( "Auto Sort Description", 'taxonomy-terms-order' ) ?></a></label>
                                             </td>
                                         </tr>
@@ -73,7 +77,8 @@ function to_plugin_options()
                                     <input type="submit" name="Submit" class="button-primary" value="<?php _e('Save Settings', 'taxonomy-terms-order') ?>">
                                </p>
                             
-                                <input type="hidden" name="form_submit" value="true" />
+                                <?php wp_nonce_field('to_form_submit','to_form_nonce'); ?>
+                                <input type="hidden" name="to_form_submit" value="true" />
                                 
                             </form>
                                                         
