@@ -2,8 +2,8 @@
 /*
 Plugin Name: Category Order and Taxonomy Terms Order
 Plugin URI: http://www.nsp-code.com
-Description: Category Order and Taxonomy Terms Order
-Version: 1.5
+Description: Order Categories and all custom taxonomies terms (hierarchically) and child terms using a Drag and Drop Sortable javascript capability. 
+Version: 1.5.3.2
 Author: Nsp-Code
 Author URI: http://www.nsp-code.com
 Author Email: electronice_delphi@yahoo.com
@@ -56,9 +56,9 @@ Domain Path: /languages/
             wp_enqueue_script('jquery-ui-sortable');
             
             $myJsFile = TOURL . '/js/to-javascript.js';
-            wp_register_script('to-javascript.js', $myJsFile);
-            wp_enqueue_script( 'to-javascript.js');
-               
+            wp_register_script('to-javascript', $myJsFile);
+            wp_enqueue_script( 'to-javascript');
+                  
         }
         
     add_action('admin_print_styles', 'TO_admin_styles');
@@ -90,7 +90,7 @@ Domain Path: /languages/
                 }
                 else
                     {
-                        $capability = 'install_plugins';  
+                        $capability = 'manage_options';  
                     } 
                     
              //put a menu within all custom types if apply
@@ -156,10 +156,13 @@ Domain Path: /languages/
     add_action( 'wp_ajax_update-taxonomy-order', 'TOsaveAjaxOrder' );
     function TOsaveAjaxOrder()
         {
-            global $wpdb; 
-            $taxonomy = stripslashes($_POST['taxonomy']);
-            $data = stripslashes($_POST['order']);
-            $unserialised_data = unserialize($data);
+            global $wpdb;
+            
+            if  ( ! wp_verify_nonce( $_POST['nonce'], 'update-taxonomy-order' ) )
+                die('wrong');
+             
+            $data               = stripslashes($_POST['order']);
+            $unserialised_data  = json_decode($data, TRUE);
                     
             if (is_array($unserialised_data))
             foreach($unserialised_data as $key => $values ) 
@@ -179,6 +182,7 @@ Domain Path: /languages/
                         } 
                 }
                 
+            do_action('tto/update-order');
                 
             die();
         }

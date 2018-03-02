@@ -1,10 +1,10 @@
 === Category Order and Taxonomy Terms Order  ===
 Contributors: nsp-code
 Donate link: http://www.nsp-code.com/donate.php
-Tags: category order,terms order, taxonomy order, admin order
+Tags: category order,terms order, taxonomy order, admin order, categories sort, order category
 Requires at least: 2.8
-Tested up to: 4.7.5
-Stable tag: 1.5
+Tested up to: 4.9.4
+Stable tag: 1.5.3.2
 
 Order Categories and all custom taxonomies terms (hierarchically) and child terms using a Drag and Drop Sortable javascript capability. 
 
@@ -14,6 +14,8 @@ Order Categories and all custom taxonomies terms (hierarchically) using a Drag a
 If multiple taxonomies are created for a custom post type, a menu will allow to chose the one need to be sorted. If child categories (terms) are defined, those can be ordered too using the same interface.
 <br />Also you can have the admin terms interface sorted per your new sort.
 <br />This plugin is developed by <a target="_blank" href="http://www.nsp-code.com">Nsp-Code</a>
+
+<br />See the <a target="_blank" href="https://www.nsp-code.com/premium-plugins/wordpress-plugins/advanced-taxonomy-terms-order/">Advanced Taxonomy Terms Order</a> for advanced features.
 
 == Installation ==
 
@@ -51,7 +53,27 @@ Absolutely, the plugin can do that. In fact you can configure so only the admin 
 
 All ideas are welcome and i put them on my list to be implemented into the new versions. Anyway this may take time, but if you are in a rush, please consider a small donation and we can arrange something.
 
+= I still need more features =
+
+Consider upgrading to our advanced version of this plugin at a very resonable price <a target="_blank" href="http://www.nsp-code.com/premium-plugins/wordpress-plugins/advanced-taxonomy-terms-order/">Advanced Taxonomy Terms Order Order</a>
+
 == Change Log ==
+
+= 1.5.3.2 =
+  - Add nonce field for AJAX sort update
+
+= 1.5.3.1 =
+  - Removed Google Plus share button which triggered some JavaScript errors
+
+= 1.5.3 =
+  - Use JSON instead serialize method when sending order through AJAX
+  - Updated PO language file
+
+= 1.5.2.2 =
+  - Default admin capability changed from install_plugins to manage_options to prevent DISALLOW_FILE_MODS issue. https://wordpress.org/support/topic/plugin-breaks-when-disallow_file_mods-is-set-to-true/
+  - Prepare plugin for Composer package
+  - Interface table th elements titles left align
+  - Interface Taxonomy terms count fix
 
 = 1.5 =
   - Included 'ignore_term_order' to force menu_order ignore when autosort active.
