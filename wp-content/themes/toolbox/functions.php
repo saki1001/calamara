@@ -26,7 +26,9 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-    $content_width = 640; /* pixels */
+    $content_width = 1200; /* pixels */
+
+
 
 if ( ! function_exists( 'toolbox_setup' ) ):
 /**
@@ -99,20 +101,25 @@ add_filter( 'wp_page_menu_args', 'toolbox_page_menu_args' );
  * Register widgetized area and update sidebar with default widgets
  */
 
-if ( function_exists ('register_sidebar')) { 
+if ( function_exists ('register_sidebar')) {
     register_sidebar( array(
         'name' => __( 'cat-posts' ),
         'id' => 'cat-posts'
     ) );
-    
+
     register_sidebar( array(
         'name' => __( 'cat-children' ),
         'id' => 'cat-children'
     ) );
-    
+
     register_sidebar( array(
         'name' => __( 'blog' ),
         'id' => 'blog',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Shop Sidebar' ),
+        'id' => 'shop-sidebar'
     ) );
 }
 // add_action( 'init', 'toolbox_widgets_init' );
@@ -239,19 +246,19 @@ endif;
  */
 function toolbox_body_classes( $classes ) {
     global $post;
-    
+
     // Adds the page name (slug) as a class
     if ( is_page() ) {
         $classes[] = $post->post_name;
     }
     if ( is_single() && (has_post_format('gallery') || has_post_format('video')) ) {
-            
+
             $classes[] = 'portfolio-gallery';
-            
+
         // foreach((get_the_category($post->ID)) as $category)
             // $classes[] = $category->category_nicename;
     }
-    
+
     return $classes;
 }
 add_filter( 'body_class', 'toolbox_body_classes' );
@@ -331,7 +338,7 @@ function get_first_attachment() {
 function the_excerpt_max_charlength($charlength) {
 	$excerpt = get_the_excerpt();
 	$charlength++;
-    
+
 	if ( mb_strlen( $excerpt ) > $charlength ) {
 		$subex = mb_substr( $excerpt, 0, $charlength - 5 );
 		$exwords = explode( ' ', $subex );
@@ -379,11 +386,11 @@ function get_category_tags($args) {
 function get_sticky_posts($category_slug) {
     //Get all sticky posts
     $sticky = get_option( 'sticky_posts' );
-    
+
     // Get current page we are on
     // If not set we can assume we are on page 1.
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-    
+
     // Only show Stickies on first page
     if(1 == $paged) {
 
@@ -393,15 +400,15 @@ function get_sticky_posts($category_slug) {
             'ignore_sticky_posts' => 1
         );
         $the_query = new WP_Query( $args );
-        
+
         /* Sort the stickies with the newest ones at the top */
         rsort( $sticky );
-        
+
         while ( $the_query->have_posts() ) : $the_query->the_post();
             get_template_part( 'content', 'blog-list' );
         endwhile;
     }
-    
+
     wp_reset_postdata();
 }
 
@@ -413,6 +420,21 @@ add_image_size( 'page', 350, 0 );
 
 // Custom Thumbnail Retreival
 include('php/get-thumbnail-custom.php');
+
+
+
+
+// New Image Size for Shop Item
+add_image_size( 'shop-item-image', 1200, 99999, false );
+
+
+// Register the New Image Size for Shop Item for use in Add Media modal
+add_filter( 'image_size_names_choose', 'shop_custom_sizes' );
+function shop_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'shop-item-image' => __( 'Shop Item Image' ),
+    ) );
+}
 
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a Toolbox.

@@ -541,7 +541,8 @@ body.archive #main #content {
 /* Category Template
 -------------------------------------------------------------- */
 body.category #main #content,
-body.archive.tag #main #content {
+body.archive.tag #main #content,
+body.shop #main #content {
     width: 750px;
     margin: 0;
     float: left;
@@ -1205,3 +1206,248 @@ article.comment {
 .widget-area .widget_search input {
     float: left;
 }
+
+
+
+
+/* Shop Grid
+-------------------------------------------------------------- */
+.shop-grid {
+  display: grid;
+  grid-gap: 10px;
+
+  grid-template-columns: repeat(3, 1fr);
+}/* shop-grid */
+
+.shop-grid .shop-grid-item {
+  margin:0;
+}/*shop-grid-item*/
+
+.shop-grid .shop-grid-item a {
+  border-bottom:3px solid #68D1FF;
+  display:block;
+  padding:0 0 .5rem;
+}/*shop-grid-item*/
+
+.shop-grid .shop-grid-item a span {
+  display:block;
+  margin-bottom:.5rem;
+  overflow:hidden;
+  padding:0 0 55%;
+  position:relative;
+  width:100%;
+}/*shop-grid-item*/
+
+.shop-grid .shop-grid-item a span img {
+  display:block;
+  height:auto;
+  transition: all 5s ease-in-out;
+  width:100%;
+
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:1;
+}/*shop-grid-item*/
+
+
+
+.shop-grid .shop-grid-item a:hover span img {
+  transform: scale(1.3);
+}/*shop-grid-item*/
+
+
+
+
+
+
+.rl-basicgrid-gallery {
+
+}/* rl-basicgrid-gallery */
+
+
+.rl-gallery-item {
+
+}/* rl-gallery-item */
+
+.rl-basicgrid-gallery .rl-gallery-item a {
+  display:block;
+  position:relative;
+  text-align:left;
+}/* rl-gallery-item */
+
+.rl-basicgrid-gallery .rl-gallery-item a img {
+  display:block;
+  margin:0;
+  padding:0;
+}/* rl-gallery-item */
+
+.rl-basicgrid-gallery .rl-gallery-item a .rl-gallery-caption {
+  background-color:rgba(0,0,0,.5);
+  box-sizing: border-box;
+  color:#FFF;
+  display:block;
+  padding:.5rem;
+  width:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:2;
+}/* rl-gallery-item */
+
+
+/* Custom Shop Font Styles
+-------------------------------------------------------------- */
+.shop-template-default #main em {
+  font-style:italic;
+}/* shop-template-default */
+
+.shop #main h1,
+.shop-template-default #main h1 {
+  font-size: 2.8em;
+  line-height: 3rem;
+  padding:0;
+  margin:.5rem 0 1rem;
+}/* shop-template-default */
+
+.shop #main h1,
+.shop-template-default #main h1.shop-item-title {
+  margin:0;
+}/* shop-template-default */
+
+.shop #main h2,
+.shop-template-default #main h2 {
+  font-size: 2.4em;
+  line-height: 2.6rem;
+  padding:0;
+  margin:.5rem 0 1rem;
+}/* shop-template-default */
+
+.shop #main h3,
+.shop-template-default #main h3 {
+  font-size: 2.2em;
+  line-height: 2.4rem;
+  padding:0;
+  margin:.5rem 0 1rem;
+}/* shop-template-default */
+
+.shop #main h4,
+.shop-template-default #main h4 {
+  font-size: 2em;
+  line-height: 2.2rem;
+  padding:0;
+  margin:.5rem 0 1rem;
+}/* shop-template-default */
+
+.shop #main h5,
+.shop-template-default #main h5 {
+  font-size: 1.6em;
+  line-height: 1.8rem;
+  padding:0;
+  margin:.5rem 0 1rem;
+}/* shop-template-default */
+
+.shop #main h6,
+.shop-template-default #main h6 {
+  font-size: 1.6em;
+  line-height: 1.8rem;
+  padding:0;
+  margin:.5rem 0 1rem;
+  text-transform:uppercase;
+}/* shop-template-default */
+
+.shop #main p,
+.shop-template-default #main p {
+  font-size: 1.3em;
+  line-height: 1.5rem;
+  margin:.5rem 0 1rem;
+}/* shop-template-default */
+
+
+/*  Sale Item Card  */
+
+.sale-item-card {
+  border-left:1px solid rgba(0,0,0,.15);
+  box-sizing: border-box;
+  display:block;
+  padding:0 0 4rem 1rem;
+}/* .sale-item-card */
+
+.sale-item-card img {
+  height:auto;
+  margin-bottom:.25rem;
+  width:100%;
+}/* .sale-item-card */
+
+.shop-template-default #main .sale-item-card h1,
+.shop-template-default #main .sale-item-card h2,
+.shop-template-default #main .sale-item-card h3,
+.shop-template-default #main .sale-item-card h4,
+.shop-template-default #main .sale-item-card h5,
+.shop-template-default #main .sale-item-card h6 {
+  line-height:normal;
+  margin:0 0 .25rem;
+}/* shop-template-default */
+
+
+/* Shop Image Zoomy stuff */
+.size-shop-item-image {
+  height:auto;
+  max-width:100%;
+  width:100%;
+}/* rl-gallery-container */
+
+
+body.single.single-shop #main #sidebar {
+  padding-top: 0;
+  text-align: left;
+}
+
+body.single.single-shop #content {
+  /* border-right:1px solid rgba(0,0,0,.15); */
+}/* body.single.single-shop #content */
+
+/* Payment Complete Alert Popup Model Dialog Container ----------- */
+.alert-payment {
+  position:fixed;
+  top:10%;
+  left:25%;
+  z-index:100;
+
+  background-color:#FFF;
+  display:none;
+  height:auto;
+  transition: all 3s ease-in-out;
+  width:50%;
+}/* Payment Complete Alert Popup Model Dialog Container */
+
+.alert-payment.active {
+  display:block
+}/* Payment Complete Alert Popup Model Dialog Container */
+
+.alert-payment .alert-content {
+  background-color:#FFF;
+  border-radius: 4px;
+  border:2px solid #E6E6E6;
+  padding:2rem;
+  position:relative;
+  text-align:center;
+  z-index:10;
+}/* Payment Complete Alert Popup Model Dialog Container */
+
+
+/* Bckground for Payment Complete Alert Popup Model Dialog Container ----------- */
+.alert-payment .alert-bg {
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  z-index:1;
+
+  background-color:rgba(255,255,255,.85);
+  height:100%;
+  width:100%;
+}/* Payment Complete Alert Popup Model Dialog Container */
