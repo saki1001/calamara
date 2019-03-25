@@ -3,7 +3,7 @@
  * Plugin Name: WP Image Zoom
  * Plugin URI: https://wordpress.org/plugins/wp-image-zoooom/
  * Description: Add zoom effect over the an image, whether it is an image in a post/page or the featured image of a product in a WooCommerce shop 
- * Version: 1.30
+ * Version: 1.31
  * Author: SilkyPress 
  * Author URI: https://www.silkypress.com
  * License: GPL2
@@ -27,7 +27,7 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
  */
 final class ImageZoooom {
     public $plugin;
-    public $version = '1.30';
+    public $version = '1.31';
     public $theme = '';
     protected static $_instance = null; 
 
@@ -327,6 +327,10 @@ final class ImageZoooom {
         if ( defined('LP_PLUGIN_FILE')) {
             echo '<style type="text/css">body.content-item-only .learn-press-content-item-only { z-index: 990; } .single-lp_course #wpadminbar{z-index:900;}</style>' . PHP_EOL;
         }
+        if (class_exists('WP_Image_Hotspot') ) { 
+            echo '<style type="text/css">.point_style.ihotspot_tooltop_html {z-index: 1003}</style>';
+        }
+
     }
 
 
