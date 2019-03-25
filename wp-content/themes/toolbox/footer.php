@@ -18,7 +18,7 @@
 	<?php include('content-social-links.php'); ?>
 
     <div>
-        Mara G. Haseltine &copy;2017
+        Mara G. Haseltine &copy;<?php echo date('Y'); ?>
     </div>
 </footer><!-- #footer -->
 
