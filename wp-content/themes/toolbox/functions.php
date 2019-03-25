@@ -383,35 +383,6 @@ function get_category_tags($args) {
 	return $tags;
 }
 
-function get_sticky_posts($category_slug) {
-    //Get all sticky posts
-    $sticky = get_option( 'sticky_posts' );
-
-    // Get current page we are on
-    // If not set we can assume we are on page 1.
-    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-    // Only show Stickies on first page
-    if(1 == $paged) {
-
-        $args = array(
-            'category_name' => $category_slug,
-            'post__in'  => get_option( 'sticky_posts' ),
-            'ignore_sticky_posts' => 1
-        );
-        $the_query = new WP_Query( $args );
-
-        /* Sort the stickies with the newest ones at the top */
-        rsort( $sticky );
-
-        while ( $the_query->have_posts() ) : $the_query->the_post();
-            get_template_part( 'content', 'blog-list' );
-        endwhile;
-    }
-
-    wp_reset_postdata();
-}
-
 // Adding Thumbnails
 add_theme_support( 'post-thumbnails' );
 

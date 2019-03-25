@@ -16,19 +16,32 @@
     </h2>
     
     <?php
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
         // Loop for Sticky Posts
         // (function in functions.php)
-        get_sticky_posts($category_slug);
+        $sticky = get_option( 'sticky_posts' );
+        $sticky_args = array(
+            'posts_per_page' => 20,
+            'post__in'  => $sticky,
+            'ignore_sticky_posts' => 1
+        );
+        $sticky_query = new WP_Query( $sticky_args );
+        
+        if ( !empty($sticky) && $paged === 1 ) {
+            while ( $sticky_query->have_posts() ) : $sticky_query->the_post();
+                get_template_part( 'content', 'blog-list' );
+            endwhile;
+            wp_reset_postdata();
+        }
         
         // Loop for all posts in this category
         // Except stickies
-        $sticky = get_option( 'sticky_posts' );
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-        
         $args = array(
             'category_name' => $category_slug,
             'paged' => $paged,
-            'post__not_in'  => get_option( 'sticky_posts' )
+            'post__not_in'  => get_option( 'sticky_posts' ),
+            'ignore_sticky_posts' => 1
         );
         $the_query = new WP_Query( $args );
         
@@ -36,7 +49,6 @@
         while ( $the_query->have_posts() ) : $the_query->the_post();
             get_template_part( 'content', 'blog-list' );
         endwhile;
-        
         wp_reset_postdata();
     ?>
     
