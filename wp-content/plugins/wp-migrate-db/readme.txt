@@ -1,17 +1,18 @@
 === WP Migrate DB ===
 Contributors: bradt, deliciousbrains
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5VPMGLLK94XJC
-Tags: migrate, migration, export, data dump, backup, database, mysql
+Tags: migrate, migration, export, data dump, backup, database, mysql, find & replace, search & replace, import
 Requires at least: 3.6
-Tested up to: 4.9
-Stable tag: 1.0.2
+Requires PHP: 5.4
+Tested up to: 5.0
+Stable tag: 1.0.8
 License: GPLv2
 
 Migrates your database by running find & replace on URLs and file paths, handling serialized data, and saving an SQL file.
 
 == Description ==
 
-https://www.youtube.com/watch?v=m8oScnEK5y0
+https://www.youtube.com/watch?v=m8oScnEK5y0&rel=0
 
 WP Migrate DB exports your database as a MySQL data dump (much like phpMyAdmin), does a find and replace on URLs and file paths, handles serialized data, then allows you to save it to your computer as an SQL file. To complete the migration, you need to use a database management tool (e.g. phpMyAdmin) to import the SQL file to your database, replacing your existing database. It is perfect for developers who need to migrate fresh data from the production site to their local install, or migrate their locally developed site to a staging or production server.
 
@@ -35,12 +36,14 @@ Example: <code>s:5:"hello"</code> becomes <code>s:11:"hello world"</code>
 * [Media Files addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=description)
 * [CLI addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/cli-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting)
 * [Multisite Tools addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/multisite-tools-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=description)
+* [Theme &amp; Plugin Files addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/theme-plugin-files-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=description)
+
 
 [Compare pro vs free →](https://deliciousbrains.com/wp-migrate-db-pro/upgrade/?utm_campaign=WP%2BMigrate%2BDB%2BPro%2BUpgrade&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting)
 
 See the video below or [visit the web site](http://deliciousbrains.com/wp-migrate-db-pro/?utm_campaign=WP%2BMigrate%2BDB%2BPro&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=description) to learn more about the pro version.
 
-https://www.youtube.com/watch?v=fHFcH4bCzmU
+https://www.youtube.com/watch?v=8u_kX5d78Bs&rel=0
 
 == Installation ==
 
@@ -63,7 +66,7 @@ Yes, but the [Multisite Tools addon](https://deliciousbrains.com/wp-migrate-db-p
 
 = Does the plugin migrate files as well? =
 
-No, it only operates on the database. The pro version's [Media Files addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=faqs) allows you to migrate media files.
+No, it only operates on the database. The pro version's [Media Files addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/media-files-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=faqs) allows you to migrate media files and the [Theme &amp; Plugin Files addon](https://deliciousbrains.com/wp-migrate-db-pro/doc/theme-plugin-files-addon/?utm_campaign=addons%2Binstall&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=faqs) allows you to migrate plugin and theme files as well.
 
 = Why do I end up with a wp-login.php download instead of the exported SQL file? =
 
@@ -75,7 +78,7 @@ Yep, it will run a find &amp; replace on your serialized data and migrate it wit
 
 = What are the requirements? =
 
-They are the same as the [requirements for WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/pricing/?utm_campaign=WP%2BMigrate%2BDB%2BPro&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=requirements#requirements.
+They are the same as the [requirements for WP Migrate DB Pro](https://deliciousbrains.com/wp-migrate-db-pro/pricing/?utm_campaign=WP%2BMigrate%2BDB%2BPro&utm_source=wordpress.org&utm_medium=free%2Bplugin%2Blisting&utm_content=requirements#requirements).
 
 = Do you offer email support? =
 
@@ -88,6 +91,29 @@ If you upgrade to [WP Migrate DB Pro](http://deliciousbrains.com/wp-migrate-db-p
 3. Saving the exported database
 
 == Changelog ==
+= WP Migrate DB 1.0.8 - 2018-11-29  =
+* Bug fix: WordPress filesystem class not correctly loaded and causes 500 error
+* Improvement: Remove deprecated PHP code making PHP 7+ compatibility checks pass
+
+= WP Migrate DB 1.0.7 - 2018-11-21  =
+* Bug fix: WP Migrate DB Anonymization plugin no longer functions
+* Bug fix: 500 errors occur when another plugin is installed that includes Composer
+* Improvement: Add Theme & Plugin Files Addon to addons list
+* Improvement: Remove un-needed template files
+
+= WP Migrate DB 1.0.6 - 2018-11-19  =
+* New: Increased PHP version requirement from PHP 5.2+ to PHP 5.4+
+* Improvement: Major reorganization of the PHP code into better classes and a better folder structure
+
+= WP Migrate DB 1.0.5 - 2018-11-09  =
+* New: Updated YouTube video in migration progress modal
+* Bug fix: Duplicate JavaScript causes console error
+
+= WP Migrate DB 1.0.4 - 2018-09-13  =
+* Bug fix: Overall progress bar spins when font-awesome loaded
+
+= WP Migrate DB 1.0.3 - 2018-09-10  =
+* Bug fix: Usage of static keyword errors in PHP 5.2.4
 
 = WP Migrate DB 1.0.2 - 2017-10-25 =
 * Bug fix: Some plugins causing "Invalid nonce" errors when using compatibility mode
