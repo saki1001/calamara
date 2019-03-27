@@ -462,9 +462,15 @@ body.page #content figure {
        -moz-border-radius: 10px;
             border-radius: 10px;
     margin-bottom: 15px;
+    background-position: center center;
+    background-repeat: none;
+    background-size: 350px auto;
 }
 
 body.page #content figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     visibility: hidden;
 }
 
@@ -1167,6 +1173,32 @@ textarea {
 /* Class for labelling required form items */
 .required {
     color: #cc0033;
+}
+
+form label {
+    font-size: 16px;
+}
+
+form input[type="email"],
+form input[type="text"] {
+    color: #000;
+    min-width: 200px;
+    padding: 8px;
+}
+
+form input[type="submit"] {
+    font-size: 14px;
+    color: #FFF;
+    background-color: #006699;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    form input[type="email"],
+    form input[type="text"] {
+        min-width: 200px;
+    }
 }
 
 
