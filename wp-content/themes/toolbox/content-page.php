@@ -24,9 +24,8 @@
         );
         
         // Get image attachments
-        $attachments = get_posts( $args );
-        
-        if ( $attachments ) :
+        // $attachments = get_posts( $args );
+        if ( has_post_thumbnail() ) :
             $noImageClass = '';
         else :
             $noImageClass = 'no-image';
@@ -40,13 +39,13 @@
     <?php
         // Insert images as background-image (to show rounded corners)
         // And as a regular image element (which is hidden)
-        if ( $attachments ) :
-            foreach ( $attachments as $attachment ) {
-                
-                $image = wp_get_attachment_image( $attachment->ID, 'page' );
-                $imageUrl = wp_get_attachment_image_src( $attachment->ID, 'page' );
+        
+        if ( has_post_thumbnail() ) :
+            $image = get_the_post_thumbnail();
+            $imageUrl = get_the_post_thumbnail_url();
+            $caption = get_the_post_thumbnail_caption();
     ?>
-            <figure style="background: url(<?php echo $imageUrl[0]?>) no-repeat center center;">
+            <figure style="background-image: url('<?php echo $imageUrl; ?>');">
                 <?php
                     echo $image;
                 ?>
@@ -54,11 +53,10 @@
             <figcaption>
                 <?php
                     // Insert image description
-                    echo $attachment->post_content;
+                    echo $caption;
                 ?>
             </figcaption>
     <?php
-              }
         else :
             // do nothing
         endif;
