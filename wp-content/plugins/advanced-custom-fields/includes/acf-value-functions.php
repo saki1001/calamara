@@ -39,9 +39,6 @@ function acf_get_reference( $field_name, $post_id ) {
 	return apply_filters( "acf/load_reference", $reference, $field_name, $post_id );
 }
 
-// Register deprecated.
-acf_add_deprecated_filter( 'acf/get_field_reference', '5.6.5', 'acf/load_reference' );
-
 /**
  * acf_get_value
  *
@@ -117,7 +114,7 @@ acf_add_filter_variations( 'acf/load_value', array('type', 'name', 'key'), 2 );
 function acf_format_value( $value, $post_id, $field ) {
 	
 	// Allow filter to short-circuit load_value logic.
-	$check = apply_filters( "acf/pre_format_value", null, $post_id, $field );
+	$check = apply_filters( "acf/pre_format_value", null, $value, $post_id, $field );
     if( $check !== null ) {
 	    return $check;
     }
@@ -207,6 +204,33 @@ function acf_update_value( $value = null, $post_id = 0, $field ) {
 
 // Register variation.
 acf_add_filter_variations( 'acf/update_value', array('type', 'name', 'key'), 2 );
+
+/**
+ * acf_update_values
+ *
+ * Updates an array of values.
+ *
+ * @date	26/2/19
+ * @since	5.7.13
+ *
+ * @param	array values The array of values.
+ * @param	(int|string) $post_id The post id.
+ * @return	void
+ */
+function acf_update_values( $values = array(), $post_id = 0 ) {
+	
+	// Loop over values.
+	foreach( $values as $key => $value ) {
+		
+		// Get field.
+		$field = acf_get_field( $key );
+		
+		// Update value.
+		if( $field ) {
+			acf_update_value( $value, $post_id, $field );
+		}
+	}
+}
 
 /**
  * acf_flush_value_cache
