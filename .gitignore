@@ -24,3 +24,7 @@ sitemap.xml.gz
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Text Editor #
+######################
+.idea
