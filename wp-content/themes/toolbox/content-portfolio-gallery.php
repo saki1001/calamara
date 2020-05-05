@@ -49,7 +49,7 @@
     }
 ?>
 
-<section id="content" class="portfolio-single show-images" role="main">
+<section id="content" class="portfolio-single" role="main">
     
     <div class="page-header">
         <h2 class="page-title">
