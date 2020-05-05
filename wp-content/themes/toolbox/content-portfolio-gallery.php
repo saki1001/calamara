@@ -58,11 +58,6 @@
             ?>
         </h2>
         
-        <div class="toggle-link">
-            <a href="#" class="text-link">View Text</a>
-            <a href="#" class="image-link">View Images</a>
-        </div>
-        
         <?php include('content-social-icons.php'); ?>
         
     </div>

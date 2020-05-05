@@ -340,8 +340,8 @@ header h1 a {
     background-position: -40px 0;
 }
 
-.social-icons li a.google {
-    background-position: -102px 0;
+.social-icons li a.linked-in {
+    background-position: -60px 0;
 }
 
 .social-icons li a.instagram {
@@ -361,8 +361,8 @@ header h1 a {
     background-position: -40px -20px;
 }
 
-.social-icons li a.google:hover {
-    background-position: -102px -20px;
+.social-icons li a.linked-in:hover {
+    background-position: -60px -20px;
 }
 
 .social-icons li a.instagram:hover {
@@ -668,23 +668,6 @@ body.portfolio-gallery #main h2.page-title {
     float: left;
 }
 
-body.portfolio-gallery .toggle-link {
-    float: right;
-    position: relative;
-    padding: 5px 0 18px;
-    font-size: 1.8em;
-}
-
-body.portfolio-gallery #content.show-images .toggle-link a.image-link,
-body.portfolio-gallery #content.show-images .text-container {
-    display: none;
-}
-
-body.portfolio-gallery #content.show-text .toggle-link a.text-link,
-body.portfolio-gallery #content.show-text #media {
-    display: none;
-}
-
 body.portfolio-gallery #content #media {
     width: 750px;
     height: 550px;
@@ -841,6 +824,7 @@ body.portfolio-gallery #content #media .image-container figcaption {
 
 body.portfolio-gallery #content .text-container {
     width: 750px;
+    margin-top: 40px;
     float: left;
 }
 
