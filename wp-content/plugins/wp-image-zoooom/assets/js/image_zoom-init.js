@@ -22,6 +22,17 @@ jQuery(document).ready(function( $ ){
         $(this).attr('data-zoom-image', $(this).data('lazy-src'));
     });
 
+    // Fix for the lazy load functionality from the SG Optimizer plugin
+    $("img[data-src].lazyload").each(function() {
+        $(this).attr('data-zoom-image', $(this).data('src'));
+    });
+ 
+
+    // Add "zoooom" for the "is-style-zoooom" images added with Gutenberg
+    $(".is-style-zoooom").each(function(){
+        $(this).addClass('zoooom');
+    });
+
     // Get the image url from data-large_image
     $("img[data-large_image]").each(function(){
         $(this).attr('data-zoom-image', $(this).data('large_image'));
@@ -37,13 +48,16 @@ jQuery(document).ready(function( $ ){
 
     // Start the zoom for the normal images
     options.zIndex = 112400;
-    $("img.zoooom").image_zoom(options);
+	setTimeout( function() {
+    	$("img.zoooom.jetpack-lazy-image").image_zoom(options);
+	}, 300 );
+	$("img.zoooom:not(.jetpack-lazy-image)").image_zoom( options );
 
     // WooCommerce category pages
     if ( IZ.woo_categories == '1' ) {
         var cat_class = '.tax-product_cat .products img, .post-type-archive-product .products img'; 
         $(cat_class).image_zoom(options);
-        $(document).on('ready yith-wcan-ajax-filtered', function() {
+        $(document).on('yith-wcan-ajax-filtered', function() {
             $('.zoomContainer').remove();
             $(cat_class).image_zoom(options);
         } );

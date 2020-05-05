@@ -4,8 +4,8 @@ Contributors: diana_burduja
 Email: diana@burduja.eu
 Tags: e-commerce, featured image, hover over image zoom, image, image zoom, image zoom plugin, image magnification, image magnifier, jquery picture zoom, magnifier, magnify image, magnifying glass, mouse over image zoom, panorama, picture zoom, product image, product zoom, product magnification, product magnifier, responsive, woocommerce product zoom, woocommerce zoom, woocommerce  magnifying glass, zoom, zoom image, zoom plugin, woocommerce image zoom, woocommerce product image zoom, woocommerce zoom magnifier
 Requires at least: 3.0.1
-Tested up to: 5.1 
-Stable tag: 1.31
+Tested up to: 5.4 
+Stable tag: 1.40
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 5.2.4
@@ -20,7 +20,7 @@ WP Image Zoom is a robust, modern and very configurable image zoom plugin. It al
 
 Your visitors will be able to see the beautiful details of your images. This will improve your users' experience and hopefully also your revenue.
 
-[youtube https://www.youtube.com/watch?v=qph190mQaNI]
+[youtube https://www.youtube.com/watch?v=JSkcItXaZK4] 
 
 = Features =
 
@@ -34,11 +34,12 @@ Your visitors will be able to see the beautiful details of your images. This wil
 = Using the plugin with a page bulider =
 For applying the zoom on an image on a page/post from within a page builder, you need to add the "zoooom" CSS class to the image. Here are screenshots on how to do this with the most popular page builders:
 * Gutenberg - [screenshot](https://www.silkypress.com/wp-content/uploads/2018/10/zoom-gutenberg.png)
-* Visual Composer - [screenshot](https://www.silkypress.com/wp-content/uploads/2017/05/image-zoom-js_composer.png). Please use the "large" or "full" for the Image Size setting
+* WPBakery - depending on the page builder's version: 1) [screenshot](https://www.silkypress.com/wp-content/uploads/2017/05/image-zoom-js_composer.png) with the "large" or "full" for the Image Size setting. Or 2) [screenshot](https://www.silkypress.com/wp-content/uploads/2019/06/wpbakery-zoooom.png).
 * Page Builder by SiteOrigin - [screenshot](https://www.silkypress.com/wp-content/uploads/2016/02/zoom-siteorigin.png)
 * Elementor Page Builder - [screenshot](https://www.silkypress.com/wp-content/uploads/2016/09/image-zoom-elementor.png). It works with all the Image Size options, except Custom.
 * Beaver Builder - [screenshot](https://www.silkypress.com/wp-content/uploads/2017/06/image-zoom-beaver-builder.png)
-* Divi Builder - [screenshot](https://www.silkypress.com/wp-content/uploads/2016/09/divi-builder.png)
+* Divi Builder - [screenshot](https://www.silkypress.com/wp-content/uploads/2016/09/divi-builder.png) (used by the Divi theme)
+* Avia Layout Builder - [screenshot](https://www.silkypress.com/wp-content/uploads/2019/04/enfold-apply-zoooom.png) (used by the Enfold theme)
 The zoom works alright only with Image elements. Unfortunately, trying to apply the zoom on an image gallery will make the zoom work only on the first image of the gallery. With the WP Image Zoom Pro the zoom can also be applied on image galleries. 
 
 = Why should you upgrade to WP Image Zoom Pro? =
@@ -102,7 +103,7 @@ This is an effect caused by the WordPres Admin Bar. Try logging out and check th
 
 Another cause could be the sticky header. When the page is loaded, the zoom window is built and set in the right position (next to the zoomed image). When you scroll down, the sticky header changes its height but the zoom window keeps staying in the same position. In order to solve this you can choose between removing the header's sticky effect or upgrading to the WP Image Zoom PRO, as there the zoom window is totally differently built and the sticky header doesn't affect the zoom position.
 
-Another cause could be the "CSS Animation" settings within Visual Composer. If you want to keep the animation effect and still have the zoom, I recommend you upgrade to the WP Image Zoom PRO. 
+Another cause could be the "CSS Animation" settings within WPBakery. If you want to keep the animation effect and still have the zoom, I recommend you upgrade to the WP Image Zoom PRO. 
 
 = How to zoom an image without the button in the editor? =
 When you add a CSS class called 'zoooom' to any image, the zoom will be applied on that particular image. Remember that the zooming works only when the displayed image is smaller than the loaded image (i.e. the image is shrinked with "width" and "height" attributes).
@@ -145,11 +146,61 @@ Alternatively you can upgrade to the Pro version, as there the zoom lens is buil
 
 6. WooCommerce product page with the Zoom Window applied on the featured image
 
-7. Apply the zoom from Visual Composer, the Single Image element
+7. Apply the zoom from WPBakery, the Single Image element
 
 8. Apply the zoom from Page Builder by SiteOrigin, the Image Widget
 
 == Changelog ==
+
+= 1.40 =
+* 03/04/2020
+* Fix: the WC product images were distorted on the Flatsome theme
+* Fix: allow saving options only if the current user has the "manage_options" capability
+* Changes to the backend form
+* Declare compatibility with WooCommerce 4.0
+
+= 1.39 =
+* 02/09/2020
+* Fix: zoom was showing only in customizer if the Lazy Load option from Jetpack is enabled 
+* Declare compatibility with WooCommerce 3.9
+
+= 1.38 =
+* 11/20/2019
+* Fix: product image gallery was broken on the Brooklyn theme
+* Tweak: update the plugin's presentation video on Youtube
+
+= 1.37 =
+* 11/05/2019
+* Declare compatibility with WordPress 5.3 and WooCommerce 3.8
+* Tweak: change "Visual Composer" to "WPBakery" in notices and documentation
+
+= 1.36 =
+* 09/07/2019
+* Fix: Elementor lightbox skewed if zoom applied on it (https://wordpress.org/support/topic/elementor-lightbox-2/)
+* Fix: zoom wasn't initiating when some lazy load plugins are installed on the website
+* Add notice about the WooCommerce product gallery from the Avada theme
+
+= 1.35 =
+* 07/19/2019
+* Add "with Zoom" style to the Gutenberg image block
+
+= 1.34 =
+* 06/22/2019
+* Fix: zoom wasn't initialized for post/page images served by the ShortPixel CDN
+* Add Turkish translation
+
+
+= 1.33 =
+* 05/08/2019
+* Fix: the zoom is hidden behind a wrapper for all the Edge-Themes
+* Declare compatibility with WooCommerce 3.6
+* Declare compatibility with WordPress 5.2
+
+= 1.32 =
+* 03/19/2019
+* Compatibility with WooCommerce gallery for the theGem theme
+* Fix: Add the `Custom CSS Class` option for Enfold theme builder elements
+* Tweak: update the Bootstrap library used in the admin side to 3.4.1 version
 
 = 1.31 =
 * 02/23/2019
@@ -322,7 +373,7 @@ Alternatively you can upgrade to the Pro version, as there the zoom lens is buil
 * Feature: Enable the zoom on the WooCommerce category pages 
 * Fix: replaced the <?= ?> with <?php echo ?> to make it work for PHP < 5.4 and short_open_tag = Off
 * Feature: you can tag a div with "zoooom" class in order to apply the zoom
-* Feature: compatibility with Visual Composer 
+* Feature: compatibility with WPBakery 
 
 = 1.2.5 = 
 * 01/19/2016
