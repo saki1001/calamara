@@ -1,0 +1,12 @@
+.pop-in-quick-top-enter {
+	opacity: 0;
+	transform: translateY(-8px);
+}
+.pop-in-quick-top-enter-active {
+	transition: all .3s ease;
+}
+.pop-in-quick-top-leave-active {
+	transition: none;
+	opacity: 0;
+	transform: translateY(0);
+}
