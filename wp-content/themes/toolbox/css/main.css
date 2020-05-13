@@ -403,7 +403,7 @@ body.home #content {
     position: relative;
 }
 
-body.home #slideshow {
+body.home .metaslider {
     -webkit-border-radius: 10px;
        -moz-border-radius: 10px;
             border-radius: 10px;
@@ -411,9 +411,10 @@ body.home #slideshow {
             height: 633px;
 }
 
-body.home #slideshow_text h2 {
+body.home .metslider .caption {
     font-family: 'Muli-Italic', Helvetica, Arial, sans-serif;
     font-weight: normal;
+    font-size: 18px;
 }
 
 /* Page Template
