@@ -3,7 +3,7 @@
  * Plugin Name: WP Image Zoom
  * Plugin URI: https://wordpress.org/plugins/wp-image-zoooom/
  * Description: Add zoom effect over the an image, whether it is an image in a post/page or the featured image of a product in a WooCommerce shop
- * Version: 1.40.1
+ * Version: 1.41
  * Author: SilkyPress
  * Author URI: https://www.silkypress.com
  * License: GPL2
@@ -26,7 +26,7 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
 	 * @class ImageZoooom
 	 */
 	final class ImageZoooom {
-		public $version             = '1.40.1';
+		public $version             = '1.41';
 		public $theme               = '';
 		protected static $_instance = null;
 
@@ -83,7 +83,8 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
 				new ImageZoooom_Admin();
 			}
 			add_action( 'template_redirect', array( $this, 'template_redirect' ) );
-			add_action( 'vc_after_init', array( $this, 'js_composer' ) );
+
+			include_once 'includes/class-iz-compatibilities.php';
 		}
 
 		/**
@@ -114,6 +115,10 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
 					remove_action( 'thegem_woocommerce_single_product_left', 'thegem_woocommerce_single_product_gallery', 5 );
 					add_action( 'thegem_woocommerce_single_product_left', 'woocommerce_show_product_images', 20 );
 				}
+
+				if ( $this->theme( 'enfold' ) ) {
+					add_action( 'wp_head', 'IZ_Compatibilities::wc3gallery_css', 40 );
+				}
 			}
 
 			add_filter( 'woocommerce_single_product_image_html', array( $this, 'woocommerce_single_product_image_html' ) );
@@ -125,7 +130,6 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
 			add_filter( 'the_content', array( $this, 'find_bigger_image' ), 40 );
 
 			add_action( 'wp_enqueue_scripts', array( $this, 'wp_enqueue_scripts' ) );
-			add_action( 'wp_head', array( $this, 'wp_head_compatibilities' ) );
 
 			add_filter( 'wp_calculate_image_srcset', array( $this, 'wp_calculate_image_srcset' ), 40, 5 );
 		}
@@ -162,20 +166,6 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
 				'value'      => $image_meta['width'],
 			);
 			return $sources;
-		}
-
-		/**
-		 * Add zoom option in the vc_single_image shortcode in WPBakery
-		 */
-		function js_composer() {
-			if ( ! defined( 'WPB_VC_VERSION' ) ) {
-				return false;
-			}
-			$param = WPBMap::getParam( 'vc_single_image', 'style' );
-			if ( is_array( $param ) ) {
-				$param['value'][ __( 'WP Image Zoooom', 'wp-image-zoooom' ) ] = 'zoooom';
-				vc_update_shortcode_param( 'vc_single_image', $param );
-			}
 		}
 
 		/**
@@ -268,105 +258,6 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
 			return $content;
 		}
 
-
-		/**
-		 * wp_head compatibilities
-		 */
-		function wp_head_compatibilities() {
-			$theme = get_template();
-
-			$opt = $this->get_option_general();
-
-			// These themes add a wrapper on the whole page with index higher than the zoom
-			$wrapper_themes = array(
-				array(
-					'rule'   => '.wrapper { z-index: 40 !important; }',
-					'themes' => array( 'bridge', 'nouveau', 'stockholm', 'tactile', 'vigor', 'homa', 'hudsonwp', 'borderland', 'moose' ),
-				),
-				array(
-					'rule'   => '.qodef-wrapper { z-index: 200 !important; }',
-					'themes' => array( 'kloe', 'startit', 'kudos', 'moments', 'ayro', 'suprema', 'ultima', 'geko', 'target', 'coney', 'aton', 'ukiyo', 'zenit', 'mixtape', 'scribbler', 'alecta', 'cityrama', 'bazaar' ),
-				),
-				array(
-					'rule'   => '.edgtf-wrapper { z-index: 40 !important; }',
-					'themes' => array( 'quadric', 'oxides', 'kvadrat', 'magazinevibe', 'kolumn', 'skyetheme', 'conall', 'dorianwp', 'node', 'ratio', 'escher', 'fair', 'assemble', 'any', 'walker', 'freestyle', 'shuffle', 'vangard', 'fuzion', 'crimson', 'cozy', 'xpo', 'onschedule', 'illustrator', 'oberon', 'fluid', 'barista', 'kamera', 'revolver', 'baker', 'rebellion', 'goodwish', 'maison', 'silverscreen', 'sovereign', 'atmosphere', 'dekko', 'objektiv', 'okami', 'coyote', 'bumblebee', 'blaze', 'mediadesk', 'penumbra', 'pxlz', 'gastrobar', 'aalto', 'dishup', 'voevod', 'orkan', 'fierce', 'grayson', 'hyperon', 'pintsandcrafts', 'haar', 'polyphonic', 'offbeat', 'hereford', 'kvell', 'sarto', 'journo', 'cinerama', 'ottar', 'playerx', 'kenozoik', 'elaine', 'entropia', 'tetsuo', 'bitpal', 'tahoe', 'urbango', 'smilte', 'neralbo', 'galatia', 'mintus', 'manon' ),
-				),
-				array(
-					'rule'   => '.edge-wrapper { z-index: 40 !important; }',
-					'themes' => array( 'dieter', 'anders', 'adorn', 'creedence', 'noizzy' ),
-				),
-				array(
-					'rule'   => '.edgt-wrapper { z-index: 40 !important; }',
-					'themes' => array( 'shade', 'eldritch', 'morsel', 'educator', 'milieu' ),
-				),
-				array(
-					'rule'   => '.sidebar-menu-push { z-index: 40 !important; }',
-					'themes' => array( 'artcore' ),
-				),
-				array(
-					'rule'   => '.eltdf-wrapper { z-index: 40 !important; }',
-					'themes' => array( 'readanddigest', 'tomasdaisy', 'virtuoso', 'blu', 'superfood', 'ambient', 'koto', 'azaleawp', 'all4home', 'mrseo', 'vibez', 'sweettooth', 'halogen', 'vino', 'ion', 'satine', 'nightshade', 'esmarts', 'makoto', 'mane', 'imogen', 'yvette', 'gourmand', 'sceon', 'calla', 'corretto', 'allston' ),
-				),
-				array(
-					'rule'   => '.eltd-wrapper { z-index: 40 !important; }',
-					'themes' => array( 'woly', 'averly', 'search-and-go', 'flow', 'kreate', 'allure', 'chandelier', 'malmo', 'minnesota', 'newsroom', 'kendall', 'savory', 'creator', 'awake', 'diorama', 'medipoint', 'audrey', 'findme', 'april', 'bizfinder', 'bjorn', 'trackstore', 'albergo', 'vakker', 'tamashi', 'bonvoyage' ),
-				),
-				// Next three rules are to the Mikado-Themes
-				array(
-					'rule'   => '.wrapper {z-index: 20 !important; }',
-					'themes' => array( 'mikado1', 'onyx', 'hornet', 'burst' ),
-				),
-				array(
-					'rule'   => '.mkdf-wrapper {z-index: 20 !important; }',
-					'themes' => array( 'chillnews', 'deploy', 'piquant', 'optimizewp', 'wellspring', 'siennawp', 'hashmag', 'voyagewp', 'gotravel', 'verdict', 'mediclinic', 'iacademy', 'newsflash', 'evently', 'cortex', 'roam', 'lumiere', 'aviana', 'zuhaus', 'staffscout', 'kastell', 'fivestar', 'janeandmark', 'neva', 'klippe', 'rosebud', 'endurer', 'wanderers', 'anwalt', 'equine', 'verdure', 'brewski', 'curly', 'fiorello', 'bardwp', 'lilo', 'gluck', 'dotwork', 'eola', 'cocco', 'housemed', 'ande', 'foton', 'overton', 'kanna', 'attika', 'backpacktraveller' ),
-				),
-				array(
-					'rule'   => '.mkd-wrapper {z-index: 20 !important; }',
-					'themes' => array( 'libero', 'discussionwp', 'hue', 'medigroup', 'newshub', 'affinity', 'hotspot', 'industrialist', 'pinata', 'cornerstone', 'connectwp', 'opportunity', 'highrise', 'anahata', 'hoshi', 'fleur', 'sparks', 'topfit', 'depot', 'trophy', 'motorepair', 'citycruise', 'indigo', 'servicemaster', 'lister', 'renovator', 'ecologist', 'buro', 'cyberstore', 'appetito', 'grillandchow', 'baumeister', 'kalos', 'fuego', 'entre' ),
-				),
-
-				array(
-					'rule'   => '#boxed { z-index: 840 !important; }',
-					'themes' => array( 'salient' ),
-				),
-			);
-
-			foreach ( $wrapper_themes as $_v ) {
-				if ( in_array( $theme, $_v['themes'] ) ) {
-					echo '<style type="text/css">' . $_v['rule'] . '</style>' . PHP_EOL;
-				}
-			}
-
-			if ( $this->theme( 'thegem' ) && $opt['enable_woocommerce'] && class_exists( 'woocommerce' ) && version_compare( WC_VERSION, '3.0', '>' ) ) { ?>
-			<style type="text/css">
-			.single-product div.product .woocommerce-product-gallery .attachment-shop_thumbnail {width: 100%;height: 100%;}
-			.single-product div.product .woocommerce-product-gallery .flex-control-thumbs {margin: 0;padding: 0;margin-top: 10px;}
-			.single-product div.product .woocommerce-product-gallery .flex-control-thumbs::before {content: "";display: table;}
-			.single-product div.product .woocommerce-product-gallery.woocommerce-product-gallery--columns-4 .flex-control-thumbs li {width: 24.2857142857%;float: left;}
-			.single-product div.product .woocommerce-product-gallery .flex-control-thumbs li {list-style: none;margin-bottom: 1.618em;cursor: pointer;}
-			</style>
-				<?php
-			}
-
-			if ( $this->theme( 'brooklyn' ) && $opt['enable_woocommerce'] && class_exists( 'woocommerce' ) && version_compare( WC_VERSION, '3.0', '>' ) ) {
-				?>
-			<style type="text/css">
-			.woocommerce div.product div.images .woocommerce-product-gallery__wrapper { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: start; }
-			</style>
-				<?php
-			}
-
-			if ( defined( 'LP_PLUGIN_FILE' ) ) {
-				echo '<style type="text/css">body.content-item-only .learn-press-content-item-only { z-index: 990; } .single-lp_course #wpadminbar{z-index:900;}</style>' . PHP_EOL;
-			}
-			if ( class_exists( 'WP_Image_Hotspot' ) ) {
-				echo '<style type="text/css">.point_style.ihotspot_tooltop_html {z-index: 1003}</style>';
-			}
-			if ( defined( 'ELEMENTOR_VERSION' ) ) {
-				echo '<style type="text/css">.dialog-lightbox-widget-content[style] { top: 0 !important; left: 0 !important;}</style>' . PHP_EOL;
-			}
-
-		}
 
 
 		/**
@@ -547,8 +438,6 @@ if ( ! class_exists( 'ImageZoooom' ) ) :
 			if ( ! isset( $general['enable_mobile'] ) ) {
 				$general['enable_mobile'] = false;
 			}
-
-			$general['force_woocommerce'] = false;
 
 			if ( ! isset( $general['woo_cat'] ) ) {
 				$general['woo_cat'] = false;

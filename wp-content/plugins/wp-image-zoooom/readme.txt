@@ -5,7 +5,7 @@ Email: diana@burduja.eu
 Tags: e-commerce, featured image, hover over image zoom, image, image zoom, image zoom plugin, image magnification, image magnifier, jquery picture zoom, magnifier, magnify image, magnifying glass, mouse over image zoom, panorama, picture zoom, product image, product zoom, product magnification, product magnifier, responsive, woocommerce product zoom, woocommerce zoom, woocommerce  magnifying glass, zoom, zoom image, zoom plugin, woocommerce image zoom, woocommerce product image zoom, woocommerce zoom magnifier
 Requires at least: 3.0.1
 Tested up to: 5.4 
-Stable tag: 1.40.1
+Stable tag: 1.41
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Requires PHP: 5.2.4
@@ -154,8 +154,9 @@ Alternatively you can upgrade to the Pro version, as there the zoom lens is buil
 
 == Changelog ==
 
-= 1.40.1 =
-* 05/05/2020
+= 1.41 =
+* 05/29/2020
+* Fix: compatibility with the WooCommerce product gallery on the Enfold theme
 * Declare compatibility with WooCommerce 4.1
 
 = 1.40 =

@@ -369,12 +369,6 @@ if ( ! function_exists( 'wp_image_zoooom_settings' ) ) {
 				'input_form' => 'checkbox',
 				'section'    => 'general',
 			),
-			'force_woocommerce'          => array(
-				'label'      => __( 'Force it to work on WooCommerce', 'wp-image-zoooom' ),
-				'value'      => true,
-				'input_form' => 'checkbox',
-				'section'    => 'general',
-			),
 			'remove_lightbox_thumbnails' => array(
 				'label'       => __( 'Remove the Lightbox on thumbnail images', 'wp-image-zoooom' ),
 				'value'       => true,
