@@ -453,7 +453,7 @@ if ( ! function_exists( 'wp_image_zoooom_settings' ) ) {
 				'label'      => __( 'Enable inside a Lightbox. <a href="#TB_inline?width=600&height=400&inlineId=supported-lightboxes" class="thickbox">See supported lightboxes</a>', 'wp-image-zoooom' ),
 				'value'      => false,
 				'input_form' => 'checkbox',
-				'pro'         => true,
+				'pro'        => true,
 				'section'    => 'general',
 			),
 			'image_title_position'       => array(
