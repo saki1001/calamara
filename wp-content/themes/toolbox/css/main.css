@@ -817,15 +817,19 @@ body.portfolio-gallery #content #media .image-container figure img {
 
 body.portfolio-gallery #content #media .image-container figcaption {
     font-size: 1.5em;
-    height: 50px;
-    padding: 45px 10px 0 0;
+    width: 100%;
+    height: 70px;
+    padding: 12px 20px;
     text-align: center;
     display: block;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
 }
 
 body.portfolio-gallery #content .text-container {
     width: 750px;
-    margin-top: 40px;
+    margin-top: 70px;
     float: left;
 }
 
