@@ -88,6 +88,19 @@ $themecolors = array(
     'text' => '444444',
 );
 
+// Enqueue Styles and Scripts
+function add_theme_scripts() {
+    wp_enqueue_style('main-styles', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css'), false); 
+ 
+    wp_enqueue_script('social-sharing', get_template_directory_uri() . '/js/social-sharing.js', array ('jquery'), filemtime(get_template_directory() . '/js/social-sharing.js'), true);
+ 
+    if ( is_singular() && has_post_format('gallery') ) :
+        wp_enqueue_script('image-nav', get_template_directory_uri() . '/js/image-nav.js', array ('jquery'), filemtime(get_template_directory() . '/js/image-nav.js'), true);
+        wp_enqueue_script('center-images', get_template_directory_uri() . '/js/center-images.js', array ('jquery'), filemtime(get_template_directory() . '/js/center-images.js'), true);
+    endif;
+}
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
