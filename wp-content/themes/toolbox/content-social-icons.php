@@ -14,18 +14,39 @@
     $desc = urlencode(get_the_excerpt());
     $image = urlencode(get_thumbnail_custom($post->ID, 'post-thumbnail'));
 ?>
-<ul class="social-icons">
-    <li>Share with:</li>
-    <li>
-        <a onClick="window.open('http://twitter.com/intent/tweet?text=%23MaraGHaseltine%20<?php echo $title . ', ' . $url; ?>%20%40CalamaraG','sharer','toolbar=0,status=0,width=548,height=225');" href="javascript: void(0)" class="twitter" title="Tweet this" target="_blank"></a>
-    </li>
-    <li>
-        <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title . ' | Mara G. Haseltine'; ?>&amp;p[summary]=<?php echo $desc + ' @MaraTheGreat';?>&amp;p[url]=<?php echo $url; ?>&amp;&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=548,height=325');" href="javascript: void(0)" class="facebook" title="Share on Facebook." target="_blank"></a>
-    </li>
-    <li>
-        <a onClick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $url;?>&title=<?php echo $title; ?>&summary=<?php echo $desc; ?>&source=calamara.com')" class="linked-in" title="Share on LinkedIn"></a>
-    </li>
-    <li>
-        <a onClick="window.open('http://pinterest.com/pin/create/button/?url=<?php echo $url; ?>&amp;media=<?php echo $image; ?>&amp;description=<?php echo $desc; ?>','sharer','toolbar=0,status=0,width=650,height=225');" href="javascript: void(0)" class="pintrest" title="Pin It" target="_blank"></a>
-    </li>
-</ul>
+<div class="social-sharing">
+    <a id="share-link" href="#">Share</a>
+    <ul class="social-icons">
+        <li>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-via="maraghaseltine" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </li>
+        <li>
+              <!-- Load Facebook SDK for JavaScript -->
+              <div id="fb-root"></div>
+              <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));</script>
+
+              <!-- Your share button code -->
+              <div class="fb-share-button" 
+                data-href="<?php echo get_permalink(); ?>" 
+                data-layout="button_count">
+        </li>
+        <li>
+            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+    <script type="IN/Share" data-url="<?php echo get_permalink(); ?>"></script>
+        </li>
+        <li>
+            <script
+                type="text/javascript"
+                async defer
+                src="//assets.pinterest.com/js/pinit.js"
+            ></script>
+            <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark"></a>
+        </li>
+    </ul>
+</div>

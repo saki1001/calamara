@@ -320,6 +320,43 @@ header h1 a {
     background: none;
 }
 
+/*Above post - hidden icons*/
+#main #content .social-sharing {
+    width: 100%;    
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+#main #content #share-link {
+    font-size: 18px;
+    height: 18px;
+    background: url('../images/share-arrow.png') no-repeat right 0;
+    background-size: auto 100%;
+    margin: 3px 15px 3px 0;
+    padding-right: 25px;
+    float: left;
+}
+
+#main #content #share-link:hover {
+    background-image: url('../images/share-arrow-blue.png');
+}
+
+#main #content .social-sharing ul.social-icons {
+    width: auto;
+    position: absolute;
+    left: -9999px;
+}
+
+#main #content .social-sharing ul.social-icons.active {
+    position: relative;
+    left: auto;
+}
+
+#main #content .social-sharing ul.social-icons li a {
+    background: none;
+}
+
 /*Social Media Icons*/
 .social-icons li a {
     width: 20px;

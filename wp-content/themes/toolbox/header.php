@@ -46,6 +46,8 @@
         <?php wp_head(); ?>
         
         <?php /*Custom JS Files*/ ?>
+        <script src="<?php echo get_template_directory_uri(); ?>/js/social-sharing.js" type="text/javascript"></script>
+        
         <?php if ( is_single() && has_post_format('gallery') ) : ?>
             
             <script src="<?php echo get_template_directory_uri(); ?>/js/image-nav.js" type="text/javascript"></script>
